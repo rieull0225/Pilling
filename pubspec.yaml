@@ -44,6 +44,8 @@ flutter:
         - asset: assets/font/GmarketSansTTFMedium.ttf
           weight: 500
 
+
+
   assets:
     - assets/image/
 
