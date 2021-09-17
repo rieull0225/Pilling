@@ -2,6 +2,14 @@
 
 A new Flutter project.
 
+
+
+image drive : https://drive.google.com/drive/folders/1DvJvyyLfpYdZUH45ZcjCUgOGGPqZ7CSU
+
+slider https://medium.com/flutter-community/flutter-sliders-demystified-4b3ea65879c
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

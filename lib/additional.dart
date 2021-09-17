@@ -130,7 +130,7 @@ Column First(PageController pageController){
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.only(left: 18.0),
-          child: SizedBox(width : 332 * 4/3, height : 52, child : Image.asset("assets/image/추가정보입력_네비게이터1.png")),
+          child: SizedBox(width : 332 * 4/3, height : 52, child : Image.asset("assets/image/기타/추가정보입력_네비게이터1.png")),
         ),
         SizedBox(height : 35 ),
         Padding(
@@ -197,7 +197,7 @@ Column Second(PageController pageController, List<Widget> s1, List<Widget> s2, L
   return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        SizedBox(width : 332 * 4/ 3, height : 52, child : Image.asset("assets/image/추가정보입력_네비게이터2.png")),
+        SizedBox(width : 332 * 4/ 3, height : 52, child : Image.asset("assets/image/기타/추가정보입력_네비게이터2.png")),
         SizedBox(height : 35 ),
         Padding(
           padding: const EdgeInsets.only(left : 18.0),
@@ -404,7 +404,7 @@ Column Third(PageController pageController, List<Widget> ache){
       children: <Widget>[
         Row(
           children: [
-            SizedBox(width : 320 , height : 52, child : Image.asset("assets/image/추가정보입력_네비게이터3.png")),
+            SizedBox(width : 320 , height : 52, child : Image.asset("assets/image/기타/추가정보입력_네비게이터3.png")),
             SizedBox(width : 20),
           ],
         ),
@@ -474,7 +474,7 @@ Column Forth(PageController pageController) {
       children: <Widget>[
         Row(
           children: [
-            SizedBox(width : 60 , height : 52, child : Image.asset("assets/image/추가정보입력_네비게이터4.png")),
+            SizedBox(width : 60 , height : 52, child : Image.asset("assets/image/기타/추가정보입력_네비게이터4.png")),
             SizedBox(width : 250),
           ],
         ),

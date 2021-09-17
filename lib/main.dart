@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   width: 92 ,
                   height: 105  ,
-                  child : Image.asset('assets/image/로고_세로형_white.png',fit : BoxFit.fill),
+                  child : Image.asset('assets/image/기타/로고_세로형_white.png',fit : BoxFit.fill),
                 ),
                 SizedBox(height : 32 ),
                 SizedBox(width : 342 * 4/3 , height : 44,

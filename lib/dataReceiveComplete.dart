@@ -30,7 +30,7 @@ class _dataReceiveCompleteState extends State<dataReceiveComplete> {
           SizedBox(height: 100 ),
           SizedBox(width: MediaQuery.of(context).size.width ,
               height: 350 ,
-              child: Image.asset("assets/image/의료데이터 도착.png")),
+              child: Image.asset("assets/image/기타/의료데이터 도착.png")),
           SizedBox(height: 34 ),
           Text("의료데이터가\n안전하게 도착했어요!",
               textAlign: TextAlign.center,

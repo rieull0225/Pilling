@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:degree/additional.dart';
+import 'package:degree/home.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _welcomeState extends State<welcome> {
                     padding : EdgeInsets.zero
                 ),
                 onPressed: (){
-                  Get.to(()=>additional());
+                  Get.to(()=>Home());
                 }, child: Text("홈으로", style: TextStyle(color : Color(0xffffffff),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,)))
             ,SizedBox(height : 17)
           ],

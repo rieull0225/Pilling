@@ -19,7 +19,7 @@ class search_result extends StatelessWidget {
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: IconButton(icon: Image.asset("assets/image/back_button.png"), onPressed: (){Get.back();},),
+          child: IconButton(icon: Image.asset("assets/image/기타/back_button.png"), onPressed: (){Get.back();},),
         ),
       ),
       body : Stack(
@@ -114,7 +114,7 @@ class search_result extends StatelessWidget {
                                                       width : 82, height : 82 ,
                                                       decoration : BoxDecoration(
                                                         shape : BoxShape.circle,
-                                                        image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/심볼_blue.png")),
+                                                        image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/기타/심볼_blue.png")),
                                                       )
                                                   ),
                                                   SizedBox(height : 12),
@@ -143,7 +143,7 @@ class search_result extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(18, 25, 18,0),
                     child: Column(children: [
                       Row(children: [
-                        SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/병원검색_진료시간.png")),
+                        SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/기타/병원검색_진료시간.png")),
                         Text('  진료 시간',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontFamily: 'Gmarket'))
                       ],),
                       SizedBox(height: 16 ),
@@ -278,13 +278,13 @@ class search_result extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Row(children: [
-                        SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/병원검색_위치.png")),
+                        SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/기타/병원검색_위치.png")),
                         Text('  위치 정보',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontFamily: 'Gmarket'))
                       ],),
                       SizedBox(height: 17 ),
                       Text('${address}', style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500,color : Color(0xff3d3d3d))),
                         SizedBox(height : 14 ),
-                        Container(width : 432, height : 161.54 , child : Image.asset("assets/image/병원검색_지도.png")),
+                        Container(width : 432, height : 161.54 , child : Image.asset("assets/image/기타/병원검색_지도.png")),
 
                     ],),
                   ),
@@ -302,7 +302,7 @@ class search_result extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(children: [
-                          SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/병원검색_연계약국.png")),
+                          SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/기타/병원검색_연계약국.png")),
                           Text('  연계 약국',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontFamily: 'Gmarket'))
                         ],),
                         SizedBox(height: 17 ),
@@ -316,7 +316,7 @@ class search_result extends StatelessWidget {
                                 Text('경상북도 포항시 양덕동 72번길 한동빌딩 1층', style : TextStyle(fontSize : 12, fontWeight: FontWeight.w500, color :Color(0xff6b6b6b)),)
                               ]
                             ),
-                            SizedBox(child : Image.asset("assets/image/병원검색_전화.png"), width : 36, height : 36),
+                            SizedBox(child : Image.asset("assets/image/기타/병원검색_전화.png"), width : 36, height : 36),
                           ],
                         ),
                         SizedBox(height : 11),
