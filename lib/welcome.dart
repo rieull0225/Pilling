@@ -25,7 +25,7 @@ class _welcomeState extends State<welcome> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height : 127 ),
-            SizedBox(width : MediaQuery.of(context).size.width , height : 300 ,child: Image.asset("assets/image/기타/환영해요.png")),
+            SizedBox(width : MediaQuery.of(context).size.width , height : 300 ,child: Image.asset("assets/image/general/환영해요.png")),
             SizedBox(height : 42 ),
             Text("반가워요 이로사님!", textAlign: TextAlign.center,
                 style : TextStyle(color : Color(0xff4271ff), fontSize: 21, fontFamily: 'Gmarket', fontWeight: FontWeight.w700)),

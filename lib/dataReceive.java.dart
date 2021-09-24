@@ -32,7 +32,7 @@ class dataReceivePageState extends State<dataReceivePage> {
           SizedBox(height: 100 ),
           SizedBox(width: MediaQuery.of(context).size.width ,
               height: 350 ,
-              child: Image.asset("assets/image/기타/의료데이터조회완료.png")),
+              child: Image.asset("assets/image/general/의료데이터조회완료.png")),
           SizedBox(height: 34 ),
           Text("해당 병원에서 의료 데이터를\n받아오는 중입니다" + ('.' * counter),
               textAlign: TextAlign.center,

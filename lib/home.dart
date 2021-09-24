@@ -17,12 +17,12 @@ class _HomeState extends State<Home> {
       body : Stack(
         children: [
           SizedBox(width : 200, height : 200,
-              child: Image.asset('assets/image/AI진료/AI진료프로필.png')),
+              child: Image.asset('assets/image/AI/AI진료프로필.png')),
           Column(
             children: [
               Text("hello"),
-              Image.asset('assets/image/AI진료/AI진료프로필.png'),
-              Image.asset('assets/image/기타/온보딩1.png'),
+              Image.asset('assets/image/AI/AI진료프로필.png'),
+              Image.asset('assets/image/general/온보딩1.png'),
               Image.asset('assets/image/하단바/하단바_홈_활성.png')
 
             ],

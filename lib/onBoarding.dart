@@ -62,7 +62,7 @@ List<Column> _onBoard = [
       GestureDetector(onTap:(){
         Get.to(()=>additional());
       },
-          child: SizedBox(width : 268 , height : 285 , child : Image.asset("assets/image/기타/온보딩1.png"))),
+          child: SizedBox(width : 268 , height : 285 , child : Image.asset("assets/image/general/온보딩1.png"))),
       SizedBox(height : 52 ),
       SizedBox(width : 200 , height : 56 , child : Text("필잉! 나만을 위한\n복약 관리를 시작해요",
           textAlign: TextAlign.center,
@@ -81,7 +81,7 @@ List<Column> _onBoard = [
   Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        SizedBox(width : 285 , height : 268, child : Image.asset("assets/image/기타/온보딩2.png")),
+        SizedBox(width : 285 , height : 268, child : Image.asset("assets/image/general/온보딩2.png")),
         SizedBox(height : 52 ),
         SizedBox(width : 220 , height : 56, child : Text("부작용을 예측하고\n빠른 기록을 도와줘요",
             textAlign: TextAlign.center,
@@ -99,7 +99,7 @@ List<Column> _onBoard = [
   Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        SizedBox(width : 220, height : 232 , child : Image.asset("assets/image/기타/온보딩3.png")),
+        SizedBox(width : 220, height : 232 , child : Image.asset("assets/image/general/온보딩3.png")),
         SizedBox(height : 49 ),
         SizedBox(width : 250 , height : 56 , child : Text("진료 시 기록된 데이터를\n의사와 함께 공유해요",
             textAlign: TextAlign.center,
@@ -118,7 +118,7 @@ List<Column> _onBoard = [
   Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        SizedBox(width : 220 , height : 232, child : Image.asset("assets/image/기타/온보딩4.png")),
+        SizedBox(width : 220 , height : 232, child : Image.asset("assets/image/general/온보딩4.png")),
         SizedBox(height : 49 ),
         SizedBox(width : 276 , height : 56 , child : Text("정확하고 빠른 진료,\nAI 챗봇 \'Dr.Pill\'과 함께해요",
             textAlign: TextAlign.center,
