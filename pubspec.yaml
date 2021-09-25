@@ -14,9 +14,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  timer_builder:
   cupertino_icons: ^1.0.2
   smooth_page_indicator: ^0.2.3
   dotted_line: 3.0.0
+  date_format:
+  intl:
 
 dev_dependencies:
   flutter_native_splash: ^1.2.1
@@ -43,12 +46,20 @@ flutter:
           weight: 300
         - asset: assets/font/GmarketSansTTFMedium.ttf
           weight: 500
+        - asset: assets/font/GmarketSansTTFBold.ttf
+          weight: 700
+
 
   assets:
     - assets/image/
-    - assets/image/general #기타
-    - assets/image/AI #AI진료
-    - assets/image/Record #복용기록
+    - assets/image/general/ #기타
+    - assets/image/AI/ #AI진료
+    - assets/image/Record/ #복용기록
+    - assets/image/home/
+    - assets/image/SideEffect/
+    - assets/image/Detail/
+    - assets/image/Booking/
+    - assets/image/BotNav/
 
 
 
