@@ -1,3 +1,5 @@
+import 'package:degree/drugFail.dart';
+import 'package:degree/drugOK.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
@@ -198,9 +200,17 @@ Widget afterSet(){
                 ],
               ),
               SizedBox(width : 10),
-              SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인X.png")),
+              GestureDetector(
+                  onTap:(){
+                    Get.to(()=>drugFail());
+                  },
+                  child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인X.png"))),
               SizedBox(width : 12),
-              SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인V.png")),
+              GestureDetector(
+                onTap:(){
+                  Get.to(()=>drugOK());
+                },
+                  child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인V.png"))),
             ],
           ),
         )
@@ -218,7 +228,6 @@ Widget afterSet(){
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
                     Text("복용 완료 | 08:32am", style : TextStyle(color : Color(0xff4271ff), fontSize: 12,fontWeight: FontWeight.w300,fontFamily: 'Apple')),
                     Text("콘서타OROS27mg 1정", style : TextStyle(color : Color(0xff4271ff,), fontSize: 15)),
                     Text("21년 06월 28일부터 23일째 먹고있어요.", style : TextStyle(color : Color(0xff6b6b6b), fontSize : 12))
@@ -227,7 +236,11 @@ Widget afterSet(){
                 SizedBox(width : 10),
                 SizedBox(height : 34, width : 34),
                 SizedBox(width : 12),
-                SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용완료.png")),
+                GestureDetector(
+                  onTap:(){
+                    Get.to(()=>drugOK());
+                  },
+                    child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용완료.png"))),
               ],
             ),
           )
