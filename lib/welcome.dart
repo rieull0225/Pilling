@@ -41,7 +41,7 @@ class _welcomeState extends State<welcome> {
                     padding : EdgeInsets.zero
                 ),
                 onPressed: (){
-                  Get.to(()=>Home());
+                  Get.offAll(()=>Home());
                 }, child: Text("홈으로", style: TextStyle(color : Color(0xffffffff),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,)))
             ,SizedBox(height : 17)
           ],

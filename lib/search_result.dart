@@ -51,7 +51,7 @@ class search_result extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(bottom:44.0),
-                            child: SizedBox(width : 55 , height : 55 ,child: Image.asset("assets/image/병원검색_전화.png")),
+                            child: SizedBox(width : 55 , height : 55 ,child: Image.asset("assets/image/general/병원검색_전화.png")),
                           )
                         ],
                       )
@@ -74,7 +74,7 @@ class search_result extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        children: [SizedBox(child : Image.asset("assets/image/병원검색_의사정보.png"), width : 16  , height : 16 ),
+                                        children: [SizedBox(child : Image.asset("assets/image/general/병원검색_의사정보.png"), width : 16  , height : 16 ),
                                           SizedBox(width : 5.38 ),
                                           Text('의사 정보',style : TextStyle(fontSize : 13, fontFamily : 'Gmarket',color : Color(0xff6b6b6b)))
                                         ],
@@ -93,7 +93,7 @@ class search_result extends StatelessWidget {
                                                   width : 82 , height : 82 ,
                                                   decoration : BoxDecoration(
                                                     shape : BoxShape.circle,
-                                                    image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/심볼_blue.png")),
+                                                    image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/general/심볼_blue.png")),
                                                   )
                                                 ),
                                                 SizedBox(height : 12),

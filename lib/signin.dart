@@ -17,7 +17,7 @@ class _SignInState extends State<SignIn> {
   List<bool> bList = [false, false, false, false, false, false];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       body : Padding(
         padding: const EdgeInsets.fromLTRB(18, 102.5 , 13, 17 ),
         child: Column(
@@ -83,44 +83,75 @@ class _SignInState extends State<SignIn> {
                 style : ElevatedButton.styleFrom(primary : Color(0xff4271ff),
                     shape : RoundedRectangleBorder(borderRadius : BorderRadius.circular(12),)),
                 onPressed:(){
-                  Get.defaultDialog(
-                    confirm: GestureDetector(
-                      onTap : (){
-                        Get.to(()=>dataReceivePage());
-                      },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color : total ? Color(0xff4271ff) : Color(0xfff6f8ff),
-                          ),
-                        height : 48 , width : 303 ,
-                        child : Center(
-                        child: Text("동의하고 진행하기"))
-                    )),
-                    titlePadding: EdgeInsets.fromLTRB(0,26 , 0, 0),
-                      title : '서비스 약관 동의',
-                      titleStyle : TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color : Color(0xff141922)),
-                      content : StatefulBuilder(builder : (BuildContext context, StateSetter setState){
+                  Get.dialog( Dialog() );
+                },child : Text('다음', style : TextStyle(fontSize: 14, color: Color(0xffffffff), fontWeight: FontWeight.w400)))
+                : SizedBox(
+                  width : 324, height : 48,
+                  child: ElevatedButton(
+                  style : ElevatedButton.styleFrom(primary : Color(0xfff6fbff),elevation : 0,
+                      shape : RoundedRectangleBorder(borderRadius : BorderRadius.circular(12),)),
+                  onPressed:(){
+
+                  },child : Text('다음', style : TextStyle(fontSize: 14, color: Color(0xffb8b8b8), fontWeight: FontWeight.w400))),
+                )),
+
+          ],
+        ),
+      )
+    );
+  }
+
+
+  Widget Dialog(){
+    return Center(
+      child: Container(
+        height : 420,
+        width: 303,
+        child: Column(
+            children: <Widget>[
+              Container(
+                  width : 303,
+                  height : 372,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                  ),
+                  child : Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      StatefulBuilder(builder : (BuildContext context, StateSetter setState){
                         return Container(
-                          width : 303, height : 324,
                           child: Column(
                               children :[
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    IconButton(onPressed : (){
-                                      setState((){
-                                        total = total ? false : true;
-                                        for(int i = 0 ; i < bList.length ; ++i) {
-                                          bList[i] = total ? true : false;
-                                        }
-
-                                      });
-                                    }, icon: total ? Icon(Icons.check_circle_rounded,size : 18, color: Color(0xffb8b8b8)):Icon(Icons.check_circle_rounded,size : 18, color: Color(0xff4271ff))),
-                                    Text("아래 약관에 모두 동의합니다.", style : TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b))),
-                                    SizedBox(width : 50),
-                                  ],
+                                Text("서비스 이용약관 동의", style : TextStyle(color : Color(0xff141922),decoration: TextDecoration.none, fontSize: 18, letterSpacing: -0.1)),
+                                SizedBox(height : 20),
+                                Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      GestureDetector(
+                                        onTap: (){
+                                          setState((){
+                                            total = total ? false : true;
+                                            for(int i = 0; i < bList.length ; ++i){
+                                              bList[i] = total ?true : false;
+                                            }
+                                          });
+                                        },
+                                        child:total ? Icon(Icons.check_circle_rounded,size : 18, color: Color(0xffb8b8b8)):Icon(Icons.check_circle_rounded,size : 18, color: Color(0xff4271ff))),
+                                      SizedBox(width : 10),
+                                      Text("아래 약관에 모두 동의합니다.", style : TextStyle(
+                                          letterSpacing : -0.5,fontSize: 13, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
+                                      SizedBox(width : 50),
+                                    ],
+                                  ),
                                 ),
+
+
                                 SizedBox(height : 15,),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -145,17 +176,18 @@ class _SignInState extends State<SignIn> {
                                                         child: GestureDetector(
 
                                                             onTap : (){
-                                                          setState((){
-                                                            bList[i] = bList[i] ? false : true;
-                                                            for(int i = 0 ; i < bList.length; ++i){
-                                                              if(bList[i] == false) total = true;
-                                                            }
-                                                          });
-                                                        }, child: bList[i] ? Icon(Icons.check_circle_rounded,size: 16, color: Color(0xffb8b8b8)):Icon( Icons.check_circle_rounded,size: 16, color: Color(0xff4271ff))),
+                                                              setState((){
+                                                                bList[i] = !bList[i];
+                                                                for(int i = 0 ; i < bList.length; ++i){
+                                                                  if(bList[i] == false) total = true;
+                                                                }
+                                                              });
+                                                            }, child: bList[i] ? Icon(Icons.check_circle_rounded,size: 16, color: Color(0xffb8b8b8)):Icon( Icons.check_circle_rounded,size: 16, color: Color(0xff4271ff))),
                                                       ),
-                                                      Text("필잉 이용 약관 동의 (필수)", style : TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b))),
+                                                      Text("필잉 이용 약관 동의 (필수)", style : TextStyle(letterSpacing: -0.5,
+                                                          fontSize: 12, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
                                                       SizedBox(width : 30),
-                                                      Text("보기", style:TextStyle(fontSize : 12, fontWeight: FontWeight.w400, color : Color(0xffb8b8b8),decoration: TextDecoration.underline)),
+                                                      Text("보기", style:TextStyle(fontSize : 12, fontWeight: FontWeight.w400, color : Color(0xffb8b8b8),decoration: TextDecoration.underline, decorationColor:Color(0xffb8b8b8))),
                                                       SizedBox(width : 12),
                                                     ],
                                                   ),
@@ -170,23 +202,36 @@ class _SignInState extends State<SignIn> {
                           ),
                         );
                       }),
+                    ],
+                  )
+              ),
+              GestureDetector(
+                onTap:(){
+                  Get.to(dataReceivePage());
+                },
+                child: Container(
+                  width : 303,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: Color(0xff4271ff),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "동의하고 진행하기",
+                      style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
+                      textAlign: TextAlign.center,
 
-                  );
-                },child : Text('다음', style : TextStyle(fontSize: 14, color: Color(0xffffffff), fontWeight: FontWeight.w400)))
-                : SizedBox(
-                  width : 324, height : 48,
-                  child: ElevatedButton(
-                  style : ElevatedButton.styleFrom(primary : Color(0xfff6fbff),elevation : 0,
-                      shape : RoundedRectangleBorder(borderRadius : BorderRadius.circular(12),)),
-                  onPressed:(){
+                    ),
+                  ),
+                ),
+              ),
+            ]),
+      ),
+    );}
 
-                  },child : Text('다음', style : TextStyle(fontSize: 14, color: Color(0xffb8b8b8), fontWeight: FontWeight.w400))),
-                )),
 
-          ],
-        ),
-      )
-    );
-  }
 }
 

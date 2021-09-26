@@ -1,4 +1,5 @@
 
+import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
@@ -57,7 +58,9 @@ class _HomeState extends State<Home> {
       floatingActionButton : FloatingActionButton(
         backgroundColor: Color(0xffff5b64),
         child : Image.asset("assets/image/home/Vector.png",fit: BoxFit.fill,),
-        onPressed: (){},
+        onPressed: (){
+          Get.to(SideEff());
+        },
       )
     );
   }

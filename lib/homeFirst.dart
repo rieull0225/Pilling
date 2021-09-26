@@ -1,5 +1,6 @@
 import 'package:degree/drugFail.dart';
 import 'package:degree/drugOK.dart';
+import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
@@ -9,9 +10,9 @@ import 'package:intl/intl.dart';
 import 'package:timer_builder/timer_builder.dart';
 
 String dateFormat = DateFormat('EEEE').format(DateTime.now());
-bool isSet = true;
+bool isSet = false;
 bool prep = true;
-bool side = false;
+bool side = true;
 class homeFirst extends StatefulWidget {
   const homeFirst({Key? key}) : super(key: key);
 
@@ -93,8 +94,12 @@ Widget SideEffect(){
   return Padding(
     padding: const EdgeInsets.only(left : 8.0),
     child: Container(
-      width :350, height : 205,
-      child : Image.asset("assets/image/home/side.png",fit:BoxFit.cover),
+      width :350, height : 204,
+      child : GestureDetector(
+        onTap:(){
+          Get.to(SideEff());
+        },
+          child: Image.asset("assets/image/home/side.png",fit:BoxFit.cover)),
     ),
   );
 }
@@ -156,13 +161,14 @@ Widget prepButton(BuildContext context){
 
 Widget beforeSet(){
   return Container(
-      width : 312, height : 174,
+      width : 312, height : 204,
       decoration: BoxDecoration(color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(height : 20),
           SizedBox(height : 104, width : 120, child: Image.asset("assets/image/home/홈_최초배너.png")),
           Text("복용 시간을 설정해주세요!",style: TextStyle(color : Color(0xffff5b64), fontWeight: FontWeight.w300 , fontSize: 15)),
           SizedBox(height : 7),
