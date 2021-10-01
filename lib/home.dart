@@ -6,6 +6,7 @@ import 'package:date_format/date_format.dart';
 import 'package:get/get.dart';
 import 'homeFirst.dart';
 import 'package:intl/intl.dart';
+import 'package:degree/homeSecond.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -55,20 +56,20 @@ class _HomeState extends State<Home> {
       ),
       appBar: null,
       body : ListView(children: [bodyList.elementAt(_idx),],),
-      floatingActionButton : FloatingActionButton(
+      floatingActionButton : _idx == 0? FloatingActionButton(
         backgroundColor: Color(0xffff5b64),
         child : Image.asset("assets/image/home/Vector.png",fit: BoxFit.fill,),
         onPressed: (){
           Get.to(SideEff());
         },
-      )
+      ) : null,
     );
   }
 }
 
 List bodyList = [
   homeFirst(),
-  homeFirst(),
+  homeSecond(),
   homeFirst(),
   homeFirst(),
 ];

@@ -32,12 +32,18 @@ flutter:
   fonts:
     - family: Apple
       fonts:
-        - asset: assets/font/AppleSDGothicNeoH.ttf
-          weight: 500
+        - asset: assets/font/AppleSDGothicNeoEB.ttf
+          weight: 600
         - asset: assets/font/AppleSDGothicNeoL.ttf
           weight: 300
         - asset: assets/font/AppleSDGothicNeoM.ttf
           weight: 400
+        - asset: assets/font/AppleSDGothicNeoB.ttf
+          weight: 500
+        - asset: assets/font/AppleSDGothicNeoUL.ttf
+          weight: 200
+        - asset: assets/font/AppleSDGothicNeoT.ttf
+          weight: 100
 
 
     - family: Gmarket

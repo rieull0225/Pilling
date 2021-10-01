@@ -59,7 +59,7 @@ class _homeFirstState extends State<homeFirst> {
               side == false ? SideEffect() :GestureDetector(
                 onTap : (){
                   setState(() {
-                    isSet = isSet ? false : true;
+                    isSet = true;
                     //isSet = true;
                   });
                 },
@@ -159,7 +159,7 @@ Widget prepButton(BuildContext context){
    );
 }
 
-Widget beforeSet(){
+Widget afterSet(){
   return Container(
       width : 312, height : 204,
       decoration: BoxDecoration(color: Colors.white,
@@ -179,7 +179,7 @@ Widget beforeSet(){
 }
 
 
-Widget afterSet(){
+Widget beforeSet(){
   return Column(
     children: [
       Container(

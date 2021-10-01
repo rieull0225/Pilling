@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'home.dart';
 
 final controller = PageController(viewportFraction:1.0,
     initialPage: 0);
@@ -60,7 +61,7 @@ List<Column> _onBoard = [
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
       GestureDetector(onTap:(){
-        Get.to(()=>additional());
+        Get.to(()=>Home());
       },
           child: SizedBox(width : 268 , height : 285 , child : Image.asset("assets/image/general/온보딩1.png"))),
       SizedBox(height : 52 ),
