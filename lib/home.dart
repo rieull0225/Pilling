@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
         ]
       ),
       appBar: null,
-      body : ListView(children: [bodyList.elementAt(_idx),],),
+      body : ListView(children: [bodyList.elementAt(_idx)],),
       floatingActionButton : _idx == 0? FloatingActionButton(
         backgroundColor: Color(0xffff5b64),
         child : Image.asset("assets/image/home/Vector.png",fit: BoxFit.fill,),

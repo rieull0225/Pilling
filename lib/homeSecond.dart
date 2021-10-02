@@ -1,15 +1,9 @@
 import 'package:degree/drug1.dart';
 import 'package:degree/drug2.dart';
-import 'package:degree/drugFail.dart';
-import 'package:degree/drugOK.dart';
-import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:date_format/date_format.dart';
 import 'package:get/get.dart';
-import 'homeFirst.dart';
 import 'package:intl/intl.dart';
-import 'package:timer_builder/timer_builder.dart';
 
 String dateFormat = DateFormat('EEEE').format(DateTime.now());
 bool isSet = false;
@@ -25,6 +19,9 @@ class homeSecond extends StatefulWidget {
 }
 class _homeSecondState extends State<homeSecond> {
   var info = false;
+  var info2 = false;
+  List _valueList = ['06월27일 - 07월03일','07월04일 - 07월11일'];
+  var _selected = '06월27일 - 07월03일' ;
 
 
   @override
@@ -36,7 +33,10 @@ class _homeSecondState extends State<homeSecond> {
           appBar: AppBar(
             leading: Container(),
             titleSpacing: 0,
-            title : Text('필잉스토리',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),),
+            title : Padding(
+              padding: const EdgeInsets.only(top : 20.0),
+              child: Text('필잉스토리',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),),
+            ),
             elevation: 2,
             backgroundColor: Colors.white,
             bottom : TabBar(
@@ -63,7 +63,6 @@ class _homeSecondState extends State<homeSecond> {
         ),
       ),
     );}
-
     Widget Tab1(){
       return ListView(
         children: [
@@ -208,26 +207,269 @@ class _homeSecondState extends State<homeSecond> {
         ],
       );
     }
-  Widget Tab2(){
-    return ListView(
-      children: [
-        Column(
-          children: [
 
-          ],
-        )
-      ],
+    Widget Tab2(){
+    return Container(
+      decoration: BoxDecoration(color : Colors.white),
+      child: ListView(
+        children: [
+          Column(
+            children: [
+              SizedBox(height : 16,),
+              Stack(
+                children: [
+                  Container(
+                    width : MediaQuery.of(context).size.width,
+                    height : MediaQuery.of(context).size.width,
+                    child:Image.asset('assets/image/home/calender.png'),
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(259, 18, 0, 0),
+                    child: GestureDetector(
+                      onTap: (){
+                        Get.dialog(
+                          Dialog()
+                        );
+                      },
+                        child: SizedBox(width : 68, height : 22, child: Image.asset("assets/image/home/복용률.png"),)),
+                  )
+                ],
+              ),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 31.0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width : MediaQuery.of(context).size.width, height : 47,
+                      child: Image.asset('assets/image/home/캘린더기록.png'),
+                    ),
+                    SizedBox(
+                      width : MediaQuery.of(context).size.width, height : 63,
+                      child: Image.asset('assets/image/home/캘린더기록-1.png'),
+                    ),SizedBox(
+                      width : MediaQuery.of(context).size.width, height : 63,
+                      child: Image.asset('assets/image/home/캘린더기록-2.png'),
+                    ),
+                    SizedBox(height: 109),
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
-  Widget Tab3(){
-    return ListView(
-      children: [
-        Column(
-          children: [
 
-          ],
-        )
-      ],
+
+  Widget Dialog(){
+    return Stack(
+      children: [
+        Center(
+          child: Container(
+            height : 384,
+            width: 294,
+            child: Image.asset("assets/image/home/복용률팝업.png"),
+
+
+          )
+        ),
+
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height : 336,
+              ),
+              GestureDetector(
+                onTap:(){
+                  Get.back();
+                },
+                child: Container(
+                  width : 290,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: Color(0xff4271ff),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10)),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "확인",
+                      style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
+                      textAlign: TextAlign.center,
+
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ]
+    );
+  }
+
+
+  Widget Tab3(){
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      width : MediaQuery.of(context).size.width,
+      child: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(18,28,0,28),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    DropdownButton(
+                      value : _selected,
+                      items: _valueList.map(
+                            (value){
+                          return DropdownMenuItem(
+                            value : value,
+                            child : Text(value, style : TextStyle(color:Color(0xff4271ff),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w400)),
+                          );
+                        },
+                      ).toList(),
+                      onChanged: (value) {
+                        setState((){
+                          _selected = value.toString();
+                        });
+                      },
+                    ),
+                    SizedBox(width : 7),
+                    Text("동안",style : TextStyle(color:Color(0xff141922),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w400)),
+                  ],
+                ),
+                Text("콘서타OROS 27mg과 아빌리파이 2mg\n"
+                "복용 중 나타난 부작용이에요.",style : TextStyle(color:Color(0xff141922),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w400)),
+                SizedBox(height : 27),
+                Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [BoxShadow(color:Colors.grey.withOpacity(0.5), offset : Offset(2,2), blurRadius: 10)]
+                      ),
+                      width : 324, height : 399,
+                      child : Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("부작용의 종류와 빈도는",style : TextStyle(color:Color(0xff141922),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w500)),
+                                Row(
+                                  children: [
+                                    Text("적정상태",style : TextStyle(color:Color(0xff4271ff),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w500)),
+                                    Text(" 입니다.",style : TextStyle(color:Color(0xff141922),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w500)),
+                                  ],
+                                ),
+                                SizedBox(height : 30),
+                                Image.asset("assets/image/home/sideInfo.png"),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(290.0, 23,0,0),
+                            child: GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  info2 = !info2;
+                                });
+                              },
+                              child: SizedBox(
+                                height : 17,
+                                width : 17,
+                                child: Image.asset('assets/image/home/Info_light.png'),
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    ),
+                    info2 ? Padding(
+                      padding: const EdgeInsets.fromLTRB(80,36,0,0),
+                      child: SizedBox(
+                          width : 300,child: Image.asset('assets/image/home/talkbubble.png')),
+                    ): Container(),
+                  ],
+                ),
+                SizedBox(height : 20),
+                Container(
+                  width : 324,
+                  height : 501,
+                  decoration: BoxDecoration(
+                      color: Color(0xfff8faff),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [BoxShadow(color:Colors.grey.withOpacity(0.5), offset : Offset(2,2), blurRadius: 10)]
+                  ),
+                  child : Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children:[
+                        Text("각 부작용에 대해\n이렇게 느꼈다고 답했어요.",
+                            style : TextStyle(color:Color(0xff141922),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w500)),
+                        SizedBox(height : 22),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Image.asset("assets/image/home/sideGraph.png"),
+                        ),
+                        SizedBox(height: 100, width : 286, child : Image.asset("assets/image/home/sideWarning.png")),
+                      ]
+                    ),
+                  )
+                ),
+                SizedBox(height : 20),
+                Container(
+                    width : 324,
+                    height : 452,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [BoxShadow(color:Colors.grey.withOpacity(0.5), offset : Offset(2,2), blurRadius: 10)]
+                    ),
+                    child :  Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("부작용이 가장 활발한 시간대는",style : TextStyle(color:Color(0xff141922),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w500)),
+                          Row(
+                            children: [
+                              Text("17시 ~ 19시",style : TextStyle(color:Color(0xff4271ff),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w500)),
+                              Text(" 입니다.",style : TextStyle(color:Color(0xff141922),fontFamily: 'Gmarket', fontSize: 16,fontWeight: FontWeight.w500)),
+
+                            ],
+                          ),
+                          SizedBox(height : 30),
+                          SizedBox(
+                              width : 286, height : 324, child : Image.asset('assets/image/home/sideTimeGraph.png')
+                          )
+                        ],
+                      ),
+                    ),
+                ),
+                SizedBox(height : 85),
+
+
+              ],
+            ),
+          )
+
+        ],
+      ),
     );
   }
 }
