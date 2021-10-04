@@ -113,23 +113,7 @@ class search_result extends StatelessWidget {
                                                       padding: const EdgeInsets.symmetric(horizontal: 36),
                                                       child: Container(width : 1, color : Color(0xffebf0ff), height : 96),
                                                     ),
-/*
 
-                                                  Column(
-                                                      children:[
-                                                        Container(
-                                                            width : 82, height : 82 ,
-                                                            decoration : BoxDecoration(
-                                                              shape : BoxShape.circle,
-                                                              image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/general/심볼_blue.png")),
-                                                            )
-                                                        ),
-                                                        SizedBox(height : 12),
-                                                        Text("한나비 의사", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w700,color : Color(0xff3d3d3d))),
-                                                        SizedBox(height : 4 ),
-                                                        Text("정신건강의학과 5년차", style : TextStyle(fontSize: 11, fontWeight : FontWeight.w500, color : Color(0xff929292)))
-                                                      ]
-                                                  )*/
                                                 ]
                                               ),
                                             ],

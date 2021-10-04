@@ -1,5 +1,7 @@
 
+import 'package:degree/changeHos.dart';
 import 'package:degree/search_result.dart';
+import 'package:degree/timeSelect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,6 +15,7 @@ class reservation extends StatefulWidget {
 }
 
 class _reservationState extends State<reservation> {
+
   final hospital = Get.arguments;
   var isSelected = false;
   var box1 = false;
@@ -116,13 +119,18 @@ class _reservationState extends State<reservation> {
                     ],
                   ),
                   Expanded(child: Container()),
-                  Container(
-                    width : 324, height : 48,
-                    decoration: BoxDecoration(
-                      color : Color(0xff4271ff),
-                      borderRadius: BorderRadius.circular(12),
+                  GestureDetector(
+                    onTap:(){
+                      Get.to(timeSelect());
+                      },
+                    child: Container(
+                      width : 324, height : 48,
+                      decoration: BoxDecoration(
+                        color : Color(0xff4271ff),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child : Center(child : Text("날짜/시간 선택하기", style: TextStyle(color : Colors.white, fontSize: 14, fontFamily: 'Apple',fontWeight: FontWeight.w400))),
                     ),
-                    child : Center(child : Text("날짜/시간 선택하기", style: TextStyle(color : Colors.white, fontSize: 14, fontFamily: 'Apple',fontWeight: FontWeight.w400))),
                   )
                 ],
               ),
@@ -172,13 +180,13 @@ class _reservationState extends State<reservation> {
             children: [
               Row(
                 children: [
-                  SizedBox(height : 50, width: 50, child : Image.asset("assets/image/${hospital[0]}/${hospital[1]}.png")),
+                  SizedBox(height : 50, width: 50, child : Image.asset("assets/image/${hospital.name}/${hospital.doctor[0]} 원장.png")),
                   SizedBox(width : 11),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(hospital[0], style: TextStyle(color: Color(0xff3d3d3d), fontSize: 12, fontWeight: FontWeight.w400),),
-                      Text(hospital[1], style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w700),),
+                      Text(hospital.name, style: TextStyle(color: Color(0xff3d3d3d), fontSize: 12, fontWeight: FontWeight.w400),),
+                      Text(hospital.doctor[0] + " 원장", style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w700),),
                     ],
                   )
                 ],
@@ -223,13 +231,13 @@ class _reservationState extends State<reservation> {
             children: [
               Row(
                 children: [
-                  SizedBox(height : 50, width: 50, child : Image.asset("assets/image/${hospital[0]}/${hospital[1]}.png")),
+                  SizedBox(height : 50, width: 50, child : Image.asset("assets/image/${hospital.name}/${hospital.doctor[0]} 원장.png")),
                   SizedBox(width : 11),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(hospital[0], style: TextStyle(color: Color(0xff3d3d3d), fontSize: 12, fontWeight: FontWeight.w400),),
-                      Text(hospital[1], style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w700),),
+                      Text(hospital.name, style: TextStyle(color: Color(0xff3d3d3d), fontSize: 12, fontWeight: FontWeight.w400),),
+                      Text(hospital.doctor[0] + " 원장", style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w700),),
                     ],
                   )
                 ],
@@ -305,20 +313,23 @@ class _reservationState extends State<reservation> {
                           ),
                         ),
                       ),
-                      Container(
-                        width : 145,
-                        height: 48,
-                        decoration: BoxDecoration(
-                          color: Color(0xff4271ff),
-                          borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(10)),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "변경할래요",
-                            style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
-                            textAlign: TextAlign.center,
+                      GestureDetector(
+                        onTap: () => Get.to(changeHos()),
+                        child: Container(
+                          width : 145,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            color: Color(0xff4271ff),
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(10)),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "변경할래요",
+                              style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
+                              textAlign: TextAlign.center,
 
+                            ),
                           ),
                         ),
                       ),

@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 import 'package:degree/AIEnter.dart';
 import 'package:intl/intl.dart';
 
+import 'assets.dart';
+
 String dateFormat = DateFormat('EEEE').format(DateTime.now());
 bool isSet = false;
 bool prep = true;
@@ -20,8 +22,11 @@ class homeFirst extends StatefulWidget {
   _homeFirstState createState() => _homeFirstState();
 }
 
+
 class _homeFirstState extends State<homeFirst> {
   @override
+
+
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -106,7 +111,7 @@ Widget SideEffect(){
 
 Widget BookButton(){
   return GestureDetector(
-    onTap:(){Get.to(reservation(),arguments: ['마음샘정신건강의학과', '김진규 원장', '서울시 서초구 서초동 1673-1 인앤인빌딩 502호', '02-534-8856']);},
+    onTap:(){Get.to(reservation(),arguments: inform(name : '마음샘정신건강의학과',doctor : ['김진규', '곽은진'], address : '서울시 서초구 서초동 1673-1 인앤인빌딩 502',phone : '02-522-6836'));},
     child: Container(
       width : 156, height : 171,
       decoration: BoxDecoration(color : Color(0xfff6f8ff),
