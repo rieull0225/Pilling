@@ -5,9 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
 import 'package:get/get.dart';
-import 'homeFirst.dart';
+import 'package:degree/AIEnter.dart';
 import 'package:intl/intl.dart';
-import 'package:timer_builder/timer_builder.dart';
 
 String dateFormat = DateFormat('EEEE').format(DateTime.now());
 bool isSet = false;
@@ -130,23 +129,28 @@ Widget BookButton(){
 Widget EnterButton(){
   return GestureDetector(
     onTap:(){},
-    child: Container(
-        width : 156, height : 171,
-        decoration: BoxDecoration(color : Color(0xfff6f8ff),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
-        child : Padding(
-          padding: const EdgeInsets.fromLTRB(16,16,0,0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("AI 챗봇 진료실\n입장하기 >", style : TextStyle(color : Color(0xff4271ff),fontSize: 16, fontWeight: FontWeight.w400),),
-              Expanded(child : SizedBox()),
-              SizedBox(width : 134, height: 94,
-                child: Image.asset("assets/image/home/입장.png",),),
-            ],
-          ),
-        )
+    child: InkWell(
+      onTap: (){
+        Get.to(AIEnter());
+      },
+      child: Container(
+          width : 156, height : 171,
+          decoration: BoxDecoration(color : Color(0xfff6f8ff),
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
+          child : Padding(
+            padding: const EdgeInsets.fromLTRB(16,16,0,0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("AI 챗봇 진료실\n입장하기 >", style : TextStyle(color : Color(0xff4271ff),fontSize: 16, fontWeight: FontWeight.w400),),
+                Expanded(child : SizedBox()),
+                SizedBox(width : 134, height: 94,
+                  child: Image.asset("assets/image/home/입장.png",),),
+              ],
+            ),
+          )
+      ),
     ),
   );
 }
