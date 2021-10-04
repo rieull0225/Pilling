@@ -1,9 +1,7 @@
 import 'package:degree/welcome.dart';
 import 'package:get/get.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'main.dart';
 import 'package:dotted_line/dotted_line.dart';
 
 List<Widget> s1 = [];

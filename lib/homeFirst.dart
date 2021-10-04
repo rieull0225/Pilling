@@ -1,5 +1,6 @@
 import 'package:degree/drugFail.dart';
 import 'package:degree/drugOK.dart';
+import 'package:degree/reservation.dart';
 import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +106,7 @@ Widget SideEffect(){
 
 Widget BookButton(){
   return GestureDetector(
-    onTap:(){},
+    onTap:(){Get.to(reservation(),arguments: ['마음샘정신건강의학과', '김진규 원장', '서울시 서초구 서초동 1673-1 인앤인빌딩 502호', '02-534-8856']);},
     child: Container(
       width : 156, height : 171,
       decoration: BoxDecoration(color : Color(0xfff6f8ff),

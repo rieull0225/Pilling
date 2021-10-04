@@ -1,17 +1,10 @@
 import 'dart:async';
-
-import 'package:degree/drugFail.dart';
-import 'package:degree/drugOK.dart';
 import 'package:degree/home.dart';
-import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:date_format/date_format.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'homeFirst.dart';
 import 'package:intl/intl.dart';
-import 'package:timer_builder/timer_builder.dart';
 
 class AIDoctor extends StatefulWidget {
   const AIDoctor({Key? key}) : super(key: key);

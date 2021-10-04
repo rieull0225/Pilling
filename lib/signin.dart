@@ -2,8 +2,6 @@ import 'package:degree/dataReceive.java.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
-
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 

@@ -2,16 +2,15 @@ import 'package:degree/signin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'onBoarding.dart';
-import 'package:flutter/services.dart';
 
 class search_result extends StatelessWidget {
   search_result({Key? key}) : super(key: key);
-  //['열린마음신경정신과의원', '김해린', '경기 시흥시 배곧3로 96 엠플러스 3층', '031-432-8383']
-  var title = Get.arguments[0];
-  var name = Get.arguments[1];
-  var address = Get.arguments[2];
-  var phone = Get.arguments[3];
+  //['마음샘정신건강의학과', '김진규 원장', '서울시 서초구 서초동 1673-1 인앤인빌딩 502호', '02-534-8856']
+  var hospital = Get.arguments;
+  var title = Get.arguments.name;
+  var names = Get.arguments.doctor;
+  var address = Get.arguments.address;
+  var phone = Get.arguments.phone;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,45 +84,56 @@ class search_result extends StatelessWidget {
 
                                       Padding(
                                         padding: const EdgeInsets.only(left : 16),
-                                        child: Row(
-                                          children :[
-                                            Column(
-                                              children:[
-                                                Container(
-                                                  width : 82 , height : 82 ,
-                                                  decoration : BoxDecoration(
-                                                    shape : BoxShape.circle,
-                                                    image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/general/심볼_blue.png")),
-                                                  )
-                                                ),
-                                                SizedBox(height : 12),
-                                                Text("${name} 의사", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w700,color : Color(0xff3d3d3d))),
-                                                SizedBox(height : 3 ),
-                                                Text("정신건강의학과 7년차", style : TextStyle(fontSize: 11, fontWeight : FontWeight.w500, color : Color(0xff929292)))
-                                              ]
-                                            ),
+                                        child: Container(
+                                          width : MediaQuery.of(context).size.width,
+                                          height : 141,
+                                          child: ListView(
+                                            scrollDirection: Axis.horizontal,
+                                            children: [
+                                              for(int i = 0 ; i < names.length ; i++)
+                                                Row(
+                                                  children :[
+                                                    Column(
+                                                      children:[
+                                                        Container(
+                                                          width : 82 , height : 82 ,
+                                                          decoration : BoxDecoration(
+                                                            shape : BoxShape.circle,
+                                                            image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/${title}/${names[i]} 원장.png")),
+                                                          )
+                                                        ),
+                                                        SizedBox(height : 12),
+                                                        Text("${names[i]} 원장", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w700,color : Color(0xff3d3d3d))),
+                                                        SizedBox(height : 3 ),
+                                                        Text("정신건강의학과 7년차", style : TextStyle(fontSize: 11, fontWeight : FontWeight.w500, color : Color(0xff929292)))
+                                                      ]
+                                                    ),
 
-                                            Padding(
-                                              padding: const EdgeInsets.symmetric(horizontal: 36),
-                                              child: Container(width : 1, color : Color(0xffebf0ff), height : 96),
-                                            ),
+                                                    Padding(
+                                                      padding: const EdgeInsets.symmetric(horizontal: 36),
+                                                      child: Container(width : 1, color : Color(0xffebf0ff), height : 96),
+                                                    ),
+/*
 
-                                            Column(
-                                                children:[
-                                                  Container(
-                                                      width : 82, height : 82 ,
-                                                      decoration : BoxDecoration(
-                                                        shape : BoxShape.circle,
-                                                        image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/general/심볼_blue.png")),
-                                                      )
-                                                  ),
-                                                  SizedBox(height : 12),
-                                                  Text("한나비 의사", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w700,color : Color(0xff3d3d3d))),
-                                                  SizedBox(height : 4 ),
-                                                  Text("정신건강의학과 5년차", style : TextStyle(fontSize: 11, fontWeight : FontWeight.w500, color : Color(0xff929292)))
+                                                  Column(
+                                                      children:[
+                                                        Container(
+                                                            width : 82, height : 82 ,
+                                                            decoration : BoxDecoration(
+                                                              shape : BoxShape.circle,
+                                                              image : DecorationImage(fit : BoxFit.fill, image : AssetImage("assets/image/general/심볼_blue.png")),
+                                                            )
+                                                        ),
+                                                        SizedBox(height : 12),
+                                                        Text("한나비 의사", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w700,color : Color(0xff3d3d3d))),
+                                                        SizedBox(height : 4 ),
+                                                        Text("정신건강의학과 5년차", style : TextStyle(fontSize: 11, fontWeight : FontWeight.w500, color : Color(0xff929292)))
+                                                      ]
+                                                  )*/
                                                 ]
-                                            )
-                                          ]
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       )
 
@@ -284,7 +294,7 @@ class search_result extends StatelessWidget {
                       SizedBox(height: 17 ),
                       Text('${address}', style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500,color : Color(0xff3d3d3d))),
                         SizedBox(height : 14 ),
-                        Container(width : 432, height : 161.54 , child : Image.asset("assets/image/general/병원검색_지도.png")),
+                        Container(width : 432, height : 161.54 , child : Image.asset("assets/image/${title}/지도.png")),
 
                     ],),
                   ),

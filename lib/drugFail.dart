@@ -1,11 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:date_format/date_format.dart';
 import 'package:get/get.dart';
-import 'homeFirst.dart';
-import 'package:intl/intl.dart';
-import 'package:timer_builder/timer_builder.dart';
 
 List<bool> _idx = [false,false,false,false,false];
 List<String> name = ["잊어버림","부작용 등 건강상의 염려","약이 떨어져서","복용할 필요가 없다고 판단","기타 직접 입력"];

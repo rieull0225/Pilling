@@ -3,9 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
 import 'package:get/get.dart';
-import 'homeFirst.dart';
-import 'package:intl/intl.dart';
-import 'package:timer_builder/timer_builder.dart';
+
 
 List<bool> _idx = [false,false,false,false,false,false,false,false,false,false,false];
 List<bool> _idx2 = [false,false,false,false,false];
