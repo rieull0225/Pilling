@@ -1,4 +1,5 @@
 
+import 'package:degree/homeThird.dart';
 import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +70,7 @@ class _HomeState extends State<Home> {
 List bodyList = [
   homeFirst(),
   homeSecond(),
-  homeFirst(),
+  homeThird(),
   homeFirst(),
 ];
 

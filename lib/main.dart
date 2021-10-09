@@ -104,7 +104,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   width: 92 ,
                   height: 105  ,
-                  child : Image.asset('assets/image/general/로고_세로형_white.png',fit : BoxFit.fill),
+                  child : GestureDetector(
+                    onTap: (){
+                      print(MediaQuery.of(context).size.width);
+                      print(MediaQuery.of(context).size.height);
+                    },
+                      child: Image.asset('assets/image/general/로고_세로형_white.png',fit : BoxFit.fill)),
                 ),
                 SizedBox(height : 32 ),
                 SizedBox(width : 342 * 4/3 , height : 44,

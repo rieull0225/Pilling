@@ -5,6 +5,7 @@ import 'package:degree/search_result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'assets.dart';
 
 
 class request extends StatefulWidget {
@@ -29,6 +30,8 @@ List<Buttons> buttonList = [
   Buttons(label: "기타 직접 입력", idx : 4),
 ];
 
+
+
 class _requestState extends State<request> {
   @override
   TextEditingController _controller = TextEditingController();
@@ -36,6 +39,9 @@ class _requestState extends State<request> {
   String time = Get.arguments[1];
   bool isSet = false;
   String request = '';
+  final control = Get.put(ReactiveController());
+
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -235,8 +241,16 @@ class _requestState extends State<request> {
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), border: Border.all(color:Color(0xff929292))),
                 ),
                 SizedBox(width : 8),
+
+                GetX<ReactiveController>(
+                    builder : (_) {
+                      return Container();
+                    }
+                ),
+
                 GestureDetector(
                   onTap: (){
+                    control.reserve = true.obs;
                     Get.to(reserveCompel(), arguments: [date, time, request]);
                   },
                   child: Container(

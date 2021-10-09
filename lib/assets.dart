@@ -1,4 +1,26 @@
 
+import 'package:get/get.dart';
+
+
+class Controller extends GetxController{
+  bool _reservation = false;
+
+
+  void Reserve(){
+    _reservation = true;
+    update();
+  }
+}
+
+class ReactiveController extends GetxController{
+  RxBool reserve = false.obs;
+
+  void Reserve(){
+    reserve = true.obs;
+    update();
+  }
+
+}
 
 class inform{
   String name;
