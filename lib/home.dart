@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 import 'package:degree/homeSecond.dart';
 
 class Home extends StatefulWidget {
+
   const Home({Key? key}) : super(key: key);
 
   @override
@@ -19,7 +20,7 @@ class _HomeState extends State<Home> {
   String dateFormat = DateFormat('EEEE').format(DateTime.now());
   bool isSet = true;
   bool float = true;
-  int _idx = 0;
+  int _idx = Get.arguments == null ? 0 : Get.arguments;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +56,7 @@ class _HomeState extends State<Home> {
         ]
       ),
       appBar: null,
-      body : ListView(children: [bodyList.elementAt(_idx)],),
+      body : ListView(children: [bodyList.elementAt(_idx)],physics: NeverScrollableScrollPhysics(),),
       floatingActionButton : _idx == 0? FloatingActionButton(
         backgroundColor: Color(0xffff5b64),
         child : Image.asset("assets/image/home/Vector.png",fit: BoxFit.fill,),

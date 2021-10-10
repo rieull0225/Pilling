@@ -17,7 +17,7 @@ class _dataReceiveCompleteState extends State<dataReceiveComplete> {
 
 
   _dataReceiveCompleteState(){
-    sleep(const Duration(seconds: 5));
+    sleep(const Duration(seconds: 2));
   }
   @override
   Widget build(BuildContext context) {

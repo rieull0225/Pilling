@@ -242,15 +242,10 @@ class _requestState extends State<request> {
                 ),
                 SizedBox(width : 8),
 
-                GetX<ReactiveController>(
-                    builder : (_) {
-                      return Container();
-                    }
-                ),
-
                 GestureDetector(
                   onTap: (){
-                    control.reserve = true.obs;
+                    control.Reserve();
+                    print(control.reserve);
                     Get.to(reserveCompel(), arguments: [date, time, request]);
                   },
                   child: Container(

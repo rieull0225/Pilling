@@ -1,4 +1,5 @@
 
+import 'package:degree/assets.dart';
 import 'package:degree/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class _reserveCompelState extends State<reserveCompel> {
   bool _switchValue = false;
   var  _selectedValue = '10';
   final _valueList = ['5','10', '15', '20', '30'];
+  final control = Get.put(ReactiveController());
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +41,7 @@ class _reserveCompelState extends State<reserveCompel> {
             color: Color(0xff141922),
             icon: Icon(Icons.close, size: 16,),
             onPressed: () {
+              control.reserve = true.obs;
               Get.offAll(Home());
             },
           ),

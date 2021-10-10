@@ -10,9 +10,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  bool total = false;
+  bool total = true;
   bool isChecked = false;
-  List<bool> bList = [false, false, false, false, false, false];
+  List<bool> bList = [true,true,true,true,true,true];
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -136,7 +136,7 @@ class _SignInState extends State<SignIn> {
                                           setState((){
                                             total = total ? false : true;
                                             for(int i = 0; i < bList.length ; ++i){
-                                              bList[i] = total ?true : false;
+                                              bList[i] = total ? true : false;
                                             }
                                           });
                                         },
