@@ -43,7 +43,7 @@ class _homeThirdState extends State<homeThird> {
             body: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(18.0),
+                  padding: const EdgeInsets.all(18),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
