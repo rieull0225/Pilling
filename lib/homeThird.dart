@@ -45,7 +45,7 @@ class _homeThirdState extends State<homeThird> {
                 Padding(
                   padding: const EdgeInsets.all(18),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment:  CrossAxisAlignment.start,
                     children: [
                       GestureDetector(
                           onTap:(){
