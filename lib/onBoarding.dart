@@ -47,7 +47,7 @@ class _onBoardingState extends State<onBoarding> {
                   ),
                   onPressed: (){
                     Get.offAll(MyHomePage());
-                  }, child: Text("서비스 시작하기", style: TextStyle(color : Color(0xffffffff),fontSize: 15,fontFamily: 'Gmarket',),textAlign: TextAlign.center,))),
+                  }, child: Text("서비스 시작하기", style: TextStyle(color : Color(0xffffffff),fontSize: 14,),textAlign: TextAlign.center,))),
         SizedBox(height : 16)
         ],
       ),

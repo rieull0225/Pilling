@@ -12,7 +12,20 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   bool total = true;
   bool isChecked = false;
+
+  bool name = false;
+  bool idNum = false;
+
+  int idx = 0;
   List<bool> bList = [true,true,true,true,true,true];
+  List<String> Agree = [
+    '서비스 이용 약관 동의 (필수)',
+    '개인정보 처리 방침 동의 (필수)',
+    '위치기반 서비스 이용약관 동의 (필수)',
+    '개인 민감정보 처리 방침 동의 (필수)',
+    '개인정보 제 3자 제공 동의 (필수)',
+    '민감 정보 제 3자 제공 동의 (필수)',
+  ];
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -28,22 +41,36 @@ class _SignInState extends State<SignIn> {
             SizedBox(height : 29 ),
             Text("이름", style : TextStyle(fontSize : 14, color : Color(0xff3d3d3d),)),
             SizedBox(height : 9),
-            Container(width : 324, height : 34 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
-                child : isChecked ? Text("이로사", style : TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color : Color(0xff141922)))
-                    : Text("이름 입력", style : TextStyle(fontSize : 14, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  name = true;
+                });
+              },
+              child: Container(width : 324, height : 34 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
+                  child : name ? Text("이로사", style : TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color : Color(0xff141922)))
+                      : Text("이름 입력", style : TextStyle(fontSize : 14, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
+            ),
             SizedBox(height : 28),
             Text("주민등록번호", style : TextStyle(fontSize : 14, color : Color(0xff3d3d3d),)),
             SizedBox(height : 9),
-            Row(
-              children: [
-                Container(width : 140 , height : 34 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
-                    child : isChecked ? Text("993456", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color : Color(0xff141922)))
-                        : Text("생년월일 6자리", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
-                Container(width : 39, height : 34 , child : Center(child: Text("-",  style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada))))),
-                Container(width : 140  , height : 34 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
-                    child : isChecked ? Text("2******", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color : Color(0xff141922)))
-                        : Text("뒷자리 7자리", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
-              ],
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  idNum = true;
+                });
+              },
+              child: Row(
+                children: [
+                  Container(width : 140 , height : 34 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
+                      child : idNum ? Text("993456", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color : Color(0xff141922)))
+                          : Text("생년월일 6자리", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
+                  Container(width : 39, height : 34 , child : Center(child: Text("-",  style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada))))),
+                  Container(width : 140  , height : 34 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
+                      child : idNum ? Text("2******", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color : Color(0xff141922)))
+                          : Text("뒷자리 7자리", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
+                ],
+              ),
             ),
             SizedBox(height : 21),
             Text("휴대폰 인증", style : TextStyle(fontSize : 14, color : Color(0xff3d3d3d),)),
@@ -61,7 +88,7 @@ class _SignInState extends State<SignIn> {
               )),
               SizedBox(width : 11 ),
               Container(width : 143 , height : 29 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
-                  child : isChecked ? Text("010-1234-5678", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color : Color(0xff141922)))
+                  child : isChecked ? Text("010-1234-5678", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color : Color(0xff141922)))
                       : Text("휴대폰 번호 입력", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
               SizedBox(width : 17),
               GestureDetector(child : Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),
@@ -72,7 +99,7 @@ class _SignInState extends State<SignIn> {
 
             SizedBox(height : 18),
             Container(width : 324, height : 34 , decoration : BoxDecoration(border : Border(bottom : BorderSide(color : Color(0xffdadada)))),
-                child : isChecked ? Text("527495", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color : Color(0xff141922)))
+                child : isChecked ? Text("527495", style : TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color : Color(0xff141922)))
                     : Text("인증 번호 입력", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500, color : Color(0xffdadada)))),
             Expanded(child :Container()),
             Container(
@@ -159,15 +186,15 @@ class _SignInState extends State<SignIn> {
                                           border: Border.all(color: Color(0xff4271ff))),
                                       width : 270, height : 238 ,
                                       child : Padding(
-                                        padding: const EdgeInsets.symmetric(vertical : 5),
+                                        padding: const EdgeInsets.all(10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
                                             children:[
                                               for(int i = 0 ; i < bList.length ; i++)
                                                 Padding(
                                                   padding: const EdgeInsets.symmetric(vertical : 9.0),
                                                   child: Row(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    mainAxisAlignment: MainAxisAlignment.start,
                                                     children: [
                                                       Padding(
                                                         padding: const EdgeInsets.symmetric(horizontal : 10.0),
@@ -182,9 +209,9 @@ class _SignInState extends State<SignIn> {
                                                               });
                                                             }, child: bList[i] ? Icon(Icons.check_circle_rounded,size: 16, color: Color(0xffb8b8b8)):Icon( Icons.check_circle_rounded,size: 16, color: Color(0xff4271ff))),
                                                       ),
-                                                      Text("필잉 이용 약관 동의 (필수)", style : TextStyle(letterSpacing: -0.5,
+                                                      Text(Agree[i], style : TextStyle(letterSpacing: -0.5,
                                                           fontSize: 12, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
-                                                      SizedBox(width : 30),
+                                                      Expanded(child: Container()),
                                                       Text("보기", style:TextStyle(fontSize : 12, fontWeight: FontWeight.w400, color : Color(0xffb8b8b8),decoration: TextDecoration.underline, decorationColor:Color(0xffb8b8b8))),
                                                       SizedBox(width : 12),
                                                     ],

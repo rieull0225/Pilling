@@ -8,10 +8,6 @@ List<Widget> s1 = [];
 List<Widget> e1 = [];
 List<Widget> s2 = [];
 List<Widget> e2 = [];
-List<Widget> s3 = [Container(width : 75, height : 101 ,child: Center(child: Text("AM", style : TextStyle(fontSize: 21,)))),
-  Container(width : 75, height : 101 ,child: Center(child: Text("PM", style : TextStyle(fontSize: 21,))))];
-List<Widget> e3 = [Container(width : 75, height : 101 ,child: Center(child: Text("AM", style : TextStyle(fontSize: 21,)))),
-  Container(width : 75, height : 101 ,child: Center(child: Text("PM", style : TextStyle(fontSize: 21,))))];
 
 List<Widget> ache = [];
 List<bool> _idx = [false,false,false,false,false,false,false,false,false, false];
@@ -51,6 +47,20 @@ class _additionalState extends State<additional> {
       }
     }
   }
+  
+  List<String> drugs = [
+    '아빌리파이정 2mg',
+    '아빌리파이정 5mg',
+    '아빌리파이정 10mg',
+    '아빌리파이정 15mg',
+    '아빌리파이정 2mg',
+    '아빌리파이정 2mg',
+    '아빌리파이정 2mg',
+    
+  ];
+
+  TextEditingController _controller = TextEditingController();
+  String input = '';
 
 
 
@@ -86,7 +96,7 @@ class _additionalState extends State<additional> {
                   physics:new NeverScrollableScrollPhysics(),
                   children: [
                     First(pageController),
-                    Second(pageController,s1,s2,e1,e2,s3,e3),
+                    Second(pageController,s1,s2,e1,e2),
                     Third(pageController, ache),
                     Forth(pageController),
                   ]
@@ -169,7 +179,7 @@ class _additionalState extends State<additional> {
     );
   }
 
-  Column Second(PageController pageController, List<Widget> s1, List<Widget> s2, List<Widget> e1, List<Widget> e2,List<Widget> s3, List<Widget> e3){
+  Column Second(PageController pageController, List<Widget> s1, List<Widget> s2, List<Widget> e1, List<Widget> e2){
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -219,7 +229,7 @@ class _additionalState extends State<additional> {
                                   children : [
                                     Container(height : 113 , width : 75,
                                       child: ListWheelScrollView(
-                                        squeeze : 0.5,
+                                        squeeze : 1,
                                         children : s1,
                                         itemExtent: 24,
                                       ),
@@ -232,7 +242,7 @@ class _additionalState extends State<additional> {
                                     ),
                                     Container(height : 113, width :75,
                                       child: ListWheelScrollView(
-                                        squeeze : 1,
+                                        squeeze : 2,
                                         children : s2,
                                         itemExtent: 60,
                                       ),
@@ -243,11 +253,11 @@ class _additionalState extends State<additional> {
                                         direction : Axis.vertical,
                                       ),
                                     ),
-                                    Container(height : 113, width :75,
+                                    Container(height : 113 , width : 75,
                                       child: ListWheelScrollView(
-                                        squeeze : 1,
-                                        children : s3,
-                                        itemExtent: 2,
+                                        squeeze : 0.8,
+                                        children : [Text("AM"), Text("PM")],
+                                        itemExtent: 20,
                                       ),
                                     ),
                                   ]
@@ -295,7 +305,7 @@ class _additionalState extends State<additional> {
                                   children : [
                                     Container(height : 113, width :75,
                                       child: ListWheelScrollView(
-                                        squeeze : 0.5,
+                                        squeeze : 1,
                                         children : s1,
                                         itemExtent: 24,
                                       ),
@@ -308,7 +318,7 @@ class _additionalState extends State<additional> {
                                     ),
                                     Container(height : 113, width : 75,
                                       child: ListWheelScrollView(
-                                        squeeze : 1,
+                                        squeeze : 2,
                                         children : s2,
                                         itemExtent: 60,
                                       ),
@@ -321,9 +331,9 @@ class _additionalState extends State<additional> {
                                     ),
                                     Container(height : 113 , width : 75,
                                       child: ListWheelScrollView(
-                                        squeeze : 1,
-                                        children : s3,
-                                        itemExtent: 2,
+                                        squeeze : 0.8,
+                                        children : [Text("AM"), Text("PM")],
+                                        itemExtent: 20,
                                       ),
                                     ),
                                   ]
@@ -478,6 +488,45 @@ class _additionalState extends State<additional> {
           SizedBox(height : 38 ),
 
           for(int i = 0 ; i < name2.length ; ++i) Buttons2(name2[i],i),
+          SizedBox(height : 26),
+    _idx2[1] ?  Center(
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(color : Color(0xfff8faff),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            width : 324 ,
+            child: Padding(
+              padding: const EdgeInsets.only(left : 15.0),
+              child: Center(
+                child: TextField(
+                  controller: _controller,
+                  style: TextStyle(fontSize:14, fontFamily: 'Apple', fontWeight: FontWeight.w300, color : Color(0xff3d3d3d)),
+                  decoration : InputDecoration(
+
+                    hintText:'약 이름을 검색해주세요.',
+                    hintStyle: TextStyle(color : Color(0xffb8b8b8),fontSize : 14,fontFamily: 'Apple',fontWeight: FontWeight.w300),
+                    focusedBorder : InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    errorBorder : InputBorder.none,
+                    border : InputBorder.none,
+
+                    suffixIcon: IconButton(onPressed:(){
+                      setState((){
+                        input = _controller.text;
+                        FocusScope.of(context).requestFocus(FocusNode());
+                      });
+                    },icon: Icon(Icons.search, color : Theme.of(context).primaryColor)),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          input =='' ? Container():SizedBox(height : 130,child :_List(context, _buildList(context, drugs, input))),
+        ],
+      ),
+    ):Container(),
           Expanded(child : Container()),
           Padding(
             padding: const EdgeInsets.only(left : 18.0),
@@ -566,15 +615,49 @@ class _additionalState extends State<additional> {
 
 
   buttonPressed(int idx){
-    for(int i = 0 ; i < _idx.length ; ++i)
-      _idx[i] = false;
-    _idx[idx] = _idx[idx] ? false : true;
+    _idx[idx] = !_idx[idx];
   }
 
   buttonPressed2(int idx){
     for(int i = 0 ; i < _idx2.length ; ++i)
       _idx2[i] = false;
-    _idx2[idx] = _idx2[idx] ? false : true;
+    _idx2[idx] != _idx2[idx] ;
+
+  }
+
+  List<String> _buildList(BuildContext context, List<String> drugs, String input){
+    List<String> searchResult = [];
+    for(String s in drugs){
+      if(s.contains(input))
+        searchResult.add(s);
+    }
+    return searchResult;
+  }
+
+  Widget _List(BuildContext context, List list){
+    return ListView.builder(
+        padding : EdgeInsets.only(top:8),
+        itemCount : list.length,
+        itemBuilder : (context, index){
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical:5.0),
+            child: SizedBox(
+              height : 67,
+              width : 296 ,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+                child: ListTile(
+                  title : Text("${list[index]}", style : TextStyle(fontSize : 15, fontWeight: FontWeight.w500, color : Color(0xff141922)), ),
+                  subtitle : Padding(
+                    padding: const EdgeInsets.only(top : 8.0),
+                    child: Text("주요우울장애 치료의 부가요법제", style : TextStyle(fontSize : 11, fontWeight: FontWeight.w400, color: Color(0xff929292))),
+                  ),
+                ),
+              ),
+            ),
+          );
+        }
+    );
   }
 }
 
