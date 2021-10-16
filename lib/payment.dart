@@ -53,7 +53,7 @@ class _paymentState extends State<payment> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         actions: [IconButton(icon: Icon(Icons.arrow_back_ios,),onPressed: (){Get.back();},color: Colors.white,)],
-        title : Center(child : Text('진료내역 상세', style: TextStyle(color : Color(0xff141922), fontSize: 14 ),)),
+        title : Center(child : Text('진료비 결제', style: TextStyle(color : Color(0xff141922), fontSize: 14 ),)),
         elevation: 1,
         backgroundColor: Colors.white,
         leading: IconButton(
@@ -81,8 +81,8 @@ class _paymentState extends State<payment> {
                             children: [
                               Text("결제 금액",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                               Expanded(child : Container()),
-                              Text("8,000",style: TextStyle(color : Color(0xff4271ff), fontSize: 29, fontWeight: FontWeight.w400,),),
-                              Text("원",style: TextStyle(color : Color(0xff141922), fontSize: 29, fontWeight: FontWeight.w400,),),
+                              Text("8,000",style: TextStyle(color : Color(0xff4271ff), fontSize: 29, fontWeight: FontWeight.w300,),),
+                              Text("원",style: TextStyle(color : Color(0xff141922), fontSize: 29, fontWeight: FontWeight.w300,),),
                             ],
                           ),
                         ],
@@ -207,7 +207,7 @@ class _paymentState extends State<payment> {
                               child:total ? Icon(Icons.check_circle_rounded,size : 18, color: Color(0xffb8b8b8)):Icon(Icons.check_circle_rounded,size : 18, color: Color(0xff4271ff))),
                           SizedBox(width : 10),
                           Text("아래 약관에 모두 동의합니다.", style : TextStyle(
-                              letterSpacing : -0.5,fontSize: 13, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
+                              letterSpacing : -0.5,fontSize: 13, fontWeight: FontWeight.w300, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
                           SizedBox(width : 50),
                         ],
                       ),
@@ -239,9 +239,9 @@ class _paymentState extends State<payment> {
                                       ),
                                       SizedBox(width : 5),
                                       Text(strList[i], style : TextStyle(letterSpacing: -0.5,
-                                          fontSize: 12, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
+                                          fontSize: 12, fontWeight: FontWeight.w300, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
                                       Expanded(child: Container()),
-                                      Text("보기", style:TextStyle(fontSize : 12, fontWeight: FontWeight.w400, color : Color(0xffb8b8b8),decoration: TextDecoration.underline, decorationColor:Color(0xffb8b8b8))),
+                                      Text("보기", style:TextStyle(fontSize : 12, fontWeight: FontWeight.w300, color : Color(0xffb8b8b8),decoration: TextDecoration.underline, decorationColor:Color(0xffb8b8b8))),
                                     ],
                                   ),
                                 ),

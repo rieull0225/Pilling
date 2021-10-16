@@ -40,7 +40,7 @@ class _sharedDataState extends State<sharedData> {
             children: [
               Container(
                 width : MediaQuery.of(context).size.width, height : 51,
-                child : Center(child : Text("2021년 10월 15일 ~ ${DateFormat('yyyy년 MM월 dd일').format(DateTime.now())}", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),)
+                child : Center(child : Text("2021년 10월 15일 ~ ${DateFormat('yyyy년 MM월 dd일').format(DateTime.now())}", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),),)
               ),
               Container(
                 width : MediaQuery.of(context).size.width,
@@ -51,7 +51,7 @@ class _sharedDataState extends State<sharedData> {
                     children: [
                       Align(
                         alignment : Alignment.topRight,
-                        child : Text("최근 업데이트 : ${DateFormat('yyyy년 MM월 dd일(EE) hh:mmaaa').format(DateTime.now())}", style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400),),),
+                        child : Text("최근 업데이트 : ${DateFormat('yyyy년 MM월 dd일(EE) hh:mmaaa').format(DateTime.now())}", style: TextStyle(fontSize: 11, color :Colors.grey, fontWeight: FontWeight.w200),),),
                       SizedBox(height : 9),
                       Container(width : MediaQuery.of(context).size.width,
                           height : 257,

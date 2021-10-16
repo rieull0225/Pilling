@@ -73,7 +73,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("마음샘정신건강의학과", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w500),),
-                                  Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w600),)
+                                  Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w500),)
                                 ],
                               ),
                               Expanded(child : Container()),
@@ -93,7 +93,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                     children: [
                                       Text("환자명",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                       Expanded(child : Container()),
-                                      Text("이로사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text("이로사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                     ],
                                   ),
                                 ),
@@ -103,7 +103,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                     children: [
                                       Text("접수일",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                       Expanded(child : Container()),
-                                      Text(YearDate,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text(YearDate,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                     ],
                                   ),
                                 ),
@@ -113,7 +113,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                     children: [
                                       Text("예약 시간",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                       Expanded(child : Container()),
-                                      Text(date,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text(date,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                     ],
                                   ),
                                 ),
@@ -123,7 +123,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                     children: [
                                       Text("약물 조절 요청사항",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                       Expanded(child : Container()),
-                                      Text("증량하고 싶어요",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text("증량하고 싶어요",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                     ],
                                   ),
                                 ),
@@ -141,7 +141,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                           children: [
                                             Text("진료일시",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                             Expanded(child : Container()),
-                                            Text(YearDate ,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                            Text(YearDate ,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                           ],
                                         ),
                                       ),
@@ -151,7 +151,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                           children: [
                                             Text("처방전 발급여부",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                             Expanded(child : Container()),
-                                            Text("발급",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                            Text("발급",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                           ],
                                         ),
                                       ),
@@ -162,8 +162,8 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                             Text("약물 픽업 예약",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
 
                                             Expanded(child : Container()),
-                                            pickup? Text("1시간 이내 방문 수령",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),) :
-                                            Text("예약 대기 중중",style: TextStyle(color : Color(0xff5b64), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                            pickup? Text("1시간 이내 방문 수령",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),) :
+                                            Text("예약 대기 중중",style: TextStyle(color : Color(0xff5b64), fontSize: 13, fontWeight: FontWeight.w300,),),
                                           ],
                                         ),
                                       ),
@@ -216,8 +216,8 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("환자 보관용", style: TextStyle(color : Color(0xff3d3d3d), fontSize: 12 ,fontWeight: FontWeight.w400),),
-                                  Text("모바일처방전", style: TextStyle( color : Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w700),),
-                                  Text("발급일자 "+YearDate, style: TextStyle( color : Color(0xff6b6b6b), fontSize: 12,  fontWeight: FontWeight.w400),)
+                                  Text("모바일처방전", style: TextStyle( color : Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w500),),
+                                  Text("발급일자 "+YearDate, style: TextStyle( color : Color(0xff6b6b6b), fontSize: 12,  fontWeight: FontWeight.w300),)
                                 ],
                               ),
                               Expanded(child : Container()),
@@ -283,7 +283,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                         padding: const EdgeInsets.symmetric(vertical: 3),
                                         child: Row(
                                           children: [
-                                            Text("콘서타OROS서방정 36mg",style: TextStyle(color : Color(0xff141922), fontSize: 13, fontWeight: FontWeight.w600,),),
+                                            Text("콘서타OROS서방정 36mg",style: TextStyle(color : Color(0xff141922), fontSize: 13, fontWeight: FontWeight.w500,),),
                                             Expanded(child : Container()),
                                             Text("1정  /  1회" ,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                                           ],
@@ -293,7 +293,7 @@ class _homeThirdDetailState extends State<homeThirdDetail> {
                                         padding: const EdgeInsets.symmetric(vertical: 3),
                                         child: Row(
                                           children: [
-                                            Text("아빌리파이정 2mg",style: TextStyle(color : Color(0xff141922), fontSize: 13, fontWeight: FontWeight.w600,),),
+                                            Text("아빌리파이정 2mg",style: TextStyle(color : Color(0xff141922), fontSize: 13, fontWeight: FontWeight.w500,),),
                                             Expanded(child : Container()),
                                             Text("1정  /  1회" ,style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                                           ],

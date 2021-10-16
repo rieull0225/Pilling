@@ -11,7 +11,7 @@ List<Widget> e2 = [];
 
 List<Widget> ache = [];
 List<bool> _idx = [false,false,false,false,false,false,false,false,false, false];
-List<String> name = ['해당사항 없음', '두통', '불면중','식욕부진','우울 및 불안','심장박동수 증가','어지러움','구토','복통','입마름'];
+List<String> name = ['해당사항 없음', '두통', '불면증','식욕부진','우울 및 불안','심장박동수 증가','어지러움','구토','복통','입마름'];
 List<bool> _idx2 = [false,false];
 List<String> name2 = ["아니요, 없어요.", "네, 있어요"];
 final controller = PageController(viewportFraction:1.0,
@@ -38,12 +38,12 @@ class _additionalState extends State<additional> {
   void initList(){
     if(s1.isEmpty) {
       for (int i = 1; i <= 12; ++i) {
-        s1.add(Container(width : 75, height : 101 ,child: Center(child: Text("${i}", style : TextStyle(fontSize: 16,)))));
-        e1.add(Container(width : 75, height : 101 ,child: Center(child: Text("${i}",style : TextStyle(fontSize: 16,)))));
+        s1.add(Container(width : 75, height : 101 ,child: Center(child: Text("${i}", style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300)))));
+        e1.add(Container(width : 75, height : 101 ,child: Center(child: Text("${i}",style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300)))));
       }
       for (int i = 0; i < 60; ++i) {
-        s2.add(Container(width : 75, height : 101 ,child: Center(child: Text("${i}",style : TextStyle(fontSize: 16,)))));
-        e2.add(Container(width : 75, height : 101,child: Center(child: Text("${i}",style : TextStyle(fontSize: 16,)))));
+        s2.add(Container(width : 75, height : 101 ,child: Center(child: Text("${i}",style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300)))));
+        e2.add(Container(width : 75, height : 101,child: Center(child: Text("${i}",style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300)))));
       }
     }
   }
@@ -75,7 +75,7 @@ class _additionalState extends State<additional> {
         appBar : AppBar(
           elevation : 0,
           backgroundColor: Colors.white,
-          leading : IconButton(icon : Icon(Icons.arrow_back_ios,color : Colors.black), onPressed: (){
+          leading : IconButton(icon : Icon(Icons.arrow_back_ios,color : Colors.black, size : 18), onPressed: (){
             if(pageController.page == 0){
               Get.back();
             }else {
@@ -124,7 +124,12 @@ class _additionalState extends State<additional> {
             child: SizedBox(width : 324,child: Text("현재 이로사님의 키와\n몸무게는 어떻게 되시나요?", style : TextStyle(fontSize: 22, fontWeight: FontWeight.w600,fontFamily: 'Gmarket', color : Color(0xff141922)))),
           ),
           SizedBox(height : 9),
-          Text("신체 정보를 알면 약효와 부작용을 파악하는데 도움이 돼요", style : TextStyle(fontSize: 13, color : Color(0xff929292), fontWeight: FontWeight.w400)),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+                child: Text("신체 정보를 알면 약효와 부작용을 파악하는데 도움이 돼요", style : TextStyle(fontSize: 13, color : Color(0xff929292), fontWeight: FontWeight.w400))),
+          ),
           SizedBox(height : 38 ,),
           Container(width : 324, height : 79 , decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
@@ -256,7 +261,7 @@ class _additionalState extends State<additional> {
                                     Container(height : 113 , width : 75,
                                       child: ListWheelScrollView(
                                         squeeze : 0.8,
-                                        children : [Text("AM"), Text("PM")],
+                                        children : [Text("AM", style: TextStyle(fontWeight: FontWeight.w300),), Text("PM", style: TextStyle(fontWeight: FontWeight.w300))],
                                         itemExtent: 20,
                                       ),
                                     ),
@@ -332,7 +337,7 @@ class _additionalState extends State<additional> {
                                     Container(height : 113 , width : 75,
                                       child: ListWheelScrollView(
                                         squeeze : 0.8,
-                                        children : [Text("AM"), Text("PM")],
+                                        children : [Text("AM", style: TextStyle(fontWeight: FontWeight.w300)), Text("PM", style: TextStyle(fontWeight: FontWeight.w300))],
                                         itemExtent: 20,
                                       ),
                                     ),

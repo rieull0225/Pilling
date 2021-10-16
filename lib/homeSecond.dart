@@ -31,11 +31,12 @@ class _homeSecondState extends State<homeSecond> {
         length : 3,
         child: Scaffold(
           appBar: AppBar(
+              actions: [IconButton(icon: Icon(Icons.arrow_back_ios,),onPressed: (){Get.back();},color: Colors.white,)],
             leading: Container(),
             titleSpacing: 0,
             title : Padding(
               padding: const EdgeInsets.only(top : 20.0),
-              child: Text('필잉스토리',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),),
+              child: Center(child: Text('필잉스토리',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),)),
             ),
             elevation: 2,
             backgroundColor: Colors.white,

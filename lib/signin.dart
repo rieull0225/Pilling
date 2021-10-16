@@ -113,7 +113,7 @@ class _SignInState extends State<SignIn> {
                 : SizedBox(
                   width : 324, height : 48,
                   child: ElevatedButton(
-                  style : ElevatedButton.styleFrom(primary : Color(0xfff6fbff),elevation : 0,
+                  style : ElevatedButton.styleFrom(primary : Color(0xfff3f5fb),elevation : 0,
                       shape : RoundedRectangleBorder(borderRadius : BorderRadius.circular(12),)),
                   onPressed:(){
 

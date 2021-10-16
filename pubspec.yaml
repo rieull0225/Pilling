@@ -83,7 +83,7 @@ flutter_native_splash:
   image: assets/image/logo_height_blue.png
   fullscreen: true
   color: "#FFFFFF"
-  android_gravity: center
+  android_gravity: fill
 
 
 

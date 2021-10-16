@@ -51,13 +51,14 @@ class _reserveShowState extends State<reserveShow> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("마음샘정신건강의학과", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w500),),
-                      Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w600),)
+                      Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w500),)
                     ],
                   ),
                   Expanded(child : Container()),
                   Row(
                     children: [
                       SizedBox(width : 70, height : 22 ,  child : Image.asset('assets/image/Detail/confirm.png')),
+                      SizedBox(width : 5),
                       SizedBox(width : 70, height : 22 ,  child : Image.asset('assets/image/Detail/call.png')),
                     ],
                   ),
@@ -74,9 +75,9 @@ class _reserveShowState extends State<reserveShow> {
                       padding: const EdgeInsets.symmetric(vertical: 3),
                       child: Row(
                         children: [
-                          Text("환자명",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("환자명",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w300,),),
                           Expanded(child : Container()),
-                          Text("이로사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("이로사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                         ],
                       ),
                     ),
@@ -84,9 +85,9 @@ class _reserveShowState extends State<reserveShow> {
                       padding: const EdgeInsets.symmetric(vertical: 3),
                       child: Row(
                         children: [
-                          Text("접수일",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("접수일",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w300,),),
                           Expanded(child : Container()),
-                          Text("${DateFormat('yyyy년 MM월 dd일').format(DateTime.now())}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("${DateFormat('yyyy년 MM월 dd일').format(DateTime.now())}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                         ],
                       ),
                     ),
@@ -94,9 +95,9 @@ class _reserveShowState extends State<reserveShow> {
                       padding: const EdgeInsets.symmetric(vertical: 3),
                       child: Row(
                         children: [
-                          Text("예약 시간",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("예약 시간",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w300,),),
                           Expanded(child : Container()),
-                          Text("${DateFormat('yyyy년 MM월 dd일 hh:mmaaa').format(DateTime.now())}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("${DateFormat('yyyy년 MM월 dd일 hh:mmaaa').format(DateTime.now())}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                         ],
                       ),
                     ),
@@ -104,9 +105,9 @@ class _reserveShowState extends State<reserveShow> {
                       padding: const EdgeInsets.symmetric(vertical: 3),
                       child: Row(
                         children: [
-                          Text("약물 조절 요청사항",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("약물 조절 요청사항",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w300,),),
                           Expanded(child : Container()),
-                          Text("증량하고 싶어요",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("증량하고 싶어요",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                         ],
                       ),
                     ),
@@ -114,9 +115,9 @@ class _reserveShowState extends State<reserveShow> {
                       padding: const EdgeInsets.symmetric(vertical: 3),
                       child: Row(
                         children: [
-                          Text("추가 알림 설정",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("추가 알림 설정",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w300,),),
                           Expanded(child : Container()),
-                          Text("10분 전 알림",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                          Text("10분 전 알림",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                         ],
                       ),
                     ),
@@ -134,13 +135,13 @@ class _reserveShowState extends State<reserveShow> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("진료 예약 시 유의사항",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w600,),),
+                            Text("진료 예약 시 유의사항",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w500,),),
                             SizedBox(height : 7),
                             Text("환자가 예약시간 내 진료실에 입장하지 않을 시, 자동으로 진료가 \n취소됩니다.",
-                              style: TextStyle(color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400,),),
+                              style: TextStyle(color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w300,),),
                             SizedBox(height : 7),
                             Text("환자의 복약 및 부작용 기록이 일정 기준 이상 이루어지지 않을 시 \n진료 예약이 취소될 수 있습니다. ",
-                              style: TextStyle(color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400,),),
+                              style: TextStyle(color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w300,),),
                           ],
                         )
                       ],

@@ -18,7 +18,10 @@ class search_result extends StatelessWidget {
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: IconButton(icon: Image.asset("assets/image/general/back_button.png"), onPressed: (){Get.back();},),
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: IconButton(icon: Image.asset("assets/image/general/back_button.png"), onPressed: (){Get.back();},),
+          ),
         ),
       ),
       body : Stack(
@@ -34,7 +37,7 @@ class search_result extends StatelessWidget {
                       child : Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 30,0,0),
+                            padding: const EdgeInsets.fromLTRB(16, 23,0,0),
                             child: Column(
 
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +52,7 @@ class search_result extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(bottom:44.0),
+                            padding: const EdgeInsets.only(bottom:48.0),
                             child: SizedBox(width : 55 , height : 55 ,child: Image.asset("assets/image/general/병원검색_전화.png")),
                           )
                         ],
@@ -75,11 +78,11 @@ class search_result extends StatelessWidget {
                                       Row(
                                         children: [SizedBox(child : Image.asset("assets/image/general/병원검색_의사정보.png"), width : 16  , height : 16 ),
                                           SizedBox(width : 5.38 ),
-                                          Text('의사 정보',style : TextStyle(fontSize : 13, fontFamily : 'Gmarket',color : Color(0xff6b6b6b)))
+                                          Text('의사 정보',style : TextStyle(fontSize : 13, fontFamily : 'Gmarket',color : Color(0xff6b6b6b) , fontWeight: FontWeight.w500))
                                         ],
                                       ),
                                       SizedBox(height : 17 ),
-                                      SizedBox(height : 22 , width : 80 , child : Text("전문의 2명",style: TextStyle(fontSize : 16, color : Color(0xff3d3d3d), fontWeight: FontWeight.w700) )),
+                                      SizedBox(height : 22 , width : 80 , child : Text("전문의 2명",style: TextStyle(fontSize : 16, color : Color(0xff3d3d3d), fontWeight: FontWeight.w500) )),
                                       SizedBox(height : 21 ),
 
                                       Padding(
@@ -103,9 +106,9 @@ class search_result extends StatelessWidget {
                                                           )
                                                         ),
                                                         SizedBox(height : 12),
-                                                        Text("${names[i]} 원장", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w700,color : Color(0xff3d3d3d))),
+                                                        Text("${names[i]} 원장", style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500,color : Color(0xff3d3d3d))),
                                                         SizedBox(height : 3 ),
-                                                        Text("정신건강의학과 7년차", style : TextStyle(fontSize: 11, fontWeight : FontWeight.w500, color : Color(0xff929292)))
+                                                        Text("정신건강의학과 7년차", style : TextStyle(fontSize: 11, fontWeight : FontWeight.w400, color : Color(0xff929292)))
                                                       ]
                                                     ),
 
@@ -137,8 +140,8 @@ class search_result extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(18, 25, 18,0),
                     child: Column(children: [
                       Row(children: [
-                        SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/general/병원검색_진료시간.png")),
-                        Text('  진료 시간',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontFamily: 'Gmarket'))
+                        SizedBox(width : 16 , height : 16 , child : Image.asset("assets/image/general/병원검색_진료시간.png")),
+                        Text('  진료 시간',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b),fontWeight: FontWeight.w500,fontFamily: 'Gmarket'))
                       ],),
                       SizedBox(height: 16 ),
                       Padding(
@@ -160,7 +163,7 @@ class search_result extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("월요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w600)),
+                                          Text("월요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
                                           Text("08:00 ~ 19:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
                                         ],
@@ -169,7 +172,7 @@ class search_result extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("화요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w600)),
+                                          Text("화요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
                                           Text("08:00 ~ 19:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
                                         ],
@@ -185,7 +188,7 @@ class search_result extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("수요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w600)),
+                                          Text("수요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
                                           Text("08:00 ~ 19:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
                                         ],
@@ -194,7 +197,7 @@ class search_result extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("목요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w600)),
+                                          Text("목요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
                                           Text("08:00 ~ 19:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
                                         ],
@@ -210,7 +213,7 @@ class search_result extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("금요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w600)),
+                                          Text("금요일",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
                                           Text("08:00 ~ 19:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
                                         ],
@@ -219,7 +222,7 @@ class search_result extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("점심시간",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w600)),
+                                          Text("점심시간",style : TextStyle(fontSize : 13, color : Color(0xff3d3d3d),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
                                           Text("12:00 ~ 14:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
                                         ],
@@ -235,16 +238,16 @@ class search_result extends StatelessWidget {
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("토요일",style : TextStyle(fontSize : 13, color : Color(0xff4271ff),fontWeight: FontWeight.w600)),
+                                          Text("토요일",style : TextStyle(fontSize : 13, color : Color(0xff4271ff),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
-                                          Text("08:00 ~ 19:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
+                                          Text("08:00 ~ 19:00",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), fontWeight: FontWeight.w300 )),
                                         ],
                                       ),
                                       SizedBox(width : 82 ),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:[
-                                          Text("공휴일",style : TextStyle(fontSize : 13, color : Color(0xffff5b64),fontWeight: FontWeight.w600)),
+                                          Text("공휴일",style : TextStyle(fontSize : 13, color : Color(0xffff5b64),fontWeight: FontWeight.w500)),
                                           SizedBox(height : 3),
                                           Text("휴진",style : TextStyle(fontSize : 13, color : Color(0xff6b6b6b), )),
                                         ],
@@ -272,11 +275,11 @@ class search_result extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Row(children: [
-                        SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/general/병원검색_위치.png")),
-                        Text('  위치 정보',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontFamily: 'Gmarket'))
+                        SizedBox(width : 16 , height : 16 , child : Image.asset("assets/image/general/병원검색_위치.png")),
+                        Text('  위치 정보',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontFamily: 'Gmarket',fontWeight: FontWeight.w500))
                       ],),
                       SizedBox(height: 17 ),
-                      Text('${address}', style : TextStyle(fontSize : 16, fontWeight: FontWeight.w500,color : Color(0xff3d3d3d))),
+                      Text('${address}', style : TextStyle(fontSize : 16, fontWeight: FontWeight.w300,color : Color(0xff3d3d3d))),
                         SizedBox(height : 14 ),
                         Container(width : 432, height : 161.54 , child : Image.asset("assets/image/${title}/지도.png")),
 
@@ -296,8 +299,8 @@ class search_result extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(children: [
-                          SizedBox(width : 11 , height : 11 , child : Image.asset("assets/image/general/병원검색_연계약국.png")),
-                          Text('  연계 약국',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontFamily: 'Gmarket'))
+                          SizedBox(width : 16 , height : 16 , child : Image.asset("assets/image/general/병원검색_연계약국.png")),
+                          Text('  연계 약국',style : TextStyle(fontSize: 14, color :Color(0xff6b6b6b), fontWeight: FontWeight.w500,fontFamily: 'Gmarket'))
                         ],),
                         SizedBox(height: 17 ),
                         Row(

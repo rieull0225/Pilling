@@ -40,7 +40,7 @@ class _SideEffState extends State<SideEff> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 23),
-                  Text("시간", style: TextStyle(fontFamily: 'Gmarket', fontSize: 15, color: Color(0xff3d3d3d),fontWeight: FontWeight.w400),),
+                  Text("시간", style: TextStyle(fontFamily: 'Gmarket', fontSize: 15, color: Color(0xff3d3d3d),fontWeight: FontWeight.w500),),
                   SizedBox(height : 8),
                   Row(
                     children : [
@@ -57,8 +57,11 @@ class _SideEffState extends State<SideEff> {
                       )
                     ]
                   ),
-                  Divider(),
-                  Text("어떤 부작용이 나타났나요?", style: TextStyle(fontFamily: 'Gmarket', fontSize: 15, color: Color(0xff3d3d3d),fontWeight: FontWeight.w400), ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical : 12.0),
+                    child: Divider(),
+                  ),
+                  Text("어떤 부작용이 나타났나요?", style: TextStyle(fontFamily: 'Gmarket', fontSize: 15, color: Color(0xff3d3d3d),fontWeight: FontWeight.w500), ),
                   SizedBox(height : 15),
                   Container(
                     height : 280,
@@ -75,8 +78,11 @@ class _SideEffState extends State<SideEff> {
                       }
                     ),
                   ),
-                  Divider(),
-                  Text("부작용이 얼마나 심하게 느껴지나요?", style: TextStyle(fontFamily: 'Gmarket', fontSize: 15, color: Color(0xff3d3d3d),fontWeight: FontWeight.w400), ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical : 12.0),
+                    child: Divider(),
+                  ),
+                  Text("부작용이 얼마나 심하게 느껴지나요?", style: TextStyle(fontFamily: 'Gmarket', fontSize: 15, color: Color(0xff3d3d3d),fontWeight: FontWeight.w500), ),
                   SizedBox(height : 30),
                   Container(
                     width : MediaQuery.of(context).size.width,
@@ -129,7 +135,7 @@ class _SideEffState extends State<SideEff> {
                   Center(
                     child: Text('정확한 부작용 기록으로 잊기 쉬운 증상을 전달하고\n비대면 진료시 약물 조절에 도움을 받으세요:)',
                         textAlign: TextAlign.center
-                        ,style:TextStyle(color:Color(0xffb8b8b8),fontSize: 11,fontFamily: 'Gmarket')),
+                        ,style:TextStyle(color:Color(0xffb8b8b8),fontSize: 11,fontWeight: FontWeight.w400)),
                   ),
 
 

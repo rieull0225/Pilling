@@ -40,7 +40,7 @@ class _callComplState extends State<callCompl> {
           backgroundColor: Colors.white,
           leading: IconButton(
             color: Color(0xff141922),
-            icon: Icon(Icons.close, size: 16,),
+            icon: Icon(Icons.close, size: 20,),
             onPressed: () {
               Get.back();
             },
@@ -75,8 +75,8 @@ class _callComplState extends State<callCompl> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("마음샘정신건강의학과", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w500),),
-                                  Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w600),)
+                                  Text("마음샘정신건강의학과", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400),),
+                                  Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w500),)
                                 ],
                               ),
                               Expanded(child : Container()),
@@ -94,9 +94,9 @@ class _callComplState extends State<callCompl> {
                                   padding: const EdgeInsets.symmetric(vertical: 3),
                                   child: Row(
                                     children: [
-                                      Text("환자명",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text("환자명",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w300,),),
                                       Expanded(child : Container()),
-                                      Text("이로사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text("이로사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                     ],
                                   ),
                                 ),
@@ -104,9 +104,9 @@ class _callComplState extends State<callCompl> {
                                   padding: const EdgeInsets.symmetric(vertical: 3),
                                   child: Row(
                                     children: [
-                                      Text("진료일시",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text("진료일시",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w300,),),
                                       Expanded(child : Container()),
-                                      Text("${DateFormat('yyyy년 MM월 dd일 hh:mmaaa').format(DateTime.now())}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                      Text("${DateFormat('yyyy년 MM월 dd일 hh:mmaaa').format(DateTime.now())}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
                                     ],
                                   ),
                                 ),

@@ -69,7 +69,7 @@ class _AIDoctorState extends State<AIDoctor> {
       actions: [Icon(Icons.arrow_back_ios, color: Color(0xff4271ff),size :30),Icon(Icons.arrow_back_ios, color: Color(0xff4271ff),size :30)],
       title : Center(child: Text('AI 진료실', style : TextStyle(color : Colors.white, fontFamily: 'Apple', fontWeight: FontWeight.w400, fontSize: 14,))),
       leading: GestureDetector(onTap: (){Get.back();},
-      child: Icon(Icons.arrow_back_ios,),),),
+      child: SizedBox(child: Icon(Icons.arrow_back_ios, size :18)),),),
       backgroundColor: Color(0xfff8faff),
       body: Stack(
         children: <Widget>[
@@ -238,7 +238,7 @@ class _AIDoctorState extends State<AIDoctor> {
                               child: GestureDetector(
                                 onTap: ()=>_handleSubmitted(messages[index].button![i]),
                                 child: Container(
-                                  width : 210, height: 36,
+                                  width : 165, height: 36,
                                   decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
                                   child : Center(child: Text(messages[index].button![i], style: TextStyle(color : Color(0xff4271ff), fontSize: 12, fontFamily: 'Apple',
                                   fontWeight: FontWeight.w400),)),

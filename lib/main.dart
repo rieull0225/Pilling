@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     trailing : Padding(
                       padding: const EdgeInsets.only(top:0.0),
-                      child: Icon(Icons.arrow_forward_ios, color: Theme.of(context).primaryColor),
+                      child: Icon(Icons.arrow_forward_ios, color: Theme.of(context).primaryColor, size: 18,),
                     ),
                   ),
                 )
@@ -102,16 +102,10 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 SizedBox(height : 63),
                 SizedBox(
-                  width: 92 ,
-                  height: 105  ,
-                  child : GestureDetector(
-                    onTap: (){
-                      print(MediaQuery.of(context).size.width);
-                      print(MediaQuery.of(context).size.height);
-                    },
-                      child: Image.asset('assets/image/general/로고_세로형_white.png',fit : BoxFit.fill)),
+                  height: 80  ,
+                  child : Image.asset('assets/image/general/로고_세로형_white.png',fit : BoxFit.fill),
                 ),
-                SizedBox(height : 32 ),
+                SizedBox(height : 57 ),
                 SizedBox(width : 342 * 4/3 , height : 44,
                 child : Text("부작용 관리부터\n비대면 진료까지 한번에!", style: TextStyle(color:Color(0xfff6f8ff),
                     fontFamily : 'Gmarket',fontSize : 16,fontWeight: FontWeight.w500),textAlign: TextAlign.center,)),
@@ -165,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child : Center(
                           child: SizedBox(
                       width : 324, height : 18 ,
-                      child: Center(child: Text('혹시 서비스 이용이 처음이신가요?',style : TextStyle(fontSize : 13, color : Color(0xffffffff),decoration:TextDecoration.underline,fontWeight: FontWeight.w300 ))), ),
+                      child: Center(child: Text('혹시 서비스 이용이 처음이신가요?',style : TextStyle(fontSize : 11, color : Color(0xffffffff),decoration:TextDecoration.underline,fontWeight: FontWeight.w300 ))), ),
                         ))
                 ],) : SizedBox(child : Column( children:[
                   SizedBox(height : 24),

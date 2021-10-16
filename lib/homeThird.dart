@@ -43,7 +43,7 @@ class _homeThirdState extends State<homeThird> {
             body: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(18),
+                  padding: const EdgeInsets.fromLTRB(18, 29, 18, 18),
                   child: Column(
                     crossAxisAlignment:  CrossAxisAlignment.start,
                     children: [
@@ -54,8 +54,8 @@ class _homeThirdState extends State<homeThird> {
                               else idx = 0;
                             });
                         },
-                          child: Text('진료내역',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),)),
-                      SizedBox(height : 12),
+                          child: Center(child: Text('진료내역',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),))),
+                      SizedBox(height : 29),
                       Text('예약된 진료', style: TextStyle(color : Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.w500, fontSize: 16)),
                       SizedBox(height : 20),
                       control.reserve == false.obs ?  ReservationCard(idx) :
@@ -77,7 +77,7 @@ class _homeThirdState extends State<homeThird> {
                         children: [
                           DecoratedBox(
                             decoration: ShapeDecoration(
-                              color : Colors.grey.shade300,
+                              color : Color(0xfff3f3f3),
                               shape : RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               )
@@ -87,6 +87,7 @@ class _homeThirdState extends State<homeThird> {
                               height : 31,
                               child: Center(
                                 child: DropdownButton(
+                                  underline: SizedBox(),
                                   value : _selected,
                                   items: _valueList.map(
                                         (value){
@@ -96,19 +97,18 @@ class _homeThirdState extends State<homeThird> {
                                       );
                                     },
                                   ).toList(),
-                                  onChanged: (value) {
-                                    setState((){
-                                      _selected = value.toString();
-                                    });
-                                  },
+                                  onChanged: null,
+
                                 ),
                               ),
                             ),
                           ),
                           SizedBox(width : 6),
                           DecoratedBox(
+
                             decoration: ShapeDecoration(
-                                color : Colors.grey.shade300,
+                                color : Color(0xfff3f3f3),
+
                                 shape : RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )
@@ -118,6 +118,7 @@ class _homeThirdState extends State<homeThird> {
                               height : 31,
                               child: Center(
                                 child: DropdownButton(
+                                  underline : SizedBox(),
                                   value : _selected2,
                                   items: _cateList.map(
                                         (value){
@@ -127,11 +128,7 @@ class _homeThirdState extends State<homeThird> {
                                       );
                                     },
                                   ).toList(),
-                                  onChanged: (value) {
-                                    setState((){
-                                      _selected2 = value.toString();
-                                    });
-                                  },
+                                  onChanged: null,
                                 ),
                               ),
                             ),
@@ -182,13 +179,13 @@ class _homeThirdState extends State<homeThird> {
                 Container(width : 70, height : 22,
                   decoration: BoxDecoration(
                       color: Colors.white, borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff929292))),
-                  child : Center(child:Text("접수확인중", style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w400) )),
+                  child : Center(child:Text("접수확인중", style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w300) )),
                 ),
                 SizedBox(width : 6),
                 Container(width : 70, height : 22,
                   decoration: BoxDecoration(
                       color:  Color(0xff6180f1), borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff6180f1))),
-                  child : Center(child:Text("접수확인중", style : TextStyle(color : Colors.white, fontSize: 12, fontWeight: FontWeight.w400) )),
+                  child : Center(child:Text("접수확인중", style : TextStyle(color : Colors.white, fontSize: 12, fontWeight: FontWeight.w300) )),
                 ),
               ],
             ),
@@ -203,9 +200,9 @@ class _homeThirdState extends State<homeThird> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("김진규 원장",style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w700)),
+                        Text("김진규 원장",style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w500)),
                         SizedBox(width : 5),
-                        Text("마음샘정신건강의학과",style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w400)),
+                        Text("마음샘정신건강의학과",style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w300)),
 
                       ],
                     ),
@@ -255,13 +252,13 @@ class _homeThirdState extends State<homeThird> {
                 Container(width : 70, height : 22,
                   decoration: BoxDecoration(
                       color: Colors.white, borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xffff5b64))),
-                  child : Center(child:Text("D-2", style : TextStyle(color: Color(0xffff5b64), fontSize: 12, fontWeight: FontWeight.w400) )),
+                  child : Center(child:Text("D-2", style : TextStyle(color: Color(0xffff5b64), fontSize: 12, fontWeight: FontWeight.w300) )),
                 ),
                 SizedBox(width : 6),
                 Container(width : 70, height : 22,
                   decoration: BoxDecoration(
                       color:  Color(0xff6180f1), borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff6180f1))),
-                  child : Center(child:Text("전화진료", style : TextStyle(color : Colors.white, fontSize: 12, fontWeight: FontWeight.w400) )),
+                  child : Center(child:Text("전화진료", style : TextStyle(color : Colors.white, fontSize: 12, fontWeight: FontWeight.w300) )),
                 ),
               ],
             ),
@@ -276,9 +273,9 @@ class _homeThirdState extends State<homeThird> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("김진규 원장",style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w700)),
+                        Text("김진규 원장",style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w500)),
                         SizedBox(width : 5),
-                        Text("마음샘정신건강의학과",style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w400)),
+                        Text("마음샘정신건강의학과",style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w300)),
 
                       ],
                     ),
@@ -287,7 +284,11 @@ class _homeThirdState extends State<homeThird> {
                   ],
                 ),
                 Expanded(child: Container()),
-                SizedBox(height : 67, width : 67, child : Image.asset("assets/image/Detail/circular2.png"))
+                GestureDetector(
+                    onTap: (){
+                      Get.to(()=>sharedData());
+                    },
+                    child: SizedBox(height : 67, width : 67, child : Image.asset("assets/image/Detail/circular2.png")))
               ],
             ),
             SizedBox(height :14),
@@ -302,10 +303,8 @@ class _homeThirdState extends State<homeThird> {
                 ),
                 Container(height : 37, decoration: BoxDecoration(border : Border.all(color : Color(0xffdadada), width : 0.35)),),
                 GestureDetector(
-                  onTap: (){
-                    Get.dialog(
-                      Dialog(),
-                    );
+                  onTap:(){
+                    Get.to(()=>reserveShow());
                   },
                   child: Container(
                       width : 144,height : 37,
@@ -335,13 +334,13 @@ class _homeThirdState extends State<homeThird> {
                 Container(width : 70, height : 22,
                   decoration: BoxDecoration(
                       color: Color(0xffff5b64), borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xffff5b64))),
-                  child : Center(child:Text("On-Time", style : TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w400) )),
+                  child : Center(child:Text("On-Time", style : TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w300) )),
                 ),
                 SizedBox(width : 6),
                 Container(width : 70, height : 22,
                   decoration: BoxDecoration(
                       color:  Color(0xff6180f1), borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff6180f1))),
-                  child : Center(child:Text("전화진료", style : TextStyle(color : Colors.white, fontSize: 12, fontWeight: FontWeight.w400) )),
+                  child : Center(child:Text("전화진료", style : TextStyle(color : Colors.white, fontSize: 12, fontWeight: FontWeight.w300) )),
                 ),
               ],
             ),
@@ -356,9 +355,9 @@ class _homeThirdState extends State<homeThird> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("김진규 원장",style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w700)),
+                        Text("김진규 원장",style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w500)),
                         SizedBox(width : 5),
-                        Text("마음샘정신건강의학과",style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w400)),
+                        Text("마음샘정신건강의학과",style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w300)),
 
                       ],
                     ),
@@ -386,7 +385,7 @@ class _homeThirdState extends State<homeThird> {
               children: [
                 Container(
                     width : 144,height : 37,
-                    child : Center(child: Text("예약 취소", style : TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400)))
+                    child : Center(child: Text("예약 취소", style : TextStyle(color : Color(0xffb8b8b8), fontSize: 13, fontWeight: FontWeight.w400)))
                 ),
                 Container(height : 37, decoration: BoxDecoration(border : Border.all(color : Color(0xffdadada), width : 0.35)),),
                 GestureDetector(
@@ -423,7 +422,7 @@ class _homeThirdState extends State<homeThird> {
         Container(width : 70, height : 22,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff6691ff))),
-          child : Center(child:Text("AI진료", style : TextStyle(color : Color(0xffa0b8ff), fontSize: 13, fontWeight: FontWeight.w400) )),
+          child : Center(child:Text("AI진료", style : TextStyle(color : Color(0xffa0b8ff), fontSize: 13, fontWeight: FontWeight.w300) )),
         ),
         SizedBox(height : 13),
         Row(
@@ -433,7 +432,7 @@ class _homeThirdState extends State<homeThird> {
               children: [
                 Text("이로사(본인)", style : TextStyle(color : Color(0xff141922), fontSize: 13, fontWeight: FontWeight.w400)),
                 SizedBox(height : 5),
-                Text("AI 진료", style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w700)),
+                Text("AI 진료", style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w500)),
                 SizedBox(height : 7),
                 Text("${DateFormat("yyyy.MM.dd(목) hh:mmaaa").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xff6b6b6b), fontSize: 13, fontWeight: FontWeight.w400)),
               ],
@@ -448,9 +447,9 @@ class _homeThirdState extends State<homeThird> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("약물 픽업 완료", style : TextStyle(color : Color(0xfff37981), fontSize: 11, fontWeight: FontWeight.w700)),
+                  Text("약물 픽업 완료", style : TextStyle(color : Color(0xfff37981), fontSize: 11, fontWeight: FontWeight.w500)),
                   SizedBox(height : 4),
-                  Text("${DateFormat("MM.dd(목)").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xfff37981), fontSize: 14, fontWeight: FontWeight.w600)),
+                  Text("${DateFormat("MM.dd(목)").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xfff37981), fontSize: 14, fontWeight: FontWeight.w500)),
                 ],
               ),
             )
@@ -488,7 +487,7 @@ class _homeThirdState extends State<homeThird> {
         Container(width : 70, height : 22,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff6691ff))),
-          child : Center(child:Text("전화진료", style : TextStyle(color : Color(0xffa0b8ff), fontSize: 13, fontWeight: FontWeight.w400) )),
+          child : Center(child:Text("전화진료", style : TextStyle(color : Color(0xffa0b8ff), fontSize: 13, fontWeight: FontWeight.w300) )),
         ),
         SizedBox(height : 13),
         Row(
@@ -500,13 +499,13 @@ class _homeThirdState extends State<homeThird> {
                 SizedBox(height : 5),
                 Row(
                   children: [
-                    Text("김준상 의사", style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w700)),
+                    Text("김준상 의사", style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w500)),
                     SizedBox(width : 3),
-                    Text('한동 정신과의원', style : TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400))
+                    Text('한동 정신과의원', style : TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w300))
                   ],
                 ),
                 SizedBox(height : 7),
-                Text("${DateFormat("yyyy.MM.dd(목) hh:mmaaa").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xff6b6b6b), fontSize: 13, fontWeight: FontWeight.w400)),
+                Text("${DateFormat("yyyy.MM.dd(목) hh:mmaaa").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xff6b6b6b), fontSize: 13, fontWeight: FontWeight.w300)),
               ],
             ),
             Expanded(child: Container()),
@@ -519,9 +518,9 @@ class _homeThirdState extends State<homeThird> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("약물 픽업 완료", style : TextStyle(color : Color(0xfff37981), fontSize: 11, fontWeight: FontWeight.w700)),
+                  Text("약물 픽업 완료", style : TextStyle(color : Color(0xfff37981), fontSize: 11, fontWeight: FontWeight.w500)),
                   SizedBox(height : 4),
-                  Text("${DateFormat("MM.dd(목)").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xfff37981), fontSize: 14, fontWeight: FontWeight.w600)),
+                  Text("${DateFormat("MM.dd(목)").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xfff37981), fontSize: 14, fontWeight: FontWeight.w500)),
                 ],
               ),
             )
@@ -558,7 +557,7 @@ class _homeThirdState extends State<homeThird> {
         Container(width : 70, height : 22,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff6691ff))),
-          child : Center(child:Text("화상진료", style : TextStyle(color : Color(0xffa0b8ff), fontSize: 13, fontWeight: FontWeight.w400) )),
+          child : Center(child:Text("화상진료", style : TextStyle(color : Color(0xffa0b8ff), fontSize: 13, fontWeight: FontWeight.w300) )),
         ),
         SizedBox(height : 13),
         Row(
@@ -570,13 +569,13 @@ class _homeThirdState extends State<homeThird> {
                 SizedBox(height : 5),
                 Row(
                   children: [
-                    Text("김준상 의사", style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w700)),
+                    Text("김준상 의사", style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w500)),
                     SizedBox(width : 3),
                     Text('한동 정신과의원', style : TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400))
                   ],
                 ),
                 SizedBox(height : 7),
-                Text("${DateFormat("yyyy.MM.dd(목) hh:mmaaa").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xff6b6b6b), fontSize: 13, fontWeight: FontWeight.w400)),
+                Text("${DateFormat("yyyy.MM.dd(목) hh:mmaaa").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xff6b6b6b), fontSize: 13, fontWeight: FontWeight.w300)),
               ],
             ),
             Expanded(child: Container()),
@@ -589,9 +588,9 @@ class _homeThirdState extends State<homeThird> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("약물 픽업 완료", style : TextStyle(color : Color(0xfff37981), fontSize: 11, fontWeight: FontWeight.w700)),
+                  Text("약물 픽업 완료", style : TextStyle(color : Color(0xfff37981), fontSize: 11, fontWeight: FontWeight.w500)),
                   SizedBox(height : 4),
-                  Text("${DateFormat("MM.dd(목)").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xfff37981), fontSize: 14, fontWeight: FontWeight.w600)),
+                  Text("${DateFormat("MM.dd(목)").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xfff37981), fontSize: 14, fontWeight: FontWeight.w500)),
                 ],
               ),
             )
