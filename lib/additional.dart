@@ -528,7 +528,7 @@ class _additionalState extends State<additional> {
               ),
             ),
           ),
-          input =='' ? Container():SizedBox(height : 130,child :_List(context, _buildList(context, drugs, input))),
+          input =='' ? Container():SizedBox(height : 130,child :_List(context , _buildList(context, drugs, input))),
         ],
       ),
     ):Container(),
@@ -545,7 +545,7 @@ class _additionalState extends State<additional> {
                     ),
                     onPressed: (){
                       Get.offAll(()=>welcome());
-                    }, child: Text("완료", style: TextStyle(color : Color(0xffffffff),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,))),
+                    }, child: Text("완료", style: TextStyle(color : Color(0xffffffff),fontSize: 14,fontFamily: 'Gmarket', ),textAlign: TextAlign.center,))),
           ),
           SizedBox(height : 17 )
         ]
