@@ -61,6 +61,7 @@ class _additionalState extends State<additional> {
 
   TextEditingController _controller = TextEditingController();
   String input = '';
+  int idx = 0;
 
 
 
@@ -79,7 +80,7 @@ class _additionalState extends State<additional> {
             if(pageController.page == 0){
               Get.back();
             }else {
-              pageController.animateToPage(1,duration : Duration(milliseconds: 500), curve : Curves.easeInBack);
+              pageController.animateToPage(idx, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
             };
           },)
         ),
@@ -144,7 +145,7 @@ class _additionalState extends State<additional> {
                   textAlign: TextAlign.end,
                   style : TextStyle(fontSize : 28, color : Colors.black),
                   decoration: InputDecoration(border : InputBorder.none, labelText : "키",
-                      labelStyle: TextStyle(fontSize: 14),
+                      labelStyle: TextStyle(fontSize: 20),
                       suffix : Text(" cm", style:TextStyle(fontSize: 24, color:Colors.black))),
                 ),
               )),
@@ -162,7 +163,7 @@ class _additionalState extends State<additional> {
                   textAlign: TextAlign.end,
                   style : TextStyle(fontSize : 28, color : Colors.black),
                   decoration: InputDecoration(border : InputBorder.none, labelText : "몸무게",
-                      labelStyle: TextStyle(fontSize: 14),
+                      labelStyle: TextStyle(fontSize: 20),
                       suffix : Text(" kg", style:TextStyle(fontSize: 24, color:Colors.black))),
                 ),
               )),
@@ -178,6 +179,7 @@ class _additionalState extends State<additional> {
                   ),
                   onPressed: (){
                     pageController.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+                    idx = 0;
                   }, child: Text("다음", style: TextStyle(color : Color(0xffffffff),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,))),
           SizedBox(height : 17 )
         ]
@@ -366,7 +368,7 @@ class _additionalState extends State<additional> {
                             onPrimary: Colors.white,
                             padding : EdgeInsets.zero
                         ),
-                        onPressed: (){
+                        onPressed: (){idx = 0;
                           pageController.animateToPage(0, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
                         }, child: Text("이전", style: TextStyle(color : Color(0xff6b6b6b),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,))),
                 SizedBox(width : 8 ,),
@@ -379,6 +381,7 @@ class _additionalState extends State<additional> {
                             padding : EdgeInsets.zero
                         ),
                         onPressed: (){
+                          idx = 1;
                           pageController.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
                         }, child: Text("다음", style: TextStyle(color : Color(0xffffffff),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,))),
               ],
@@ -446,7 +449,9 @@ class _additionalState extends State<additional> {
                             padding : EdgeInsets.zero
                         ),
                         onPressed: (){
-                          pageController.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+                          idx = 0;
+                          pageController.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+
                         }, child: Text("이전", style: TextStyle(color : Color(0xff6b6b6b),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,))),
                 SizedBox(width : 8 ,),
                 SizedBox(width : 212 , height : 48,
@@ -458,6 +463,7 @@ class _additionalState extends State<additional> {
                             padding : EdgeInsets.zero
                         ),
                         onPressed: (){
+                          idx = 2;
                           pageController.animateToPage(4, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
                         }, child: Text("다음", style: TextStyle(color : Color(0xffffffff),fontSize: 14,fontFamily: 'Gmarket',),textAlign: TextAlign.center,))),
               ],

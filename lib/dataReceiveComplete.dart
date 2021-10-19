@@ -17,7 +17,7 @@ class _dataReceiveCompleteState extends State<dataReceiveComplete> {
 
 
   _dataReceiveCompleteState(){
-    sleep(const Duration(seconds: 2));
+    sleep(const Duration(milliseconds: 500));
   }
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,6 @@ class _dataReceiveCompleteState extends State<dataReceiveComplete> {
           SizedBox(width: MediaQuery.of(context).size.width ,
               height: 350 ,
               child: Image.asset("assets/image/general/의료데이터 도착.png")),
-          SizedBox(height: 34 ),
           Text("의료데이터가\n안전하게 도착했어요!",
               textAlign: TextAlign.center,
               style: TextStyle(color: Color(0xff4271ff),

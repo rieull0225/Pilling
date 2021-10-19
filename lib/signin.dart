@@ -1,4 +1,4 @@
-import 'package:degree/dataReceive.java.dart';
+import 'package:degree/dataReceive.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -170,7 +170,7 @@ class _SignInState extends State<SignIn> {
                                         child:total ? Icon(Icons.check_circle_rounded,size : 18, color: Color(0xffb8b8b8)):Icon(Icons.check_circle_rounded,size : 18, color: Color(0xff4271ff))),
                                       SizedBox(width : 10),
                                       Text("아래 약관에 모두 동의합니다.", style : TextStyle(
-                                          letterSpacing : -0.5,fontSize: 13, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
+                                          letterSpacing : -1.0,fontSize: 13, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
                                       SizedBox(width : 50),
                                     ],
                                   ),
@@ -209,7 +209,7 @@ class _SignInState extends State<SignIn> {
                                                               });
                                                             }, child: bList[i] ? Icon(Icons.check_circle_rounded,size: 16, color: Color(0xffb8b8b8)):Icon( Icons.check_circle_rounded,size: 16, color: Color(0xff4271ff))),
                                                       ),
-                                                      Text(Agree[i], style : TextStyle(letterSpacing: -0.5,
+                                                      Text(Agree[i], style : TextStyle(letterSpacing: -1.5,
                                                           fontSize: 12, fontWeight: FontWeight.w400, color : Color(0xff6b6b6b), decoration: TextDecoration.none)),
                                                       Expanded(child: Container()),
                                                       Text("보기", style:TextStyle(fontSize : 12, fontWeight: FontWeight.w400, color : Color(0xffb8b8b8),decoration: TextDecoration.underline, decorationColor:Color(0xffb8b8b8))),

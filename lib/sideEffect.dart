@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 List<bool> _idx = [false,false,false,false,false,false,false,false,false,false,false];
 List<bool> _idx2 = [false,false,false,false,false];
 List<String> name = ["두통","불면증","식욕부진","우울 및 불안","심장박동수 증가", "어지러움","구토","복통","입마름","기타 직접 입력"];
-List<String> name2 = ["거슬리는 정도에요", '일하기 불편해요', '집중할 수 없어요', '매우 힘들어요', '아무것도 못하겠어요'];
+List<String> name2 = ["거슬리는 정도예요", '일하기 불편해요', '집중할 수 없어요', '매우 힘들어요', '아무것도 못하겠어요'];
 var record = false;
 double _value = 5;
 int temp = 5;
@@ -135,12 +135,12 @@ class _SideEffState extends State<SideEff> {
                   Center(
                     child: Text('정확한 부작용 기록으로 잊기 쉬운 증상을 전달하고\n비대면 진료시 약물 조절에 도움을 받으세요:)',
                         textAlign: TextAlign.center
-                        ,style:TextStyle(color:Color(0xffb8b8b8),fontSize: 11,fontWeight: FontWeight.w400)),
+                        ,style:TextStyle(color:Color(0xffb8b8b8),fontSize: 11,fontWeight: FontWeight.w300)),
                   ),
 
 
 
-                  SizedBox(height : 15),
+                  SizedBox(height : 30),
                   SizedBox(width : 324, height : 48,
                       child: record ?  ElevatedButton(
                           onPressed: (){},

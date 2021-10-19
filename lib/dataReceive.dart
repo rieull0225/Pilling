@@ -16,7 +16,7 @@ class dataReceivePageState extends State<dataReceivePage> {
 
   int counter= 1;
   dataReceivePageState() {
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(milliseconds: 500), () {
       Get.to(() => dataReceiveComplete());
     });
   }

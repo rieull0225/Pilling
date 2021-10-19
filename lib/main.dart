@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(height : 57 ),
                 SizedBox(width : 342 * 4/3 , height : 44,
                 child : Text("부작용 관리부터\n비대면 진료까지 한번에!", style: TextStyle(color:Color(0xfff6f8ff),
-                    fontFamily : 'Gmarket',fontSize : 16,fontWeight: FontWeight.w500),textAlign: TextAlign.center,)),
+                    fontFamily : 'Gmarket',fontSize : 16,fontWeight: FontWeight.w500, height : 1.3),textAlign: TextAlign.center,)),
                 SizedBox(height : 39 ),
                 SizedBox(height : 44 , width :  324,
                 child : Container(
