@@ -135,7 +135,7 @@ class _SideEffState extends State<SideEff> {
                   Center(
                     child: Text('정확한 부작용 기록으로 잊기 쉬운 증상을 전달하고\n비대면 진료시 약물 조절에 도움을 받으세요:)',
                         textAlign: TextAlign.center
-                        ,style:TextStyle(color:Color(0xffb8b8b8),fontSize: 11,fontWeight: FontWeight.w300)),
+                        ,style:TextStyle(color:Color(0xffb8b8b8),fontSize: 11,fontWeight: FontWeight.w200)),
                   ),
 
 
