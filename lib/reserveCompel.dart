@@ -20,7 +20,7 @@ class _reserveCompelState extends State<reserveCompel> {
   int date = Get.arguments[0];
   String time = Get.arguments[1];
   String request = Get.arguments[2];
-  bool _switchValue = false;
+  bool _switchValue = true;
   var  _selectedValue = '10';
   final _valueList = ['5','10', '15', '20', '30'];
   final control = Get.put(ReactiveController());
@@ -75,8 +75,8 @@ class _reserveCompelState extends State<reserveCompel> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("마음샘정신건강의학과", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w500),),
-                                Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w600),)
+                                Text("마음샘정신건강의학과", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400),),
+                                Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w500),)
                               ],
                             ),
                             Expanded(child : Container()),

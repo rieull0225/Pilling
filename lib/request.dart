@@ -134,7 +134,7 @@ class _requestState extends State<request> {
 
   Widget BottomSheet(){
     return Container(
-      height : 415,
+      height : 375,
       width : MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -153,10 +153,12 @@ class _requestState extends State<request> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text("2021년 10월 ${date}일 ${time}",style: TextStyle(color : Color(0xff4271ff), fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'Gmarket'),),
+
                   Text("에",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'Gmarket'),),
                 ],
               ),
             ),
+            SizedBox(height : 3),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -183,7 +185,7 @@ class _requestState extends State<request> {
                 children: [
                   Text("병원",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                   Expanded(child : Container()),
-                  Text("한동 정신과의원",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                  Text("마음샘정신건강의학과",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                 ],
               ),
             ),Padding(
@@ -192,7 +194,7 @@ class _requestState extends State<request> {
                 children: [
                   Text("담당 의사",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                   Expanded(child : Container()),
-                  Text("김준상 의사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                  Text("김진규 원장",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                 ],
               ),
             ),
@@ -215,7 +217,7 @@ class _requestState extends State<request> {
                 children: [
                   Text("예약 시간",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                   Expanded(child : Container()),
-                  Text("2021년 10월 ${date}일 ${time}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                  Text("2021년 10월 ${date}일${time}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                 ],
               ),
             ),

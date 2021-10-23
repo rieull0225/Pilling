@@ -54,7 +54,7 @@ class _homeThirdState extends State<homeThird> {
                               else idx = 0;
                             });
                         },
-                          child: Center(child: Text('진료내역',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),))),
+                          child: Center(child: Text('진료내역',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w500),))),
                       SizedBox(height : 29),
                       Text('예약된 진료', style: TextStyle(color : Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.w500, fontSize: 16)),
                       SizedBox(height : 20),

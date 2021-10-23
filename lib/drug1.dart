@@ -69,16 +69,16 @@ class _drug1State extends State<drug1> {
 
   Widget div(){
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Divider(),
     );
   }
 
   Widget tit(String str){
-    return Text(str, style: TextStyle(color: Color(0xff4271ff),fontWeight: FontWeight.w600, fontSize: 14),);
+    return Text(str, style: TextStyle(color: Color(0xff4271ff),fontWeight: FontWeight.w200, fontSize: 14),);
   }
   Widget cont(String str){
-    return Text(str,style: TextStyle(color: Color(0xff3d3d3d),fontFamily: 'Apple', fontWeight: FontWeight.w100, fontSize: 13), );
+    return Text(str,style: TextStyle(color: Color(0xff3d3d3d),fontFamily: 'Apple', fontWeight: FontWeight.w200, fontSize: 13), );
   }
 
 

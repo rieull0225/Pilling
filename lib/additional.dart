@@ -11,6 +11,7 @@ List<Widget> e2 = [];
 
 List<Widget> ache = [];
 List<bool> _idx = [false,false,false,false,false,false,false,false,false, false];
+List<bool> drugIdx = [true, false, false, false];
 List<String> name = ['해당사항 없음', '두통', '불면증','식욕부진','우울 및 불안','심장박동수 증가','어지러움','구토','복통','입마름'];
 List<bool> _idx2 = [false,false];
 List<String> name2 = ["아니요, 없어요.", "네, 있어요"];
@@ -53,10 +54,6 @@ class _additionalState extends State<additional> {
     '아빌리파이정 5mg',
     '아빌리파이정 10mg',
     '아빌리파이정 15mg',
-    '아빌리파이정 2mg',
-    '아빌리파이정 2mg',
-    '아빌리파이정 2mg',
-    
   ];
 
   TextEditingController _controller = TextEditingController();
@@ -636,6 +633,13 @@ class _additionalState extends State<additional> {
 
   }
 
+  buttonPressed3(int idx){
+    for(int i = 0 ; i < drugIdx.length ; ++i)
+      drugIdx[i] = false;
+    drugIdx[idx] != drugIdx[idx] ;
+
+  }
+
   List<String> _buildList(BuildContext context, List<String> drugs, String input){
     List<String> searchResult = [];
     for(String s in drugs){
@@ -650,25 +654,122 @@ class _additionalState extends State<additional> {
         padding : EdgeInsets.only(top:8),
         itemCount : list.length,
         itemBuilder : (context, index){
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical:5.0),
-            child: SizedBox(
-              height : 67,
-              width : 296 ,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                child: ListTile(
-                  title : Text("${list[index]}", style : TextStyle(fontSize : 15, fontWeight: FontWeight.w500, color : Color(0xff141922)), ),
-                  subtitle : Padding(
-                    padding: const EdgeInsets.only(top : 8.0),
-                    child: Text("주요우울장애 치료의 부가요법제", style : TextStyle(fontSize : 11, fontWeight: FontWeight.w400, color: Color(0xff929292))),
-                  ),
-                ),
-              ),
-            ),
-          );
+          return Buttons3(list[index], index);
         }
     );
   }
+
+
+  Widget Buttons3(String text, int idx){
+    return
+      Padding(
+        padding: const EdgeInsets.fromLTRB(18,4,18,4),
+        child: SizedBox(height : 48,width : 324,
+            child : drugIdx[idx] ? TextButton(onPressed: (){
+              setState((){
+                buttonPressed3(idx);
+              });
+            },
+                style : TextButton.styleFrom(
+                    backgroundColor: Color(0xffebf0ff),
+                    side : BorderSide(color : Color(0xff4271ff), width : 0.7),
+                    shape : RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    )
+                ),
+                child : Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(text, style : TextStyle(fontSize : 15, fontWeight: FontWeight.w500, color : Color(0xff141922)), ),
+                    Text("주요우울장애 치료의 부가요법제", style : TextStyle(fontSize : 11, fontWeight: FontWeight.w400, color: Color(0xff929292))),
+                  ],
+                ),)
+                :TextButton(onPressed: (){
+              setState(() {
+                buttonPressed3(idx);
+                drugIdx[idx] = true;
+              });
+            },
+                style : TextButton.styleFrom(
+                    primary: Colors.white,
+                    side : BorderSide(color : Color(0xffdadada), width : 0.7),
+                    shape : RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    )
+                ),
+                child : Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(text, style : TextStyle(fontSize : 15, fontWeight: FontWeight.w500, color : Color(0xff141922)), ),
+                    Text("주요우울장애 치료의 부가요법제", style : TextStyle(fontSize : 11, fontWeight: FontWeight.w400, color: Color(0xff929292))),
+                  ],
+                ),
+            )),
+      );
+  }
+
 }
 
+/*
+Padding(
+            padding: const EdgeInsets.fromLTRB(18,5,18,5),
+            child: GestureDetector(
+              onTap: (){
+                setState((){
+                  drugIdx[index] != drugIdx[index];
+                });
+              },
+              child: drugIdx[index] ? Container(
+                width : 320,
+                height : 50,
+                decoration: BoxDecoration(
+                  border: Border.all(color : Color(0xff4271ff), width : 0.7),
+                  borderRadius: BorderRadius.circular(5),
+                  color : Colors.blue,
+                ),
+                child : Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("${list[index]}", style : TextStyle(fontSize : 15, fontWeight: FontWeight.w500, color : Color(0xff141922)), ),
+                      Text("주요우울장애 치료의 부가요법제", style : TextStyle(fontSize : 11, fontWeight: FontWeight.w400, color: Color(0xff929292))),
+                    ],
+                  ),
+                )
+              ) : Container(
+                  width : 320,
+                  height : 50,
+                  decoration: BoxDecoration(
+                    border: Border.all(color : Color(0xffdadada), width : 0.7),
+                    borderRadius: BorderRadius.circular(5),
+                    color : Colors.white,
+                  ),
+                  child : Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("${list[index]}", style : TextStyle(fontSize : 15, fontWeight: FontWeight.w500, color : Color(0xff141922)), ),
+                        Text("주요우울장애 치료의 부가요법제", style : TextStyle(fontSize : 11, fontWeight: FontWeight.w400, color: Color(0xff929292))),
+                      ],
+                    ),
+                  )
+              )
+            ),
+          );
+ */
+
+/*
+ListTile(
+                  title :
+                  subtitle : Padding(
+                    padding: const EdgeInsets.only(top : 8.0),
+                    child:
+                  ),
+                ),
+ */

@@ -169,14 +169,21 @@ class _AIDoctorState extends State<AIDoctor> {
     );
   }
   void _handleSubmitted(String text){
-    if(messages.length >= 11) Get.offAll(Home());
+    if(messages.length >= 10) {
+      messages = [
+        ChatMessage(
+            messageContent: "안녕하세요. 이로사님! AI 챗봇 닥터.Pill\n입니다. 그동안 잘 지내셨나요? 약에 대한 만족\n도가 높으셨나보군요:)지금부터 기록해주신\n복용 및 부작용 데이터 분석 결과를 함께\n보며 진료를 시작하도록 하겠습니다.",
+            messageType: "receiver", button: ["네, 시작할게요", "다음에 다시 올게요."]),
+      ];
+      Get.offAll(Home());
+    }
     _textEditingController.clear();
     setState((){
       _isComposing = false;
     });
     ChatMessage message = ChatMessage(messageContent : text, messageType : "sender");
     setState((){
-      messages.insert( messages.length,message);
+      if(message.messageContent != "진료 끝내기")messages.insert(messages.length,message);
       FocusScope.of(context).unfocus();
       while(true){
         ChatMessage sender = ChatMessage(messageContent : messageSend[_idx].messageContent, messageType: 'receiver', button :

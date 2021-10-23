@@ -36,7 +36,7 @@ class _homeSecondState extends State<homeSecond> {
             titleSpacing: 0,
             title : Padding(
               padding: const EdgeInsets.only(top : 20.0),
-              child: Center(child: Text('필잉스토리',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),)),
+              child: Center(child: Text('필잉스토리',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w500),)),
             ),
             elevation: 2,
             backgroundColor: Colors.white,

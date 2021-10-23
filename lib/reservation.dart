@@ -1,6 +1,7 @@
 
 import 'package:degree/changeHos.dart';
 import 'package:degree/search_result.dart';
+import 'package:degree/search_result_after.dart';
 import 'package:degree/timeSelect.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -186,7 +187,7 @@ class _reservationState extends State<reservation> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(hospital.name, style: TextStyle(color: Color(0xff3d3d3d), fontSize: 12, fontWeight: FontWeight.w400),),
-                      Text(hospital.doctor[0] + " 원장", style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w700),),
+                      Text(hospital.doctor[0] + " 원장", style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w500),),
                     ],
                   )
                 ],
@@ -199,7 +200,7 @@ class _reservationState extends State<reservation> {
                   Expanded(child: Container()),
                   GestureDetector(
                     onTap : (){
-                      Get.to(()=> search_result(), arguments: hospital);
+                      Get.to(()=> search_result_after(), arguments: hospital);
                     },
                     child : Row(
                       children: [
@@ -237,7 +238,7 @@ class _reservationState extends State<reservation> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(hospital.name, style: TextStyle(color: Color(0xff3d3d3d), fontSize: 12, fontWeight: FontWeight.w400),),
-                      Text(hospital.doctor[0] + " 원장", style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w700),),
+                      Text(hospital.doctor[0] + " 원장", style: TextStyle(color: Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w500),),
                     ],
                   )
                 ],
@@ -250,7 +251,7 @@ class _reservationState extends State<reservation> {
                   Expanded(child: Container()),
                   GestureDetector(
                     onTap : (){
-                      Get.to(()=> search_result(), arguments: hospital);
+                      Get.to(()=> search_result_after(), arguments: hospital);
                     },
                     child : Row(
                       children: [
