@@ -3,6 +3,7 @@ import 'package:date_format/date_format.dart';
 import 'package:degree/assets.dart';
 import 'package:degree/payment.dart';
 import 'package:degree/prescImage.dart';
+import 'package:degree/sendPresc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -167,7 +168,7 @@ class _prescriptionState extends State<prescription> {
                 Expanded(child : Container()),
                 GestureDetector(
                   onTap: (){
-                    Get.to(()=>payment());
+                    Get.to(()=>sendPresc());
                   },
                   child: Container(
                     width : 324, height : 48,

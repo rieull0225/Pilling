@@ -1,6 +1,5 @@
 
 import 'package:degree/homeThirdDetail.dart';
-import 'package:degree/inCalling.dart';
 import 'package:degree/prescription.dart';
 import 'package:degree/reserveShow.dart';
 import 'package:degree/sharedData.dart';
@@ -9,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'assets.dart';
-import 'package:date_format/date_format.dart';
 
 import 'calling.dart';
 
@@ -19,16 +17,14 @@ bool prep = true;
 bool side = true;
 
 
-class homeAfterThird extends StatefulWidget {
-  const homeAfterThird({Key? key}) : super(key: key);
+class thirdInFinal extends StatefulWidget {
+  const thirdInFinal({Key? key}) : super(key: key);
 
   @override
-  _homeAfterThirdState createState() => _homeAfterThirdState();
+  _thirdInFinalState createState() => _thirdInFinalState();
 }
 
-class _homeAfterThirdState extends State<homeAfterThird> {
-
-  final control = Get.put(ReactiveController());
+class _thirdInFinalState extends State<thirdInFinal> {
   int idx = 0;
   List<String> _valueList = ['전체기간'];
   var _selected = '전체기간' ;
@@ -117,7 +113,7 @@ class _homeAfterThirdState extends State<homeAfterThird> {
                                 onTap:(){
                                   Get.offAll(()=>calling());
                                 },
-                                child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect4.png"))),
+                                child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect5.png"))),
                             SizedBox(height : 13),
                             Container(width : 292, decoration: BoxDecoration(border : Border.all(color : Color(0xffdadada), width : 0.35)),),
                             Center(

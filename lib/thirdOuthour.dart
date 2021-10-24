@@ -19,15 +19,14 @@ bool prep = true;
 bool side = true;
 
 
-class homeAfterThird extends StatefulWidget {
-  const homeAfterThird({Key? key}) : super(key: key);
+class thirdOutFinal extends StatefulWidget {
+  const thirdOutFinal({Key? key}) : super(key: key);
 
   @override
-  _homeAfterThirdState createState() => _homeAfterThirdState();
+  _thirdOutFinalState createState() => _thirdOutFinalState();
 }
 
-class _homeAfterThirdState extends State<homeAfterThird> {
-
+class _thirdOutFinalState extends State<thirdOutFinal> {
   final control = Get.put(ReactiveController());
   int idx = 0;
   List<String> _valueList = ['전체기간'];
@@ -117,7 +116,7 @@ class _homeAfterThirdState extends State<homeAfterThird> {
                                 onTap:(){
                                   Get.offAll(()=>calling());
                                 },
-                                child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect4.png"))),
+                                child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect6.png"))),
                             SizedBox(height : 13),
                             Container(width : 292, decoration: BoxDecoration(border : Border.all(color : Color(0xffdadada), width : 0.35)),),
                             Center(
