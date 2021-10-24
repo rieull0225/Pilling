@@ -1,6 +1,7 @@
 
 import 'package:degree/homeThirdDetail.dart';
 import 'package:degree/inCalling.dart';
+import 'package:degree/prescription.dart';
 import 'package:degree/reserveShow.dart';
 import 'package:degree/sharedData.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,15 +19,15 @@ bool prep = true;
 bool side = true;
 
 
-class homeThird extends StatefulWidget {
-  const homeThird({Key? key}) : super(key: key);
+class homeAfterThird extends StatefulWidget {
+  const homeAfterThird({Key? key}) : super(key: key);
 
   @override
-  _homeThirdState createState() => _homeThirdState();
+  _homeAfterThirdState createState() => _homeAfterThirdState();
 }
 
+class _homeAfterThirdState extends State<homeAfterThird> {
 
-class _homeThirdState extends State<homeThird> {
   final control = Get.put(ReactiveController());
   int idx = 0;
   List<String> _valueList = ['전체기간'];
@@ -42,124 +43,196 @@ class _homeThirdState extends State<homeThird> {
         length : 3,
         child: Scaffold(
           backgroundColor: Colors.white,
-            body: ListView(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(18, 29, 18, 18),
-                  child: Column(
-                    crossAxisAlignment:  CrossAxisAlignment.start,
-                    children: [
-                      GestureDetector(
-                          onTap:(){
-                            setState(() {
-                              if(idx < 2) idx = idx+1;
-                              else idx = 0;
-                            });
+          body: ListView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(18, 29, 18, 18),
+                child: Column(
+                  crossAxisAlignment:  CrossAxisAlignment.start,
+                  children: [
+                    GestureDetector(
+                        onTap:(){
                         },
-                          child: Center(child: Text('진료내역',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w500),))),
-                      SizedBox(height : 29),
-                      Text('예약된 진료', style: TextStyle(color : Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.w500, fontSize: 16)),
-                      SizedBox(height : 20),
-                      control.reserve == false.obs ?  ReservationCard(idx) :
-                      Container(width : MediaQuery.of(context).size.width,
-                        height : 176, child: Center(child: Text("현재 예약된 진료가 없습니다.", style : TextStyle(color : Color(0xffa0b8ff), fontSize: 13, fontWeight: FontWeight.w400) )),),
-                    ],
-                  ),
+                        child: Center(child: Text('진료내역 이후',style: TextStyle(color:Colors.black, fontSize:18, fontFamily: 'Gmarket', fontWeight: FontWeight.w500),))),
+                    SizedBox(height : 29),
+                    Text('예약된 진료', style: TextStyle(color : Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.w500, fontSize: 16)),
+                    SizedBox(height : 20),
+                    Container(
+                      width: 324, height : 237,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          border : Border.all(color : Color(0xffff5b64)),
+                          boxShadow: [BoxShadow(blurRadius: 7, color: Colors.grey.withOpacity(0.5),offset: Offset(0,8), )]),
+                      child :Padding(
+                        padding : EdgeInsets.fromLTRB(16, 18, 16, 11),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(width : 70, height : 22,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white, borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xffff5b64))),
+                                  child : Center(child:Text("진료완료", style : TextStyle(color: Color(0xffff5b64), fontSize: 12, fontWeight: FontWeight.w300) )),
+                                ),
+                                SizedBox(width : 6),
+                                Container(width : 70, height : 22,
+                                  decoration: BoxDecoration(
+                                      color:  Color(0xff6180f1), borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xff6180f1))),
+                                  child : Center(child:Text("전화진료", style : TextStyle(color : Colors.white, fontSize: 12, fontWeight: FontWeight.w300) )),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height : 13),
+                            Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("이로사(본인)",style : TextStyle(color : Color(0xff141922), fontSize: 13, fontWeight: FontWeight.w400)),
+                                    SizedBox(height : 5),
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Text("김진규 원장",style : TextStyle(color : Color(0xff141922), fontSize: 18, fontWeight: FontWeight.w500)),
+                                        SizedBox(width : 5),
+                                        Text("마음샘정신건강의학과",style : TextStyle(color : Color(0xff929292), fontSize: 12, fontWeight: FontWeight.w300)),
+
+                                      ],
+                                    ),
+                                    SizedBox(height : 7),
+                                    Text("${DateFormat("yyyy.MM.dd(목) hh:mmaaa").format(DateTime.now()).toString()}", style : TextStyle(color : Color(0xff6b6b6b), fontSize: 13, fontWeight: FontWeight.w400)),
+                                  ],
+                                ),
+                                Expanded(child: Container()),
+                                GestureDetector(
+                                    onTap: (){
+                                      Get.to(()=>prescription());
+                                    },
+                                    child: Container(height : 67, width : 67, child : Image.asset("assets/image/Detail/circular3.png")))
+                              ],
+                            ),
+                            SizedBox(height :14),
+                            GestureDetector(
+                                onTap:(){
+                                  Get.offAll(()=>calling());
+                                },
+                                child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect4.png"))),
+                            SizedBox(height : 13),
+                            Container(width : 292, decoration: BoxDecoration(border : Border.all(color : Color(0xffdadada), width : 0.35)),),
+                            Center(
+                              child: GestureDetector(
+                                onTap:(){
+                                  //Get.to(()=>reserveShow());
+                                },
+                                child: Container(
+                                    width : 144,height :41.3,
+                                    child : Center(child: Text("진료내역 상세보기", style : TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300)))
+                                ),
+                              ),
+                            )
+
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Container(width : MediaQuery.of(context).size.width , height : 7, color : Color(0xffebebeb)),
-                Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(width : MediaQuery.of(context).size.width),
-                      Text('진료 완료 내역', style: TextStyle(color : Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.w500, fontSize: 16)),
-                      SizedBox(height : 17),
-                      Row(
-                        children: [
-                          DecoratedBox(
-                            decoration: ShapeDecoration(
+              ),
+              Container(width : MediaQuery.of(context).size.width , height : 7, color : Color(0xffebebeb)),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(width : MediaQuery.of(context).size.width),
+                    Text('진료 완료 내역', style: TextStyle(color : Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.w500, fontSize: 16)),
+                    SizedBox(height : 17),
+                    Row(
+                      children: [
+                        DecoratedBox(
+                          decoration: ShapeDecoration(
                               color : Color(0xfff3f3f3),
                               shape : RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               )
-                            ),
-                            child: Container(
-                              width : 77,
-                              height : 31,
-                              child: Center(
-                                child: DropdownButton(
-                                  underline: SizedBox(),
-                                  value : _selected,
-                                  items: _valueList.map(
-                                        (value){
-                                      return DropdownMenuItem(
-                                        value : value,
-                                        child : Text(value, style : TextStyle(color:Color(0xff929292), fontSize: 12,fontWeight: FontWeight.w400)),
-                                      );
-                                    },
-                                  ).toList(),
-                                  onChanged: null,
+                          ),
+                          child: Container(
+                            width : 77,
+                            height : 31,
+                            child: Center(
+                              child: DropdownButton(
+                                underline: SizedBox(),
+                                value : _selected,
+                                items: _valueList.map(
+                                      (value){
+                                    return DropdownMenuItem(
+                                      value : value,
+                                      child : Text(value, style : TextStyle(color:Color(0xff929292), fontSize: 12,fontWeight: FontWeight.w400)),
+                                    );
+                                  },
+                                ).toList(),
+                                onChanged: null,
 
-                                ),
                               ),
                             ),
                           ),
-                          SizedBox(width : 6),
-                          DecoratedBox(
-
-                            decoration: ShapeDecoration(
-                                color : Color(0xfff3f3f3),
-
-                                shape : RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )
-                            ),
-                            child: Container(
-                              width : 77,
-                              height : 31,
-                              child: Center(
-                                child: DropdownButton(
-                                  underline : SizedBox(),
-                                  value : _selected2,
-                                  items: _cateList.map(
-                                        (value){
-                                      return DropdownMenuItem(
-                                        value : value,
-                                        child : Text(value, style : TextStyle(color:Color(0xff929292), fontSize: 12,fontWeight: FontWeight.w400)),
-                                      );
-                                    },
-                                  ).toList(),
-                                  onChanged: null,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height : 27),
-                      Column1(),
-                      Column2(),
-                      Column3(),
-                      Container(
-                        height : 107, width : MediaQuery.of(context).size.width,
-                        child: Center(
-                          child : Text("더 이상 진료 완료 내역이 없습니다.", style : TextStyle(color : Color(0xff929292), fontSize: 12,))
                         ),
+                        SizedBox(width : 6),
+                        DecoratedBox(
+
+                          decoration: ShapeDecoration(
+                              color : Color(0xfff3f3f3),
+
+                              shape : RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              )
+                          ),
+                          child: Container(
+                            width : 77,
+                            height : 31,
+                            child: Center(
+                              child: DropdownButton(
+                                underline : SizedBox(),
+                                value : _selected2,
+                                items: _cateList.map(
+                                      (value){
+                                    return DropdownMenuItem(
+                                      value : value,
+                                      child : Text(value, style : TextStyle(color:Color(0xff929292), fontSize: 12,fontWeight: FontWeight.w400)),
+                                    );
+                                  },
+                                ).toList(),
+                                onChanged: null,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height : 27),
+                    Column1(),
+                    Column2(),
+                    Column3(),
+                    Container(
+                      height : 107, width : MediaQuery.of(context).size.width,
+                      child: Center(
+                          child : Text("더 이상 진료 완료 내역이 없습니다.", style : TextStyle(color : Color(0xff929292), fontSize: 12,))
                       ),
-                      SizedBox(height: 40,)
-                    ],
-                  ),
-                )
-              ],
-            ),
+                    ),
+                    SizedBox(height: 40,)
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 
 
-   Widget ReservationCard(int i){
+  Widget ReservationCard(int i){
     return cards[i];
   }
 
@@ -336,8 +409,8 @@ class _homeThirdState extends State<homeThird> {
               children: [
                 Container(width : 70, height : 22,
                   decoration: BoxDecoration(
-                      color: Color(0xffff5b64), borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xffff5b64))),
-                  child : Center(child:Text("On-Time", style : TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w300) )),
+                      color: Colors.white, borderRadius: BorderRadius.circular(17.5), border: Border.all(color: Color(0xffff5b64))),
+                  child : Center(child:Text("진료완료", style : TextStyle(color: Color(0xffff5b64), fontSize: 12, fontWeight: FontWeight.w300) )),
                 ),
                 SizedBox(width : 6),
                 Container(width : 70, height : 22,
@@ -373,15 +446,15 @@ class _homeThirdState extends State<homeThird> {
                     onTap: (){
                       Get.to(()=>sharedData());
                     },
-                    child: Container(height : 67, width : 67, child : Image.asset("assets/image/Detail/circular2.png")))
+                    child: Container(height : 67, width : 67, child : Image.asset("assets/image/Detail/circular3.png")))
               ],
             ),
             SizedBox(height :14),
             GestureDetector(
-              onTap:(){
-                Get.offAll(()=>calling());
-              },
-                child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect2.png"))),
+                onTap:(){
+                  Get.offAll(()=>calling());
+                },
+                child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect4.png"))),
             SizedBox(height : 13),
             Container(width : 292, decoration: BoxDecoration(border : Border.all(color : Color(0xffdadada), width : 0.35)),),
             Row(

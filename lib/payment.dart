@@ -1,5 +1,6 @@
 
 import 'package:degree/home.dart';
+import 'package:degree/homeAfter.dart';
 import 'package:degree/homeThird.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -263,7 +264,7 @@ class _paymentState extends State<payment> {
     return Center(
         child: GestureDetector(
           onTap:(){
-            Get.to(Home(), arguments: 2);
+            Get.to(HomeAfter(), arguments: 2);
           },
           child: Container(
             height : 217,

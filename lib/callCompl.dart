@@ -19,10 +19,6 @@ class callCompl extends StatefulWidget {
 
 class _callComplState extends State<callCompl> {
   @override
-  @override
-  bool _switchValue = false;
-  var  _selectedValue = '10';
-  final _valueList = ['5','10', '15', '20', '30'];
   final control = Get.put(ReactiveController());
 
   Widget build(BuildContext context) {
