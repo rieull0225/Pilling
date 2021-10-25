@@ -126,6 +126,56 @@ class _drugFailState extends State<drugFail> {
                 child : Text(text, style: TextStyle(fontSize: 13, color: Color(0xff6b6b6b)),))),
       );
   }
+  Widget Dialog(){
+    return Stack(
+        children: [
+          Center(
+              child: Container(
+                height : 384,
+                width: 290,
+                child: Image.asset("assets/image/Record/복용실패팝업.png"),
+
+
+              )
+          ),
+
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height : 275,
+                ),
+                GestureDetector(
+                  onTap:(){
+                    Get.back();
+                  },
+                  child: Container(
+                    width : 290,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: Color(0xff4271ff),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "확인",
+                        style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
+                        textAlign: TextAlign.center,
+
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ]
+    );
+  }
+
 
 }
 
@@ -135,61 +185,5 @@ buttonPressed(int idx){
   _idx[idx] = _idx[idx] ? false : true;
 }
 
-Widget Dialog(){
-  return Center(
-    child: Container(
-      height : 212,
-      width: 290,
-      child: Column(
-          children: <Widget>[
-            Container(
-                width : 290,
-                height : 164,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
-                ),
-                child : Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(height : 20),
-                    Text("복약체크 완료!💊", style : TextStyle(letterSpacing: -0.01,
-                        fontSize: 18, color: Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.bold, decoration: TextDecoration.none)),
-                    SizedBox(height : 20),
-                    Text("오늘은 아쉽게도 복용하지 못했군요:(\n내일은 꼭 잊지말고 복용해주세요.\n더 나은 필잉을 위해 함께 힘내자구요!",
-                      style : TextStyle(letterSpacing: -0.5,
-                          color : Color(0xff6b6b6b), fontSize: 13, decoration : TextDecoration.none), textAlign: TextAlign.center,)
-                  ],
-                )
-            ),
 
-            GestureDetector(
-              onTap:(){
-                Get.back();
-              },
-              child: Container(
-                width : 290,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: Color(0xff4271ff),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10)),
-                ),
-                child: Center(
-                  child: Text(
-                    "확인",
-                    style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
-                    textAlign: TextAlign.center,
-
-                  ),
-                ),
-              ),
-            ),
-          ]),
-    ),
-  );}
 

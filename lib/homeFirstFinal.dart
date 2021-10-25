@@ -17,104 +17,105 @@ import 'notification.dart';
 String dateFormat = DateFormat('EEEE').format(DateTime.now());
 bool prep = true;
 bool side = true;
-class homeFirst extends StatefulWidget {
-  const homeFirst({Key? key}) : super(key: key);
+
+class homeFirstFinal extends StatefulWidget {
+  const homeFirstFinal({Key? key}) : super(key: key);
 
   @override
-  _homeFirstState createState() => _homeFirstState();
+  _homeFirstFinalState createState() => _homeFirstFinalState();
 }
 
-
-class _homeFirstState extends State<homeFirst> {
-
+class _homeFirstFinalState extends State<homeFirstFinal> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height : MediaQuery.of(context).size.height,
-      width : MediaQuery.of(context).size.width,
-      child: Scaffold(
-        body:ListView(
-          children: [
-            Stack(
-              children: [
-                SizedBox(width : MediaQuery.of(context).size.width,
-                    child: Image.asset('assets/image/home/홈_배경.png')),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(18, 29,18,0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          GestureDetector(
-                            onTap:(){
-                              Get.dialog(Dialog2());
-                            },
-                              child: SizedBox( width : 92, height : 24,child: Image.asset('assets/image/general/로고_가로형_white.png'))),
-                          SizedBox(height : 29),
-                          Text(formatDate(DateTime.now(),[mm,'월',dd,'일',]) +" "+dateFormat, style : TextStyle(color : Colors.white, fontSize: 16,fontWeight: FontWeight.w300, fontFamily: 'Gmarket')),
-                          SizedBox(height : 13),
-                          Text("안녕하세요 이로사님!\n오늘의 필잉은 어떤가요?", style : TextStyle(color : Colors.white, fontSize : 22, fontFamily: 'Gmarket')),
-                          SizedBox(height : 18),
-                          Row(
+        height : MediaQuery.of(context).size.height,
+        width : MediaQuery.of(context).size.width,
+        child: Scaffold(
+          body:ListView(
+            children: [
+              Stack(
+                children: [
+                  SizedBox(width : MediaQuery.of(context).size.width,
+                      child: Image.asset('assets/image/home/홈_배경.png')),
+                  Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(18, 29,18,0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              TextButton( child : Text('복약체크', style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),),
-                                onPressed: (){
+                              GestureDetector(
+                                  onTap:(){
+                                    Get.dialog(Dialog2());
+                                  },
+                                  child: SizedBox( width : 92, height : 24,child: Image.asset('assets/image/general/로고_가로형_white.png'))),
+                              SizedBox(height : 29),
+                              Text(formatDate(DateTime.now(),[mm,'월',dd,'일',]) +" "+dateFormat, style : TextStyle(color : Colors.white, fontSize: 16,fontWeight: FontWeight.w300, fontFamily: 'Gmarket')),
+                              SizedBox(height : 13),
+                              Text("안녕하세요 이로사님!\n오늘의 필잉은 어떤가요?", style : TextStyle(color : Colors.white, fontSize : 22, fontFamily: 'Gmarket')),
+                              SizedBox(height : 18),
+                              Row(
+                                children: [
+                                  TextButton( child : Text('복약체크', style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),),
+                                    onPressed: (){
+                                      setState(() {
+                                        side = true;
+                                      });
+                                    },),
+                                  SizedBox(width : 16),
+                                  TextButton(child : Text('부작용 노트',style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: FontWeight.w500),),
+                                    onPressed: (){
+                                      setState(() {
+                                        side = false;
+                                        if(sides.isEmpty)
+                                          Get.dialog(Dialog2());
+                                      });
+                                    },),
+                                ],
+                              ),
+                              SizedBox(height : 11),
+                              side == false ? SideEffect() :GestureDetector(
+                                onTap : (){
                                   setState(() {
-                                    side = true;
+
                                   });
-                                },),
-                              SizedBox(width : 16),
-                              TextButton(child : Text('부작용 노트',style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: FontWeight.w500),),
-                                onPressed: (){
-                                  setState(() {
-                                    side = false;
-                                    if(sides.isEmpty)
-                                      Get.dialog(Dialog2());
-                                  });
-                                },),
+                                },
+                                child : isSet ? beforeSet() : afterSet(),
+                              ),
+                              SizedBox(height : 35),
+                              Text("정확하고 간편한 증상 전달!\n필잉의 특별한 비대면진료를 이용해보세요.",style: TextStyle(fontFamily:'Gmarket', color : Color(0xff3d3d3d), fontWeight: FontWeight.w500 , fontSize: 17)),
+                              SizedBox(height : 18),
+                            ],),),
+
+                        isSet ? prepButton(context) : SizedBox(),
+                        Padding(
+                          padding: const EdgeInsets.only(left :18.0),
+                          child: Column(
+                            children:[
+                              SizedBox(height : 12),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  BookButton(),
+                                  SizedBox(width : 10),
+                                  EnterButton()
+                                ],),
+                              SizedBox(height : 17),
+                              Text(" ※ 서비스 내 일정 조건이 충족되어야 비대면 진료가 가능합니다.", style : TextStyle(color : Color(0xff4271ff),fontSize: 11, fontWeight: FontWeight.w400),),
+                              SizedBox(height :90),
                             ],
                           ),
-                          SizedBox(height : 11),
-                          side == false ? SideEffect() :GestureDetector(
-                            onTap : (){
-                              setState(() {
-
-                              });
-                            },
-                            child : isSet ? beforeSet() : afterSet(),
-                          ),
-                          SizedBox(height : 35),
-                          Text("정확하고 간편한 증상 전달!\n필잉의 특별한 비대면진료를 이용해보세요.",style: TextStyle(fontFamily:'Gmarket', color : Color(0xff3d3d3d), fontWeight: FontWeight.w500 , fontSize: 17)),
-                          SizedBox(height : 18),
-                          ],),),
-                    Padding(
-                      padding: const EdgeInsets.only(left :18.0),
-                      child: Column(
-                        children:[
-                            SizedBox(height : 12),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                BookButton(),
-                                SizedBox(width : 10),
-                                EnterButton()
-                              ],),
-                            SizedBox(height : 17),
-                            Text(" ※ 서비스 내 일정 조건이 충족되어야 비대면 진료가 가능합니다.", style : TextStyle(color : Color(0xff4271ff),fontSize: 11, fontWeight: FontWeight.w400),),
-                            SizedBox(height :90),
-                          ],
                         ),
-                    ),
-                    ]
-                ),
-                  ],
-                ),
+                      ]
+                  ),
+                ],
+              ),
 
 
-              ],
-            ),
-      ));
+            ],
+          ),
+        ));
   }
 
 
@@ -123,16 +124,16 @@ class _homeFirstState extends State<homeFirst> {
     return Padding(
       padding: const EdgeInsets.only(left : 8.0),
       child: Container(
-        width :350, height : 207,
-        child : sides.isEmpty ? Container() :
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                for(int i = n-1; i > n-4 ; --i)
-                  if(i >= 0)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical:4.0),
-                      child: Row(
+          width :350, height : 207,
+          child : sides.isEmpty ? Container() :
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              for(int i = n-1; i > n-4 ; --i)
+                if(i >= 0)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical:4.0),
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Expanded(child: Container()),
@@ -145,7 +146,7 @@ class _homeFirstState extends State<homeFirst> {
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(color : Colors.grey.withOpacity(0.5),
-                                blurRadius: 20, offset: Offset(0,8))
+                                    blurRadius: 20, offset: Offset(0,8))
                               ],
                               borderRadius: BorderRadius.circular(10),
                               color : Colors.white,
@@ -170,11 +171,11 @@ class _homeFirstState extends State<homeFirst> {
                             )
                         ),
                       ],
-                  ),
                     ),
+                  ),
 
-              ],
-            )
+            ],
+          )
 
       ),
     );
@@ -251,12 +252,12 @@ class _homeFirstState extends State<homeFirst> {
           children: [
             SizedBox(height : 20),
             GestureDetector(
-              onTap: (){
-                setState(() {
-                  isSet = true;
-                  Get.to(()=>notification());
-                });
-              },
+                onTap: (){
+                  setState(() {
+                    isSet = true;
+                    Get.to(()=>notification());
+                  });
+                },
                 child: SizedBox(height : 104, width : 120, child: Image.asset("assets/image/home/홈_최초배너.png"))),
             Text("복용 시간을 설정해주세요!",style: TextStyle(color : Color(0xffff5b64), fontWeight: FontWeight.w300 , fontSize: 15)),
             SizedBox(height : 7),

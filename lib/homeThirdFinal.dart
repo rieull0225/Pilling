@@ -1,4 +1,5 @@
 
+import 'package:degree/homeFirstFinal.dart';
 import 'package:degree/homeThird.dart';
 import 'package:degree/sideEffect.dart';
 import 'package:degree/thirdInhour.dart';
@@ -73,14 +74,14 @@ class _homeThirdFinalState extends State<homeThirdFinal> {
     );
   }
   List bodyList2 = [
-    homeFirst(),
+    homeFirstFinal(),
     homeSecond(),
     thirdInFinal(),
     homeFirst(),
   ];
 
   List bodyList = [
-    homeFirst(),
+    homeFirstFinal(),
     homeSecond(),
     thirdOutFinal(),
     homeFirst(),

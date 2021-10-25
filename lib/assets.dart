@@ -63,3 +63,13 @@ List<drug> drugs = [
   drug(name : "아빌리파이", before : true, okay : true),
   drug(name : "콘서타", before : true ,okay : true),
 ];
+
+class side{
+  String name;
+  int level;
+  String desc;
+  List<String>? time;
+  side({required this.name, required this.level, required this.desc, required this.time});
+}
+
+List<side> sides =[];

@@ -3,6 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+
+import 'assets.dart';
 
 
 List<bool> _idx = [false,false,false,false,false,false,false,false,false,false,false];
@@ -21,14 +24,22 @@ class SideEff extends StatefulWidget {
 }
 
 class _SideEffState extends State<SideEff> {
+
   @override
+
+  String hour = DateFormat('hh').format(DateTime.now());
+  String min = DateFormat('mm').format(DateTime.now());
+  String  symptom='';
+  int level = 0;
+  String desc = '';
+  List<String> time = [];
   Widget build(BuildContext context) {
     return Scaffold(
         appBar:AppBar(
           title: Center(child: Text("부작용 기록", style : TextStyle(fontSize: 14, color:Color(0xff141922)))),
-            backgroundColor: Colors.white,
-            elevation: 1,
-            leading : IconButton(icon: Icon(Icons.close, color : Color(0xff141922)), onPressed: (){Get.back();}, ),
+          backgroundColor: Colors.white,
+          elevation: 1,
+          leading : IconButton(icon: Icon(Icons.close, color : Color(0xff141922)), onPressed: (){Get.back();}, ),
           actions: [IconButton(icon:Icon(Icons.close,color:Colors.white),onPressed: (){},)],
         ),
         backgroundColor: Colors.white,
@@ -43,19 +54,19 @@ class _SideEffState extends State<SideEff> {
                   Text("시간", style: TextStyle(fontFamily: 'Gmarket', fontSize: 15, color: Color(0xff3d3d3d),fontWeight: FontWeight.w500),),
                   SizedBox(height : 8),
                   Row(
-                    children : [
-                      Text(formatDate(DateTime.now(),[yyyy,".",mm,".",dd,"  ",hh,":",nn, am]), style: TextStyle( fontSize: 18, color:Color(0xffff5b64)    ),),
-                      Expanded(child: Container()),
-                      GestureDetector(
-                        child:Row(
-                          children: [
-                            Text('시간변경', style : TextStyle(color : Color(0xff929292), fontSize: 13,)),
-                            SizedBox(width : 7),
-                            SizedBox(child: Center(child: Icon(Icons.arrow_forward_ios,size:13, color:Color(0xff929292)))),
-                          ],
+                      children : [
+                        Text(formatDate(DateTime.now(),[yyyy,".",mm,".",dd,"  ",hh,":",nn, am]), style: TextStyle( fontSize: 18, color:Color(0xffff5b64)    ),),
+                        Expanded(child: Container()),
+                        GestureDetector(
+                            child:Row(
+                              children: [
+                                Text('시간변경', style : TextStyle(color : Color(0xff929292), fontSize: 13,)),
+                                SizedBox(width : 7),
+                                SizedBox(child: Center(child: Icon(Icons.arrow_forward_ios,size:13, color:Color(0xff929292)))),
+                              ],
+                            )
                         )
-                      )
-                    ]
+                      ]
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical : 12.0),
@@ -66,16 +77,16 @@ class _SideEffState extends State<SideEff> {
                   Container(
                     height : 280,
                     child: GridView.builder(
-                      itemCount : name.length,
-                      gridDelegate : SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 8,
-                        mainAxisSpacing : 8,
-                        childAspectRatio: 158/48,
-                      ),
-                      itemBuilder: (BuildContext context, int i){
-                        return Buttons(name[i], i);
-                      }
+                        itemCount : name.length,
+                        gridDelegate : SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 8,
+                          mainAxisSpacing : 8,
+                          childAspectRatio: 158/48,
+                        ),
+                        itemBuilder: (BuildContext context, int i){
+                          return Buttons(name[i], i);
+                        }
                     ),
                   ),
                   Padding(
@@ -112,6 +123,7 @@ class _SideEffState extends State<SideEff> {
                         setState(() {
                           _value = value;
                           temp = _value.toInt();
+                          level = temp;
 
                         },
                         );
@@ -154,6 +166,9 @@ class _SideEffState extends State<SideEff> {
                           )
                       ) : ElevatedButton(
                           onPressed: (){
+                            sides.add(
+                              side(name : this.symptom, level : this.level, desc : this.desc, time : [hour,min]),
+                            );
                             Get.back();
                             Get.dialog(
                                 Dialog()
@@ -198,6 +213,7 @@ class _SideEffState extends State<SideEff> {
               buttonPressed(idx);
               _idx[idx] = true;
               record = false;
+              symptom = text;
             });
           },
               style : TextButton.styleFrom(
@@ -234,6 +250,7 @@ class _SideEffState extends State<SideEff> {
                 buttonPressed2(idx);
                 _idx2[idx] = true;
                 record = false;
+                desc = text;
               });
             },
                 style : TextButton.styleFrom(
@@ -245,6 +262,60 @@ class _SideEffState extends State<SideEff> {
                 ),
                 child : Text(text, style: TextStyle(fontSize: 13, color: Color(0xff6b6b6b)),))),
       );
+  }
+  Widget Dialog(){
+    return Stack(
+        children: [
+          Center(
+              child: GestureDetector(
+                onTap: (){
+                  Get.back();
+                },
+                child: Container(
+                  height : 384,
+                  width: 290,
+                  child: Image.asset("assets/image/Record/부작용기록완료팝업.png"),
+
+
+                ),
+              )
+          ),
+
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height : 275,
+                ),
+                GestureDetector(
+                  onTap:(){
+                    Get.back();
+                  },
+                  child: Container(
+                    width : 290,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: Color(0xff4271ff),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "확인",
+                        style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
+                        textAlign: TextAlign.center,
+
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ]
+    );
   }
 
 }
@@ -262,61 +333,4 @@ buttonPressed(int idx){
   _idx[idx] = _idx[idx] ? false : true;
 }
 
-Widget Dialog(){
-  return Center(
-    child: Container(
-      height : 212,
-      width: 290,
-      child: Column(
-          children: <Widget>[
-            Container(
-                width : 290,
-                height : 164,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
-                ),
-                child : Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(height : 20),
-                    Text("기록이 완료되었습니다!👏🏻", style : TextStyle(letterSpacing: -0.01,
-                        fontSize: 18, color: Color(0xff141922), fontFamily: 'Gmarket', fontWeight: FontWeight.bold, decoration: TextDecoration.none)),
-                    SizedBox(height : 20),
-                    Text("부작용으로 인해 당황스럽진 않았나요?\n복용 중 나타나는 부작용을 진료시 의사와 함께\n공유하며 효과적인 약물 조절을 경험해보세요:)",
-                      style : TextStyle(letterSpacing: -0.5,
-                          color : Color(0xff6b6b6b), fontSize: 13, decoration : TextDecoration.none), textAlign: TextAlign.center,)
-                  ],
-                )
-            ),
-
-            GestureDetector(
-              onTap:(){
-                Get.back();
-              },
-              child: Container(
-                width : 290,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: Color(0xff4271ff),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10)),
-                ),
-                child: Center(
-                  child: Text(
-                    "확인",
-                    style: TextStyle(color: Colors.white, fontSize: 14, decoration: TextDecoration.none),
-                    textAlign: TextAlign.center,
-
-                  ),
-                ),
-              ),
-            ),
-          ]),
-    ),
-  );}
 
