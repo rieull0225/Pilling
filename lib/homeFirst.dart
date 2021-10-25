@@ -1,3 +1,4 @@
+import 'package:degree/alarmList.dart';
 import 'package:degree/drugFail.dart';
 import 'package:degree/drugOK.dart';
 import 'package:degree/reservation.dart';
@@ -10,9 +11,10 @@ import 'package:degree/AIEnter.dart';
 import 'package:intl/intl.dart';
 
 import 'assets.dart';
+import 'notification.dart';
 
 String dateFormat = DateFormat('EEEE').format(DateTime.now());
-bool isSet = false;
+
 bool prep = true;
 bool side = true;
 class homeFirst extends StatefulWidget {
@@ -73,7 +75,7 @@ class _homeFirstState extends State<homeFirst> {
                             onTap : (){
                               setState(() {
                                 isSet = true;
-                                //isSet = true;
+                                Get.to(()=>alarmList());
                               });
                             },
                             child : isSet ? beforeSet() : afterSet(),
@@ -83,7 +85,7 @@ class _homeFirstState extends State<homeFirst> {
                           SizedBox(height : 18),
                           ],),),
 
-                          isSet == false ? prepButton(context) : SizedBox(),
+                          isSet ? prepButton(context) : SizedBox(),
                     Padding(
                       padding: const EdgeInsets.only(left :18.0),
                       child: Column(
@@ -112,52 +114,25 @@ class _homeFirstState extends State<homeFirst> {
             ),
       ));
   }
-}
 
-Widget SideEffect(){
-  return Padding(
-    padding: const EdgeInsets.only(left : 8.0),
-    child: Container(
-      width :350, height : 204,
-      child : GestureDetector(
-        onTap:(){
-          Get.to(SideEff());
-        },
-          child: Image.asset("assets/image/home/side.png",fit:BoxFit.cover)),
-    ),
-  );
-}
 
-Widget BookButton(){
-  return GestureDetector(
-    onTap:(){Get.to(reservation(),arguments: inform(name : '마음샘정신건강의학과',doctor : ['김진규', '곽은진'], address : '서울시 서초구 서초동 1673-1 인앤인빌딩 502',phone : '02-522-6836'));},
-    child: Container(
-      width : 156, height : 171,
-      decoration: BoxDecoration(color : Color(0xfff6f8ff),
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
-      child : Padding(
-        padding: const EdgeInsets.fromLTRB(16,16,0,0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("전화/화상 진료\n예약하기 >", style : TextStyle(color : Color(0xff4271ff),fontSize: 16, fontWeight: FontWeight.w400),),
-            SizedBox(width : 145, height: 107,
-                child: Image.asset("assets/image/home/예약.png",),),
-          ],
-        ),
-      )
-    ),
-  );
-}
+  Widget SideEffect(){
+    return Padding(
+      padding: const EdgeInsets.only(left : 8.0),
+      child: Container(
+        width :350, height : 204,
+        child : GestureDetector(
+            onTap:(){
+              Get.to(SideEff());
+            },
+            child: Image.asset("assets/image/home/side.png",fit:BoxFit.cover)),
+      ),
+    );
+  }
 
-Widget EnterButton(){
-  return GestureDetector(
-    onTap:(){},
-    child: InkWell(
-      onTap: (){
-        Get.to(AIEnter());
-      },
+  Widget BookButton(){
+    return GestureDetector(
+      onTap:(){Get.to(reservation(),arguments: inform(name : '마음샘정신건강의학과',doctor : ['김진규', '곽은진'], address : '서울시 서초구 서초동 1673-1 인앤인빌딩 502',phone : '02-522-6836'));},
       child: Container(
           width : 156, height : 171,
           decoration: BoxDecoration(color : Color(0xfff6f8ff),
@@ -168,119 +143,183 @@ Widget EnterButton(){
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("AI 챗봇 진료실\n입장하기 >", style : TextStyle(color : Color(0xff4271ff),fontSize: 16, fontWeight: FontWeight.w400),),
-                Expanded(child : SizedBox()),
-                SizedBox(width : 134, height: 94,
-                  child: Image.asset("assets/image/home/입장.png",),),
+                Text("전화/화상 진료\n예약하기 >", style : TextStyle(color : Color(0xff4271ff),fontSize: 16, fontWeight: FontWeight.w400),),
+                SizedBox(width : 145, height: 107,
+                  child: Image.asset("assets/image/home/예약.png",),),
               ],
             ),
           )
       ),
-    ),
-  );
-}
+    );
+  }
 
-Widget prepButton(BuildContext context){
-  return SizedBox(
-    width : MediaQuery.of(context).size.width,
-    child : GestureDetector( onTap: (){},
-      child : Image.asset("assets/image/home/홈_진료배너2.png"),
-    ));
-}
+  Widget EnterButton(){
+    return GestureDetector(
+      onTap:(){},
+      child: InkWell(
+        onTap: (){
+          Get.to(AIEnter());
+        },
+        child: Container(
+            width : 156, height : 171,
+            decoration: BoxDecoration(color : Color(0xfff6f8ff),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
+            child : Padding(
+              padding: const EdgeInsets.fromLTRB(16,16,0,0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("AI 챗봇 진료실\n입장하기 >", style : TextStyle(color : Color(0xff4271ff),fontSize: 16, fontWeight: FontWeight.w400),),
+                  Expanded(child : SizedBox()),
+                  SizedBox(width : 134, height: 94,
+                    child: Image.asset("assets/image/home/입장.png",),),
+                ],
+              ),
+            )
+        ),
+      ),
+    );
+  }
 
-Widget afterSet(){
-  return Container(
-      width : 312, height : 204,
-      decoration: BoxDecoration(color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height : 20),
-          SizedBox(height : 104, width : 120, child: Image.asset("assets/image/home/홈_최초배너.png")),
-          Text("복용 시간을 설정해주세요!",style: TextStyle(color : Color(0xffff5b64), fontWeight: FontWeight.w300 , fontSize: 15)),
-          SizedBox(height : 7),
-          Text("매일 잊지 않고 복용하는 것이 건강한 필잉의 첫 시작입니다:)", style: TextStyle(color : Color(0xff929292), fontWeight: FontWeight.w300 , fontSize: 11))
-        ],
-      )
-  );
-}
+  Widget prepButton(BuildContext context){
+    return SizedBox(
+        width : MediaQuery.of(context).size.width,
+        child : GestureDetector( onTap: (){},
+          child : Image.asset("assets/image/home/홈_진료배너2.png"),
+        ));
+  }
 
-
-Widget beforeSet(){
-  return Column(
-    children: [
-      Container(
-        width : 312, height : 83,
+  Widget afterSet(){
+    return Container(
+        width : 312, height : 204,
         decoration: BoxDecoration(color: Colors.white,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
-        child : Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height : 20),
+            SizedBox(height : 104, width : 120, child: Image.asset("assets/image/home/홈_최초배너.png")),
+            Text("복용 시간을 설정해주세요!",style: TextStyle(color : Color(0xffff5b64), fontWeight: FontWeight.w300 , fontSize: 15)),
+            SizedBox(height : 7),
+            Text("매일 잊지 않고 복용하는 것이 건강한 필잉의 첫 시작입니다:)", style: TextStyle(color : Color(0xff929292), fontWeight: FontWeight.w300 , fontSize: 11))
+          ],
+        )
+    );
+  }
+
+
+  Widget beforeSet(){
+    return Column(
+      children: [
+        Container(
+            width : 312, height : 83,
+            decoration: BoxDecoration(color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
+            child : Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
                 children: [
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(width : 14, height : 14, child: Image.asset('assets/image/home/홈_복용예정.png')),
-                      SizedBox(width : 6),
-                      Text("10:00am 복용 예정", style : TextStyle(color : Color(0xff929292), fontSize: 13,fontWeight: FontWeight.w300,fontFamily: 'Apple')),
+                      Row(
+                        children: [
+                          SizedBox(width : 14, height : 14, child: Image.asset('assets/image/home/홈_복용예정.png')),
+                          SizedBox(width : 6),
+                          Text("10:00am 복용 예정", style : TextStyle(color : Color(0xff929292), fontSize: 13,fontWeight: FontWeight.w300,fontFamily: 'Apple')),
+                        ],
+                      ),
+                      Text("${drugs[0].name} 2mg 1정", style : TextStyle(color : Color(0xff3d3d3d,), fontSize: 15)),
+                      Text("21년 10월 21일부터 11일째 먹고 있어요.", style : TextStyle(color : Color(0xff6b6b6b), fontSize : 12))
                     ],
                   ),
-                  Text("아빌리파이 2mg 1정", style : TextStyle(color : Color(0xff3d3d3d,), fontSize: 15)),
-                  Text("21년 07월 08일부터 11일째 먹고 있어요.", style : TextStyle(color : Color(0xff6b6b6b), fontSize : 12))
+                  Expanded(child: Container()),
+                  drugs[0].before ? Row(children: [
+                    GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            drugs[0].before = false;
+                            drugs[0].okay = false;
+                            Get.to(()=>drugFail());
+                          });
+
+                        },
+                        child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인X.png"))),
+                    SizedBox(width : 12),
+                    GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            drugs[0].before = false;
+                            drugs[0].okay = true;
+                            Get.to(()=>drugOK());
+                          });
+                        },
+                        child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인V.png"))),
+                  ],) : drugs[0].okay ?SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용완료.png")): SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용실패.png")),
+
                 ],
               ),
-              SizedBox(width : 10),
-              GestureDetector(
-                  onTap:(){
-                    Get.to(()=>drugFail());
-                  },
-                  child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인X.png"))),
-              SizedBox(width : 12),
-              GestureDetector(
-                onTap:(){
-                  Get.to(()=>drugOK());
-                },
-                  child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인V.png"))),
-            ],
-          ),
-        )
-      ),
-      SizedBox(height : 8 ),
-      Container(
-          width : 312, height : 83,
-          decoration: BoxDecoration(color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
-          child : Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("복용 완료 | 08:32am", style : TextStyle(color : Color(0xff4271ff), fontSize: 12,fontWeight: FontWeight.w300,fontFamily: 'Apple')),
-                    Text("콘서타OROS27mg 1정", style : TextStyle(color : Color(0xff4271ff,), fontSize: 15)),
-                    Text("21년 06월 28일부터 23일째 먹고있어요.", style : TextStyle(color : Color(0xff6b6b6b), fontSize : 12))
-                  ],
-                ),
-                SizedBox(width : 10),
-                SizedBox(height : 34, width : 34),
-                SizedBox(width : 12),
-                GestureDetector(
-                  onTap:(){
-                    Get.to(()=>drugOK());
-                  },
-                    child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용완료.png"))),
-              ],
-            ),
-          )
-      ),
-    ],
-  );
+            )
+        ),
+        SizedBox(height : 8 ),
+        Container(
+            width : 312, height : 83,
+            decoration: BoxDecoration(color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [BoxShadow(color : Colors.grey.withOpacity(0.3), spreadRadius: 5, blurRadius: 7)]),
+            child : Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(width : 14, height : 14, child: Image.asset('assets/image/home/홈_복용예정.png')),
+                          SizedBox(width : 6),
+                          Text("07:30am 복용 예정", style : TextStyle(color : Color(0xff929292), fontSize: 13,fontWeight: FontWeight.w300,fontFamily: 'Apple')),
+                        ],
+                      ),
+                      Text("${drugs[1].name} 2mg 1정", style : TextStyle(color : Color(0xff3d3d3d,), fontSize: 15)),
+                      Text("21년 10월 3일부터 23일째 먹고 있어요.", style : TextStyle(color : Color(0xff6b6b6b), fontSize : 12))
+                    ],
+                  ),
+                  Expanded(child: Container()),
+                  drugs[1].before ? Row(children: [
+                    GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            drugs[1].before = false;
+                            drugs[1].okay = false;
+                            Get.to(()=>drugFail());
+                          });
+
+                        },
+                        child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인X.png"))),
+                    SizedBox(width : 12),
+                    GestureDetector(
+                        onTap:(){
+                          setState(() {
+                            drugs[1].before = false;
+                            drugs[1].okay = true;
+                            Get.to(()=>drugOK());
+                          });
+
+                        },
+                        child: SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용확인V.png"))),
+                  ],) : drugs[1].okay ?SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용완료.png")): SizedBox(height : 34, width : 34, child : Image.asset("assets/image/home/홈_복용실패.png")),
+
+                ],
+              ),
+            )
+        ),
+      ],
+    );
+  }
+
 }
 

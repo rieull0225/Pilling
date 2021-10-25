@@ -22,6 +22,8 @@ class ReactiveController extends GetxController{
 
 }
 
+bool isSet= false;
+
 class inform{
   String name;
   List<String>? doctor;
@@ -29,8 +31,6 @@ class inform{
   String phone;
   inform({required this.name,required this.doctor, required this.address, required this.phone });
 }
-
-
 
 List<inform> hospital = [
   //inform(name: '리마인드정신건강의학과의원', doctor:['이승엽'], address:'서울 서초구 서초대로 3-4', phone: '02-593-5619'),
@@ -49,4 +49,17 @@ List<inform> hospital = [
   inform(name: '마음챙김정신건강의학과',doctor : ['이정민', '박진경'],address : '서울시 관악구 신림로 350 서원프라자 4층',phone: '02-534-8856'),
   inform(name: '서울탑마음클리닉',doctor: ['오승민'], address : '서울시 마포구 마포대로 68 아크로타워 4층', phone : '02-6933-1800'),
   inform(name : '열린마음신경정신과의원', doctor: ['김해린','윤민진','이현이'], address : '경기 시흥시 배곧3로 96 엠플러스 3층', phone : '031-432-8383'),
+];
+
+class drug{
+  String name;
+  bool before;
+  bool okay;
+
+  drug({required this.name, required this.before,required this.okay});
+}
+
+List<drug> drugs = [
+  drug(name : "아빌리파이", before : true, okay : true),
+  drug(name : "콘서타", before : true ,okay : true),
 ];

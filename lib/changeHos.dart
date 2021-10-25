@@ -244,9 +244,9 @@ class _changeHosState extends State<changeHos> {
         children: [
           Center(
               child: Container(
-                height : 204,
+                height : 320,
                 width: 289,
-                child: Image.asset("assets/image/Booking/변경성공.png"),
+                child: Image.asset("assets/image/Booking/변경성공.png",fit: BoxFit.fill),
               )
           ),
           Center(
@@ -254,7 +254,7 @@ class _changeHosState extends State<changeHos> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height : 164,
+                  height : 280,
                 ),
                 GestureDetector(
                   onTap:(){

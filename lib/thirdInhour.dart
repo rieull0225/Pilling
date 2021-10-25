@@ -111,7 +111,6 @@ class _thirdInFinalState extends State<thirdInFinal> {
                             SizedBox(height :14),
                             GestureDetector(
                                 onTap:(){
-                                  Get.offAll(()=>calling());
                                 },
                                 child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect5.png"))),
                             SizedBox(height : 13),

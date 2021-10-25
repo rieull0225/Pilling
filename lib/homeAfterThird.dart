@@ -115,7 +115,6 @@ class _homeAfterThirdState extends State<homeAfterThird> {
                             SizedBox(height :14),
                             GestureDetector(
                                 onTap:(){
-                                  Get.offAll(()=>calling());
                                 },
                                 child: SizedBox(height : 35, width : 292, child : Image.asset("assets/image/Detail/rect4.png"))),
                             SizedBox(height : 13),

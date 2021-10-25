@@ -136,7 +136,6 @@ class _sendPrescState extends State<sendPresc> {
 
                 ],
               ),
-              SizedBox(height : 20),
               Row(
                 children: [
                  IconButton(icon : inHour ? Icon(Icons.check_circle_rounded, color: Color(0xff4271ff),)
@@ -150,7 +149,7 @@ class _sendPrescState extends State<sendPresc> {
               ),
 
               Divider(color: Color(0xffdadada), thickness: 0.5,),
-              SizedBox(height : 28),
+              SizedBox(height : 23),
               inHour? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
