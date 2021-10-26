@@ -26,7 +26,7 @@ class SideEff extends StatefulWidget {
 class _SideEffState extends State<SideEff> {
 
   @override
-
+  int x = Get.arguments == null ? -1 : Get.arguments;
   String hour = DateFormat('hh').format(DateTime.now());
   String min = DateFormat('mm').format(DateTime.now());
   String  symptom='';
@@ -166,9 +166,10 @@ class _SideEffState extends State<SideEff> {
                           )
                       ) : ElevatedButton(
                           onPressed: (){
-                            sides.add(
+                            x < 0 ? sides.add(
                               side(name : this.symptom, level : this.level, desc : this.desc, time : [hour,min]),
-                            );
+                            ) : sides[x] =  side(name : this.symptom, level : this.level, desc : this.desc, time : [hour,min]);
+
                             Get.back();
                             Get.dialog(
                                 Dialog()

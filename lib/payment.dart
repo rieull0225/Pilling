@@ -267,9 +267,9 @@ class _paymentState extends State<payment> {
             Get.to(HomeAfter(), arguments: 2);
           },
           child: Container(
-            height : 217,
+            height : 350,
             width: 290,
-            child: Image.asset("assets/image/Calling/결제완료팝업.png"),
+            child: Image.asset("assets/image/Record/결제완료팝업.png"),
           ),
         )
     );

@@ -47,9 +47,7 @@ class _homeFirstState extends State<homeFirst> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           GestureDetector(
-                            onTap:(){
-                              Get.dialog(Dialog2());
-                            },
+
                               child: SizedBox( width : 92, height : 24,child: Image.asset('assets/image/general/로고_가로형_white.png'))),
                           SizedBox(height : 29),
                           Text(formatDate(DateTime.now(),[mm,'월',dd,'일',]) +" "+dateFormat, style : TextStyle(color : Colors.white, fontSize: 16,fontWeight: FontWeight.w300, fontFamily: 'Gmarket')),
@@ -164,7 +162,11 @@ class _homeFirstState extends State<homeFirst> {
                                     ],
                                   ),
                                   Expanded(child: Container()),
-                                  SizedBox(height: 34, width: 34, child : Image.asset('assets/image/general/부작용기록.png'))
+                                  GestureDetector(
+                                    onTap: (){
+                                      Get.to(SideEff(), arguments: i);
+                                    },
+                                      child: SizedBox(height: 34, width: 34, child : Image.asset('assets/image/general/부작용기록.png')))
                                 ],
                               ),
                             )
@@ -375,6 +377,18 @@ class _homeFirstState extends State<homeFirst> {
             )
         ),
       ],
+    );
+  }
+  Widget Dialog(){
+    return Center(
+        child: GestureDetector(
+
+          child: Container(
+            height : 350,
+            width: 290,
+            child: Image.asset("assets/image/Record/결제완료팝업.png"),
+          ),
+        )
     );
   }
   Widget Dialog2(){

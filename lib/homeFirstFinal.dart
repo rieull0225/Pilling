@@ -1,6 +1,7 @@
 import 'package:degree/alarmList.dart';
 import 'package:degree/drugFail.dart';
 import 'package:degree/drugOK.dart';
+import 'package:degree/prescription.dart';
 import 'package:degree/reservation.dart';
 import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
@@ -165,7 +166,13 @@ class _homeFirstFinalState extends State<homeFirstFinal> {
                                     ],
                                   ),
                                   Expanded(child: Container()),
-                                  SizedBox(height: 34, width: 34, child : Image.asset('assets/image/general/부작용기록.png'))
+                                  GestureDetector(
+                                      onTap: (){
+                                        Get.to(SideEff(), arguments: i);
+                                        setState(() {
+                                        });
+                                      },
+                                      child: SizedBox(height: 34, width: 34, child : Image.asset('assets/image/general/부작용기록.png')))
                                 ],
                               ),
                             )
@@ -236,7 +243,9 @@ class _homeFirstFinalState extends State<homeFirstFinal> {
   Widget prepButton(BuildContext context){
     return SizedBox(
         width : MediaQuery.of(context).size.width,
-        child : GestureDetector( onTap: (){},
+        child : GestureDetector( onTap: (){
+          Get.to(()=>prescription());
+        },
           child : Image.asset("assets/image/home/홈_진료배너2.png"),
         ));
   }

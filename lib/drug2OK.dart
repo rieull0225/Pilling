@@ -101,7 +101,7 @@ class drug2OK extends StatelessWidget {
               child: Container(
                 height : 384,
                 width: 290,
-                child: Image.asset("assets/image/Record/복용성공완료팝업.png"),
+                child: Image.asset("assets/image/Record/복약성공완료팝업.png"),
 
 
               )
