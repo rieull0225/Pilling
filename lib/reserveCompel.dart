@@ -70,13 +70,13 @@ class _reserveCompelState extends State<reserveCompel> {
                         SizedBox(height : 13),
                         Row(
                           children: [
-                            SizedBox(height : 43, width : 43, child : Image.asset("assets/image/마음샘정신건강의학과/김진규 원장.png")),
+                            SizedBox(height : 43, width : 43, child : Image.asset("assets/image/${Information.hospital}/${Information.doctor} 원장.png")),
                             SizedBox(width : 9),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("마음샘정신건강의학과", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400),),
-                                Text("김진규 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w500),)
+                                Text("${Information.hospital}", style: TextStyle( color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400),),
+                                Text("${Information.doctor} 원장", style: TextStyle( color : Color(0xff141922), fontSize: 15,  fontWeight: FontWeight.w500),)
                               ],
                             ),
                             Expanded(child : Container()),
@@ -106,7 +106,7 @@ class _reserveCompelState extends State<reserveCompel> {
                                   children: [
                                     Text("병원",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                     Expanded(child : Container()),
-                                    Text("한동 정신과의원",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                    Text("${Information.hospital}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                                   ],
                                 ),
                               ),Padding(
@@ -115,7 +115,7 @@ class _reserveCompelState extends State<reserveCompel> {
                                   children: [
                                     Text("담당 의사",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                                     Expanded(child : Container()),
-                                    Text("김준상 의사",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                                    Text("${Information.doctor} 원장",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                                   ],
                                 ),
                               ),

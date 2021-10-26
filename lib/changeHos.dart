@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:degree/reservation.dart';
 import 'package:degree/search_result.dart';
+import 'package:degree/search_result_after.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,6 +24,11 @@ class _changeHosState extends State<changeHos> {
   int idx = 0;
   List<bool> selectList = [];
   List<inform> secondList = [];
+
+  String doctor = Information.doctor;
+  String hos = Information.hospital;
+  String phone = Information.phone;
+  String address = Information.address;
 
   TextEditingController _controller = TextEditingController();
 
@@ -70,7 +76,7 @@ class _changeHosState extends State<changeHos> {
                         ),
                         trailing : GestureDetector(
                           onTap : (){
-                            Get.to(()=> search_result(), arguments: list[index]);
+                            Get.to(()=> search_result_after(), arguments: list[index]);
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(top:0.0, bottom : 3),
@@ -87,6 +93,10 @@ class _changeHosState extends State<changeHos> {
                       selectList[i]= false;
                     selectList[index] = true;
                     idx = index;
+                    phone = list[index].phone;
+                    doctor = list[index].doctor[0];
+                    address = list[index].address;
+                    hos = list[index].name;
                   });
                 },
                 child: Card(
@@ -102,7 +112,7 @@ class _changeHosState extends State<changeHos> {
                         ),
                         trailing : GestureDetector(
                           onTap : (){
-                            Get.to(()=> search_result(), arguments: list[index]);
+                            Get.to(()=> search_result_after(), arguments: list[index]);
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(top:0.0, bottom : 3),
@@ -222,6 +232,7 @@ class _changeHosState extends State<changeHos> {
                   padding: const EdgeInsets.fromLTRB(18,13,18,17),
                   child: GestureDetector(
                     onTap: (){
+                      Information = hosInfo(hospital : hos, doctor: doctor, address: address, phone: phone);
                       Get.dialog(Dialog());
                     },
                     child: Container(

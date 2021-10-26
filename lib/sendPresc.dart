@@ -9,6 +9,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'assets.dart';
+
 
 
 List<Widget> s1 = [];
@@ -511,7 +513,7 @@ class _sendPrescState extends State<sendPresc> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("한동 정신과의원 원내약국 ",style: TextStyle(color : Color(0xff4271ff), fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'Gmarket'),),
+                    Text("${Information.hospital} 원내약국 ",style: TextStyle(color : Color(0xff4271ff), fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'Gmarket'),),
                     Text("으로",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'Gmarket'),),
                   ],
                 ),

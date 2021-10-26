@@ -73,3 +73,13 @@ class side{
 }
 
 List<side> sides =[];
+
+class hosInfo{
+  String hospital;
+  String doctor;
+  String address;
+  String phone;
+  hosInfo({required this.hospital, required this.doctor, required this.address, required this.phone});
+}
+
+hosInfo Information = hosInfo(hospital: "마음샘정신건강의학과", doctor: '김진규', address : "서울시 서초구 서초동 1673-1 인앤인빌딩 502", phone : "02-522-6836");

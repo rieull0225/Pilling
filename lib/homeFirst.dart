@@ -56,14 +56,14 @@ class _homeFirstState extends State<homeFirst> {
                           SizedBox(height : 18),
                           Row(
                             children: [
-                              TextButton( child : Text('복약체크', style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: FontWeight.w700),),
+                              TextButton( child : Text('복약체크', style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: side ? FontWeight.w700 :FontWeight.w500),),
                                 onPressed: (){
                                   setState(() {
                                     side = true;
                                   });
                                 },),
                               SizedBox(width : 16),
-                              TextButton(child : Text('부작용 노트',style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: FontWeight.w500),),
+                              TextButton(child : Text('부작용 노트',style: TextStyle(color : Colors.white,fontSize: 16, fontFamily: 'Gmarket', fontWeight: side ? FontWeight.w500 : FontWeight.w700),),
                                 onPressed: (){
                                   setState(() {
                                     side = false;
@@ -100,7 +100,7 @@ class _homeFirstState extends State<homeFirst> {
                               ],),
                             SizedBox(height : 17),
                             Text(" ※ 서비스 내 일정 조건이 충족되어야 비대면 진료가 가능합니다.", style : TextStyle(color : Color(0xff4271ff),fontSize: 11, fontWeight: FontWeight.w400),),
-                            SizedBox(height :90),
+                            SizedBox(height :105),
                           ],
                         ),
                     ),

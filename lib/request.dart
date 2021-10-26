@@ -185,7 +185,7 @@ class _requestState extends State<request> {
                 children: [
                   Text("병원",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                   Expanded(child : Container()),
-                  Text("마음샘정신건강의학과",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                  Text("${Information.hospital}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                 ],
               ),
             ),Padding(
@@ -194,7 +194,7 @@ class _requestState extends State<request> {
                 children: [
                   Text("담당 의사",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                   Expanded(child : Container()),
-                  Text("김진규 원장",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                  Text("${Information.doctor} 원장",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                 ],
               ),
             ),
