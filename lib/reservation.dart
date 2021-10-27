@@ -196,7 +196,7 @@ class _reservationState extends State<reservation> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("최근 진료일\n2021.07.28.(화)", style: TextStyle(color: Color(0xff6b6b6b), fontSize: 12, fontWeight: FontWeight.w400),),
+                  Text("최근 진료일\n2021.10.15.(금)", style: TextStyle(color: Color(0xff6b6b6b), fontSize: 12, fontWeight: FontWeight.w400),),
                   Expanded(child: Container()),
                   GestureDetector(
                     onTap : (){
@@ -247,7 +247,7 @@ class _reservationState extends State<reservation> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("최근 진료일\n2021.07.28.(화)", style: TextStyle(color: Color(0xff6b6b6b), fontSize: 12, fontWeight: FontWeight.w400),),
+                  Text("최근 진료일\n2021.10.15.(금)", style: TextStyle(color: Color(0xff6b6b6b), fontSize: 12, fontWeight: FontWeight.w400),),
                   Expanded(child: Container()),
                   GestureDetector(
                     onTap : (){

@@ -140,17 +140,12 @@ class _homeFirstState extends State<homeFirst> {
                       child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Expanded(child: Container()),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: Text("${sides[n-1].time?[0]}:${sides[i].time?[1]}", style: TextStyle(color: Color(0xff6691ff), fontSize: 14, fontWeight: FontWeight.w300),),
-                        ),
-                        SizedBox(width : 12),
+
                         Container(
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(color : Colors.grey.withOpacity(0.5),
-                                blurRadius: 20, offset: Offset(0,8))
+                                    blurRadius: 20, offset: Offset(0,8))
                               ],
                               borderRadius: BorderRadius.circular(10),
                               color : Colors.white,
@@ -170,14 +165,20 @@ class _homeFirstState extends State<homeFirst> {
                                   ),
                                   Expanded(child: Container()),
                                   GestureDetector(
-                                    onTap: (){
-                                      Get.to(SideEff(), arguments: i);
-                                    },
+                                      onTap: (){
+                                        Get.to(SideEff(), arguments: i);
+                                      },
                                       child: SizedBox(height: 34, width: 34, child : Image.asset('assets/image/general/부작용기록.png')))
                                 ],
                               ),
                             )
                         ),
+                        SizedBox(width : 12),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Text("${sides[n-1].time?[0]}:${sides[i].time?[1]}", style: TextStyle(color: Color(0xff6691ff), fontSize: 14, fontWeight: FontWeight.w300),),
+                        ),
+                        Expanded(child: Container()),
                       ],
                   ),
                     ),

@@ -87,7 +87,7 @@ class _prescriptionState extends State<prescription> {
                             ],
                           ),
                           SizedBox(height : 12),
-                          Divider(color : Color(0xffa0b8ff), thickness: 0.5,),
+                          Divider(color : Color(0xff929292), thickness: 0.5,),
                           SizedBox(height : 12),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 6.0),

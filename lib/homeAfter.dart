@@ -1,5 +1,6 @@
 
 import 'package:degree/homeFirstFinal.dart';
+import 'package:degree/homeForth.dart';
 import 'package:degree/homeThird.dart';
 import 'package:degree/sideEffect.dart';
 import 'package:flutter/cupertino.dart';
@@ -75,6 +76,6 @@ List bodyList = [
   homeFirstFinal(),
   homeSecond(),
   homeAfterThird(),
-  homeAfterThird(),
+  homeForth(),
 ];
 

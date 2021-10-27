@@ -37,7 +37,7 @@ class _sendPrescState extends State<sendPresc> {
   void initList(){
     if(s1.isEmpty) {
       for (int i = 1; i <= 12; ++i) {
-        s1.add(Container(width : 106, height : 101 ,child: Center(child: Text("${i}", style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300)))));
+        s1.add(Container(width : 106, height : 101 ,child: Center(child: Text("${i}", style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300, )))));
       }
       for (int i = 0; i < 60; ++i) {
         e1.add(Container(width : 106, height : 101,child: Center(child: Text("${i}",style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300)))));
@@ -92,9 +92,9 @@ class _sendPrescState extends State<sendPresc> {
                             children: [
                               Text("조제기관",style: TextStyle(color : Color(0xff6b6b6b), fontSize: 12, ),),
                               SizedBox(height : 8),
-                              Text("마음샘정신건강의학과 원내조제",style: TextStyle(color : Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w500, ),),
+                              Text("${Information.hospital} 원내조제",style: TextStyle(color : Color(0xff141922), fontSize: 16, fontWeight: FontWeight.w500, ),),
                               SizedBox(height : 3),
-                              Text("서울시 서초구 서초동 1673-1 인앤인빌딩 502호",style: TextStyle(color : Color(0xff6b6b6b), fontSize: 13, ),),
+                              Text("${Information.address}",style: TextStyle(color : Color(0xff6b6b6b), fontSize: 13, ),),
                               SizedBox(height : 11),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -250,7 +250,8 @@ class _sendPrescState extends State<sendPresc> {
                             Container(height : 113, width :106,
                               child: ListWheelScrollView(
                                 squeeze : 1,
-                                children : s1,
+                                children : [for(int i = 1; i <=12 ; i++) Container(width : 106, height : 101 ,child:
+                                Center(child: Text("${i}", style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300,color: Color(0xffb8b8b8) ))))],
                                 itemExtent: 24,
                               ),
                             ),
@@ -263,7 +264,7 @@ class _sendPrescState extends State<sendPresc> {
                             Container(height : 113, width : 106,
                               child: ListWheelScrollView(
                                 squeeze : 2,
-                                children : e1,
+                                children : [for(int i = 0; i <= 59 ; i++) Container(width : 106, height : 101 ,child: Center(child: Text("${i}", style : TextStyle(fontSize: 16,fontWeight: FontWeight.w300,color: Color(0xffb8b8b8) ))))],
                                 itemExtent: 60,
                               ),
                             ),
@@ -276,7 +277,7 @@ class _sendPrescState extends State<sendPresc> {
                             Container(height : 113 , width : 106,
                               child: ListWheelScrollView(
                                 squeeze : 0.8,
-                                children : [Text("AM", style: TextStyle(fontWeight: FontWeight.w300)), Text("PM", style: TextStyle(fontWeight: FontWeight.w300))],
+                                children : [Text("AM", style: TextStyle(fontWeight: FontWeight.w300, color:(Color(0xffb8b8b8)))), Text("PM", style: TextStyle(fontWeight: FontWeight.w300, color: Color(0xffb8b8b8)))],
                                 itemExtent: 20,
                               ),
                             ),

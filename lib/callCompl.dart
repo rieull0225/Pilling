@@ -111,9 +111,12 @@ class _callComplState extends State<callCompl> {
                                 Row(
                                   children: [
                                     Text("의사소견",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
+
                                     Expanded(child:Container()),
                                   ],
                                 ),
+                                SizedBox(height : 10),
+                                Text("부작용으로 인한 식욕부진이 심하나 약효가 미미하게 느껴져 증량이 필요한 것으로 판단.",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w300,),),
 
                               ],
                             ),

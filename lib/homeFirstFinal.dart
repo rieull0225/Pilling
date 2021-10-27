@@ -137,12 +137,7 @@ class _homeFirstFinalState extends State<homeFirstFinal> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Expanded(child: Container()),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: Text("${sides[n-1].time?[0]}:${sides[i].time?[1]}", style: TextStyle(color: Color(0xff6691ff), fontSize: 14, fontWeight: FontWeight.w300),),
-                        ),
-                        SizedBox(width : 12),
+
                         Container(
                             decoration: BoxDecoration(
                               boxShadow: [
@@ -169,14 +164,18 @@ class _homeFirstFinalState extends State<homeFirstFinal> {
                                   GestureDetector(
                                       onTap: (){
                                         Get.to(SideEff(), arguments: i);
-                                        setState(() {
-                                        });
                                       },
                                       child: SizedBox(height: 34, width: 34, child : Image.asset('assets/image/general/부작용기록.png')))
                                 ],
                               ),
                             )
                         ),
+                        SizedBox(width : 12),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Text("${sides[n-1].time?[0]}:${sides[i].time?[1]}", style: TextStyle(color: Color(0xff6691ff), fontSize: 14, fontWeight: FontWeight.w300),),
+                        ),
+                        Expanded(child: Container()),
                       ],
                     ),
                   ),

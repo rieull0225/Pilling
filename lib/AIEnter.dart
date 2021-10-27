@@ -32,7 +32,7 @@ class _AIEnterState extends State<AIEnter> {
           SizedBox(height : 30.5),
           Text("필잉의 비대면 약물 처방 서비스\nAI 진료를 시작합니다",
             style: TextStyle(color : Colors.white, fontSize: 20, fontFamily: 'Gmarket',
-                fontWeight: FontWeight.w700, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
+                fontWeight: FontWeight.w500, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
           SizedBox(height : 25,),
           Text("아래 설명과 유의사항을 읽고 진료실에 입장해주세요.",
               style: TextStyle(color : Colors.white, fontSize: 12, fontFamily: 'Apple',
@@ -47,13 +47,13 @@ class _AIEnterState extends State<AIEnter> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height : 6),
-                  Text('AI 진료란?', style: TextStyle(color : Color(0xff6180f1), fontSize: 15, fontFamily: 'Gmarket',
+                  Text('AI 진료란?', style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',
                     fontWeight: FontWeight.w500, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
                   SizedBox(height : 9),
                   Text('의사와의 직접적인 진료 없이 인공지능과'
                       ' 머신러닝으로 환자의 복용 및 부작용 기록 데이터를'
                       ' 분석해 쉽고 빠른 동일 약물 처방 또는 약물 조절을'
-                      ' 도와주는 비대면 진료 서비스입니다.', style: TextStyle(color : Color(0xff6180f1), fontSize: 13, fontFamily: 'Apple',
+                      ' 도와주는 비대면 진료 서비스입니다.', style: TextStyle(color : Color(0xff141922), fontSize: 13, fontFamily: 'Apple',
                     fontWeight: FontWeight.w200, decoration: TextDecoration.none, ),textAlign: TextAlign.start),
                   SizedBox(height : 13),
                   Container(height : 71, width : 287, decoration: BoxDecoration(

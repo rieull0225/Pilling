@@ -110,7 +110,7 @@ class _requestState extends State<request> {
                           color : Color(0xff4271ff),
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child : Center(child : Text("요청사항 입력하기", style: TextStyle(color : Colors.white, fontSize: 14, fontFamily: 'Apple',fontWeight: FontWeight.w400))),
+                        child : Center(child : Text("예약하기", style: TextStyle(color : Colors.white, fontSize: 14, fontFamily: 'Apple',fontWeight: FontWeight.w400))),
                       ),
                     ):Container(
                       width : 324, height : 48,
@@ -118,7 +118,7 @@ class _requestState extends State<request> {
                         color : Color(0xfff8faff),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child : Center(child : Text("요청사항 입력하기", style: TextStyle(color : Color(0xffb8b8b8), fontSize: 14, fontFamily: 'Apple',fontWeight: FontWeight.w400))),
+                      child : Center(child : Text("예약하기", style: TextStyle(color : Color(0xffb8b8b8), fontSize: 14, fontFamily: 'Apple',fontWeight: FontWeight.w400))),
                     ),
                   ),
                   SizedBox(height : 18),
@@ -217,7 +217,7 @@ class _requestState extends State<request> {
                 children: [
                   Text("예약 시간",style: TextStyle(color : Color(0xff929292), fontSize: 13, fontWeight: FontWeight.w400,),),
                   Expanded(child : Container()),
-                  Text("2021년 10월 ${date}일${time}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
+                  Text("2021년 10월 ${date}일 ${time}",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w400,),),
                 ],
               ),
             ),
