@@ -171,7 +171,7 @@ class _reserveCompelState extends State<reserveCompel> {
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text("진료 예약 시 유의사항",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w600,),),
+                                      Text("진료 예약 시 유의사항",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w500,),),
                                       SizedBox(height : 7),
                                       Text("환자가 예약시간 내 진료실에 입장하지 않을 시, 자동으로\n진료가 취소됩니다.",
                                         style: TextStyle(color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400,),),

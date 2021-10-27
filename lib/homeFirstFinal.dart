@@ -91,7 +91,7 @@ class _homeFirstFinalState extends State<homeFirstFinal> {
 
                         prepButton(context),
                         Padding(
-                          padding: const EdgeInsets.only(left :18.0),
+                          padding: const EdgeInsets.only(left :18.0,right:18),
                           child: Column(
                             children:[
                               SizedBox(height : 12),

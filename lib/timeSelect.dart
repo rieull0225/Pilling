@@ -48,7 +48,7 @@ class _timeSelectState extends State<timeSelect> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('예약을 원하는 날짜와 시간을 선택해주세요.',
-                    style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w400),),
+                    style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w500),),
                   SizedBox(height : 4),
                   Text('※ 담당 의료진의 진료스케줄에 따른 진료가 가능한 시간입니다.',
                     style: TextStyle(color : Color(0xffff5b64), fontSize: 10, fontFamily: 'Apple',fontWeight: FontWeight.w400),),

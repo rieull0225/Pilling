@@ -15,7 +15,7 @@ class _AIEnterState extends State<AIEnter> {
   @override
   Widget build(BuildContext context) {
     return Container(width: MediaQuery.of(context).size.width, height : MediaQuery.of(context).size.height,
-    decoration: BoxDecoration(color: Color(0xff4271ff)),
+    decoration: BoxDecoration(color: Color(0xff6180f1)),
     child : Padding(
       padding: const EdgeInsets.all(18.0),
       child: Column(
@@ -32,7 +32,7 @@ class _AIEnterState extends State<AIEnter> {
           SizedBox(height : 30.5),
           Text("필잉의 비대면 약물 처방 서비스\nAI 진료를 시작합니다",
             style: TextStyle(color : Colors.white, fontSize: 20, fontFamily: 'Gmarket',
-                fontWeight: FontWeight.w500, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
+                fontWeight: FontWeight.w700, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
           SizedBox(height : 25,),
           Text("아래 설명과 유의사항을 읽고 진료실에 입장해주세요.",
               style: TextStyle(color : Colors.white, fontSize: 12, fontFamily: 'Apple',
@@ -47,26 +47,26 @@ class _AIEnterState extends State<AIEnter> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height : 6),
-                  Text('AI 진료란?', style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',
-                    fontWeight: FontWeight.w400, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
+                  Text('AI 진료란?', style: TextStyle(color : Color(0xff6180f1), fontSize: 15, fontFamily: 'Gmarket',
+                    fontWeight: FontWeight.w500, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
                   SizedBox(height : 9),
                   Text('의사와의 직접적인 진료 없이 인공지능과'
                       ' 머신러닝으로 환자의 복용 및 부작용 기록 데이터를'
                       ' 분석해 쉽고 빠른 동일 약물 처방 또는 약물 조절을'
-                      ' 도와주는 비대면 진료 서비스입니다.', style: TextStyle(color : Color(0xff141922), fontSize: 13, fontFamily: 'Apple',
+                      ' 도와주는 비대면 진료 서비스입니다.', style: TextStyle(color : Color(0xff6180f1), fontSize: 13, fontFamily: 'Apple',
                     fontWeight: FontWeight.w200, decoration: TextDecoration.none, ),textAlign: TextAlign.start),
                   SizedBox(height : 13),
                   Container(height : 71, width : 287, decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Color(0xff4271ff),),
+                    border: Border.all(color: Color(0xff6180f1),),
                   ),child : Padding(
                     padding: const EdgeInsets.all(9.0),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(width : 10),
-                        Container(width : 67, height : 35, child: Text('AI 비대면\n진료 조건', style: TextStyle(height : 1.4,color : Color(0xff4271ff), fontSize: 14, fontFamily: 'Gmarket',
-                      fontWeight: FontWeight.w400, decoration: TextDecoration.none, ),textAlign: TextAlign.center)),
+                        Container(width : 67, height : 35, child: Text('AI 비대면\n진료 조건', style: TextStyle(height : 1.4,color : Color(0xff6180f1), fontSize: 14, fontFamily: 'Gmarket',
+                      fontWeight: FontWeight.w500, decoration: TextDecoration.none, ),textAlign: TextAlign.center)),
                         SizedBox(
                           width : 22,
                         ),
@@ -74,11 +74,11 @@ class _AIEnterState extends State<AIEnter> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(height : 5),
-                            Text('·\t서비스 사용기간 3개월 이상', style: TextStyle(color : Color(0xff4271ff), fontSize: 11, fontFamily: 'Apple',
+                            Text('·\t서비스 사용기간 3개월 이상', style: TextStyle(color : Color(0xff6180f1), fontSize: 11, fontFamily: 'Apple',
                               fontWeight: FontWeight.w300, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
-                            Text('·\t동일한 약물 연속 3회 이상 처방 ', style: TextStyle(color : Color(0xff4271ff), fontSize: 11, fontFamily: 'Apple',
+                            Text('·\t동일한 약물 연속 3회 이상 처방 ', style: TextStyle(color : Color(0xff6180f1), fontSize: 11, fontFamily: 'Apple',
                               fontWeight: FontWeight.w300, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
-                            Text('·\t담당 의사의 사전 동의 ', style: TextStyle(color : Color(0xff4271ff), fontSize: 11, fontFamily: 'Apple',
+                            Text('·\t담당 의사의 사전 동의 ', style: TextStyle(color : Color(0xff6180f1), fontSize: 11, fontFamily: 'Apple',
                               fontWeight: FontWeight.w300, decoration: TextDecoration.none, ),textAlign: TextAlign.center)
 
                           ],
@@ -89,7 +89,7 @@ class _AIEnterState extends State<AIEnter> {
                   ),
                   SizedBox(height : 28),
                   Text('진료 시 유의사항', style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',
-                    fontWeight: FontWeight.w400, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
+                    fontWeight: FontWeight.w500, decoration: TextDecoration.none, ),textAlign: TextAlign.center),
                   SizedBox(height : 9),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,

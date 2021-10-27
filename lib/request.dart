@@ -70,7 +70,7 @@ class _requestState extends State<request> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('약물 조절 시 요청사항이 있나요?',
-                          style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w400),),
+                          style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w500),),
                         SizedBox(height : 4),
                         Text('※ 해당 요청사항은 진료시 담당 의료진에게 전달됩니다.',
                           style: TextStyle(color : Color(0xffff5b64), fontSize: 10, fontFamily: 'Apple',fontWeight: FontWeight.w400),),

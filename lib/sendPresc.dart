@@ -565,7 +565,7 @@ class _sendPrescState extends State<sendPresc> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("약물 픽업 시 유의사항",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w600,),),
+                      Text("약물 픽업 시 유의사항",style: TextStyle(color : Color(0xff3d3d3d), fontSize: 13, fontWeight: FontWeight.w500,),),
                       SizedBox(height : 7),
                       Text("픽업 예약시간을 꼭 지켜주세요",
                         style: TextStyle(color : Color(0xff3d3d3d), fontSize: 11, fontWeight: FontWeight.w400,),),

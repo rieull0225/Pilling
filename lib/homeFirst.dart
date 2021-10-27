@@ -95,7 +95,7 @@ class _homeFirstState extends State<homeFirst> {
                           ],),),
                     prep ? prepButton(context) : SizedBox(),
                     Padding(
-                      padding: const EdgeInsets.only(left :18.0),
+                      padding: const EdgeInsets.only(left :18.0,right : 18),
                       child: Column(
                         children:[
                             Row(
