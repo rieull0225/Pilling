@@ -47,7 +47,7 @@ class _reservationState extends State<reservation> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('병원과 의료진을 확인 후 선택해주세요',
-                    style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w400),),
+                    style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w500),),
                   SizedBox(height : 4),
                   Text('※ 서비스 가입 시 등록된 병원이 기본으로 설정됩니다.',
                     style: TextStyle(color : Color(0xffff5b64), fontSize: 10, fontFamily: 'Apple',fontWeight: FontWeight.w400),),
@@ -92,7 +92,7 @@ class _reservationState extends State<reservation> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('진료 유형을 선택해주세요', style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w400)),
+                  Text('진료 유형을 선택해주세요', style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w500)),
                   SizedBox(height : 22),
                   Row(
                     children: [
@@ -145,7 +145,7 @@ class _reservationState extends State<reservation> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('진료 유형을 선택해주세요', style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w400)),
+                  Text('진료 유형을 선택해주세요', style: TextStyle(color : Color(0xff141922), fontSize: 15, fontFamily: 'Gmarket',fontWeight: FontWeight.w500)),
                   SizedBox(height : 22),
 
                   Expanded(child: Container()),

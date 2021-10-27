@@ -1,14 +1,10 @@
 import 'package:degree/drug1.dart';
 import 'package:degree/drug2.dart';
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-
-String dateFormat = DateFormat('EEEE').format(DateTime.now());
-bool isSet = false;
-bool prep = true;
-bool side = true;
 
 class homeSecond extends StatefulWidget {
   const homeSecond({Key? key}) : super(key: key);
@@ -18,10 +14,16 @@ class homeSecond extends StatefulWidget {
   _homeSecondState createState() => _homeSecondState();
 }
 class _homeSecondState extends State<homeSecond> {
+  bool isSel = false;
+  bool isSet = false;
+
+  int date = 0;
+
+  List<bool> selectList = [for(int i = 0 ; i <= 30 ; ++i) false];
   var info = false;
   var info2 = false;
-  List _valueList = ['06월27일 - 07월03일','07월04일 - 07월11일'];
-  var _selected = '06월27일 - 07월03일' ;
+  List _valueList = ['10월20일 - 10월27일','10월28일 - 11월4일'];
+  var _selected = '10월20일 - 10월27일' ;
 
 
   @override
@@ -183,7 +185,6 @@ class _homeSecondState extends State<homeSecond> {
                       ],
                     ),
                   ): Container(),
-
                 ],
               ),
               Container(height : 6, decoration: BoxDecoration(color : Color(0xfff4f4f4)),),
@@ -216,13 +217,12 @@ class _homeSecondState extends State<homeSecond> {
         children: [
           Column(
             children: [
-              SizedBox(height : 16,),
               Stack(
                 children: [
                   Container(
                     width : MediaQuery.of(context).size.width,
-                    height : MediaQuery.of(context).size.width,
-                    child:Image.asset('assets/image/home/calender.png'),
+                    height : MediaQuery.of(context).size.width - 25,
+                    child:Calender(),
 
                   ),
                   Padding(
@@ -238,29 +238,205 @@ class _homeSecondState extends State<homeSecond> {
                 ],
               ),
               Divider(),
+              SizedBox(height :15),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 31.0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width : MediaQuery.of(context).size.width, height : 47,
-                      child: Image.asset('assets/image/home/캘린더기록.png'),
-                    ),
-                    SizedBox(
-                      width : MediaQuery.of(context).size.width, height : 63,
-                      child: Image.asset('assets/image/home/캘린더기록-1.png'),
-                    ),SizedBox(
-                      width : MediaQuery.of(context).size.width, height : 63,
-                      child: Image.asset('assets/image/home/캘린더기록-2.png'),
-                    ),
-                    SizedBox(height: 109),
-                  ],
-                ),
-              )
+                child: Container(
+                  width : 298,
+                  child : date == 0 ? Container() : Image.asset('assets/image/Calendar/${date}.png'),
+                )
+              ),
+              SizedBox(height : 100),
             ],
           )
         ],
       ),
+    );
+  }
+
+  Widget Calender() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(height : 18),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right :23.0),
+                child: GestureDetector(
+                    child : Icon(Icons.arrow_back_ios, size : 10)
+                ),
+              ),
+              Text("10월", style: TextStyle(color: Color(0xff141922),
+                  fontSize: 22,
+                  fontFamily: 'Gmarket',
+                  fontWeight: FontWeight.w500),),
+              Padding(
+                padding: const EdgeInsets.only(left : 23.0),
+                child: GestureDetector(
+                    child : Icon(Icons.arrow_forward_ios, size : 10)
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height : 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(' 일 ', style: TextStyle(color : Color(0xfff37981), fontSize: 14, fontWeight: FontWeight.w400),),
+              Text(' 월 ', style: TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400),),
+              Text(' 화 ', style: TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400),),
+              Text(' 수 ', style: TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400),),
+              Text(' 목 ', style: TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400),),
+              Text(' 금 ', style: TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400),),
+              Text(' 토 ', style: TextStyle(color : Color(0xff6691ff), fontSize: 14, fontWeight: FontWeight.w400),),
+            ],
+          ),
+          SizedBox(height : 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              UnClick('26'),
+              UnClick('27'),
+              UnClick('28'),
+              UnClick('29'),
+              UnClick('30'),
+              UnClick(' 1 '),
+              UnClick(' 2 '),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Container(width : 85),
+            Container(width : 202,  decoration: BoxDecoration(border: Border.all(color:Color(0xff4271ff), width: 0.5)),),
+          ],),
+          SizedBox(height : 7),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              UnClick(' 3 '),
+              UnClick(' 4 '),
+              UnClick(' 5 '),
+              UnClick(' 6 '),
+              UnClick(' 7 '),
+              UnClick(' 8 '),
+              UnClick(' 9 '),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Container(width : 28,  decoration: BoxDecoration(border: Border.all(color:Color(0xff4271ff), width: 0.5)),),
+            Container(width : 56),
+            Container(width : 202,  decoration: BoxDecoration(border: Border.all(color:Color(0xff4271ff), width: 0.5)),),
+          ],),
+          SizedBox(height : 7),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              UnClick('10'),
+              UnClick('11'),
+              UnClick('12'),
+              UnClick('13'),
+              UnClick('14'),
+              UnClick('15'),
+              UnClick('16'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(width : 111,  decoration: BoxDecoration(border: Border.all(color:Color(0xff4271ff), width: 0.5)),),
+              Container(width : 64),
+              Container(width : 110,  decoration: BoxDecoration(border: Border.all(color:Color(0xff4271ff), width: 0.5)),),
+            ],),
+          SizedBox(height : 7),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              UnClick('17'),
+              UnClick('18'),
+              UnClick('19'),
+              UnClick('20'),
+              UnClick('21'),
+              UnClick('22'),
+              UnClick('23'),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(width : 71,  decoration: BoxDecoration(border: Border.all(color:Color(0xff4271ff), width: 0.5)),),
+              Container(width : 13),
+              DottedLine(
+                lineLength: 78,
+                dashColor: Color(0xff4271ff),
+                dashGapLength: 1.0,
+                dashLength: 1.0,
+              ),
+              Container(width : 13),
+              Container(width : 110,  decoration: BoxDecoration(border: Border.all(color:Color(0xff4271ff), width: 0.5)),),
+            ],),
+          SizedBox(height : 7),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              UnClick('24'),
+              Click('25'),
+              Click('26'),
+              Click('27'),
+              Click('28'),
+              Click('29'),
+              Click('30'),
+            ],
+          ),
+          SizedBox(height :23),
+          Align(
+            alignment: Alignment.bottomRight,
+              child: SizedBox(width : 235, child : Image.asset("assets/image/Calendar/범례.png")))
+        ],
+      ),
+    );
+  }
+
+  Widget UnClick(String text){
+    return GestureDetector(
+        child : Container(
+            width : 35, height : 35,
+            child : Center(
+              child : Text(text, style: TextStyle(color : Color(0xff929292), fontSize: 14, fontWeight: FontWeight.w400),),)
+        )
+    );
+  }
+
+  Widget Click(String text){
+    return GestureDetector(
+        onTap : (){
+          setState(() {
+            selectList[int.parse(text)] = selectList[int.parse(text)] ? false : true;
+            for(int i = 0 ; i < selectList.length ; i++) {
+              if (int.parse(text) == i) continue;
+              selectList[i] = false;
+            }
+            isSel = selectList[int.parse(text)];
+            date = int.parse(text);
+          });
+        },
+        child : Container(
+            width : 35, height : 35,
+            decoration : selectList[int.parse(text)] ? BoxDecoration(
+              boxShadow: [BoxShadow(color:Colors.grey.withOpacity(0.7),blurRadius: 20,
+              )],
+                color : Color(0xff4271ff), borderRadius: BorderRadius.circular(30), border : Border.all(color : Color(0xff4271ff)))
+                :null,
+            child : Center(
+              child : Text(text, style: TextStyle(color :selectList[int.parse(text)] ?Colors.white: Color(0xff141922), fontSize: 15, fontWeight: FontWeight.w400),),)
+        )
     );
   }
 

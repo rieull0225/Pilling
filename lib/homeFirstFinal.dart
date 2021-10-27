@@ -89,7 +89,7 @@ class _homeFirstFinalState extends State<homeFirstFinal> {
                               SizedBox(height : 18),
                             ],),),
 
-                        isSet ? prepButton(context) : SizedBox(),
+                        prepButton(context),
                         Padding(
                           padding: const EdgeInsets.only(left :18.0),
                           child: Column(
