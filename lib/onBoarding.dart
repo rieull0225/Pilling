@@ -1,4 +1,6 @@
 
+import 'dart:async';
+
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +17,20 @@ class onBoarding extends StatefulWidget {
 
 class _onBoardingState extends State<onBoarding> {
 
+  bool delay = false;
 
   @override
+  void initState(){
+    super.initState();
+  }
+
+
   Widget build(BuildContext context) {
-    return Scaffold(
+    Timer(Duration(milliseconds : 300),
+        ()=> setState((){
+          delay = true;
+        }));
+    return delay ? Scaffold(
       body : Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -51,7 +63,7 @@ class _onBoardingState extends State<onBoarding> {
         SizedBox(height : 16)
         ],
       ),
-    );
+    ) : Scaffold(backgroundColor: Colors.white,);
   }
 }
 
